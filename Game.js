@@ -1,9 +1,34 @@
-var player = require('./Player.js');
-
 class Game {
   constructor() {
-    this.human = ;
-    this.computer = ;
+    this.human = '';
+    this.computer = '';
+    this.humamScore = '';
+  }
+
+
+  determineClassicScores(computerChoice, human) {
+    if (computerChoice === 0) { //paper
+      human.scissorsScore += 20
+      human.rockScore -= 20;
+
+    } else if (computerChoice === 1) { //rock
+      human.paperScore += 20
+      human.scissorsScore -= 20;
+
+    } else if (computerChoice === 2) { //scissors
+      human.rockScore += 20
+      human.paperScore -= 20;
+    }
+    console.log(human.scissorsScore)
+    console.log(this.human, this.computer)
+  }
+
+  determineWinner() {
+    this.human = new Player();
+    this.computer = new Player();
+    console.log(this.human, this.computer)
+
+    // var selectedParent = docQuery, selectedParent.addListener(invoke determineWinner) <<<< goes in main.js
   }
 
   logWinner(humanScore, computerScore) {
@@ -23,7 +48,7 @@ class Game {
       setTimeout(showGameChangeButton, 3000)
       return
     }
-    updateWinCount(winner)
+    this.updateWinCount(winner)
 
     player.saveWinToStorage(winner)
 
@@ -32,57 +57,30 @@ class Game {
     setTimeout(showGameChangeButton, 3000)
   }
 
-  determineClassicScores(human) {
-    if (determineComputerChoice(['paper', 'rock', 'scissors']) === 'paper') { //paper
-      human.scissorsChoice += 20
-      human.rockChoice -= 20;
-
-    } else if (determineComputerChoice(['paper', 'rock', 'scissors']) === 'rock') { //rock
-      human.paperChoice += 20
-      human.scissorsChoice -= 20;
-
-    } else if (determineComputerChoice(['paper', 'rock', 'scissors']) === 'scissors') { //scissors
-      human.rockChoice += 20
-      human.paperChoice -= 20;
-    }
-    playerChoice(human);
-  }
-
   playerChoice(human) {
     var humanChoice = event.target;
 
     if (humanChoice.className === 'block--paper') {
-      var humanScore = human.paperScore;
+      this.humanScore = human.paperScore;
 
     } else if (humanChoice.className === 'block--rock') {
-      var humanScore = human.rockScore;
+      this.humanScore = human.rockScore;
 
     } else if (humanChoice.className === 'block--scissors') {
-      var humanScore = human.scissorsScore;
+      this.humanScore = human.scissorsScore;
     }
-    logWinner(humanScore, player.score) // or var compScore = player.score
+    console.log(this.human, this.computer)
+    // this.logWinner(humanScore, player.score) // or var compScore = player.score
   }
 
   determineComputerChoice(array) {
     return Math.floor(Math.random() * array.length);
   }
 
-  determineWinner() {
-    event.preventDefault()
-
-    this.human = new Player();
-    this.computer = new Player();
-
-    // var selectedParent = docQuery, selectedParent.addListener(invoke determineWinner) <<<< goes in main.js
-    determineClassicScores(this.human);
-
-
-  }
-
   updateWinCount(winner) {
     winner.winCount += 1;
 
-    showWinCount()
+    // showWinCount()
   }
 
     // DOM-changeViewToOutcome()
