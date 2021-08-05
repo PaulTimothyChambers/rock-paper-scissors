@@ -1,4 +1,4 @@
-var human = require('./Player.js');
+var player = require('./Player.js');
 
 class Game {
   constructor() {
@@ -6,39 +6,65 @@ class Game {
     this.computer = ;
   }
 
-  logWinner(human, computer) {
+  logWinner(humanScore, computerScore) {
+    if (humanScore > computerScore) {
+      player.saveWinToStorage(this.human);
+      displayWinner(this.human);
+      var winner = this.human
 
+    } else if (humanScore < computerScore) {
+      player.saveWinToStorage(this.computer);
+      displayWinner(this.computer);
+      var winner = this.computer
+
+    } else {
+      displayDraw();
+      setTimeout(changeViewToClassic, 3000)
+      setTimeout(showGameChangeButton, 3000)
+      return
+    }
+    updateWinCount(winner)
+
+    player.saveWinToStorage(winner)
+
+    setTimeout(changeViewToClassic, 3000)
+
+    setTimeout(showGameChangeButton, 3000)
   }
 
-  determineHumanChoice(playerOne, playerTwo, event) {
+  determineClassicScores(human) {
+    if (determineComputerChoice(['paper', 'rock', 'scissors']) === 'paper') { //paper
+      human.scissorsChoice += 20
+      human.rockChoice -= 20;
+
+    } else if (determineComputerChoice(['paper', 'rock', 'scissors']) === 'rock') { //rock
+      human.paperChoice += 20
+      human.scissorsChoice -= 20;
+
+    } else if (determineComputerChoice(['paper', 'rock', 'scissors']) === 'scissors') { //scissors
+      human.rockChoice += 20
+      human.paperChoice -= 20;
+    }
+    playerChoice(human);
+  }
+
+  playerChoice(human) {
     var humanChoice = event.target;
 
-    if (humanChoice.className === 'block__block--paper-choice') {
-      playerTwo.scissorsChoice += 20
-      playerTwo.rockChoice -= 20;
-      var humanScore = playerOne.paperScore
-      return humanScore
+    if (humanChoice.className === 'block--paper') {
+      var humanScore = human.paperScore;
 
-    } else if (humanChoice.className === 'block__block--rock-choice') {
-      playerTwo.paperChoice += 20
-      playerTwo.scissorsChoice -= 20;
-      var humanScore = playerOne.rockScore
-      return humanScore
+    } else if (humanChoice.className === 'block--rock') {
+      var humanScore = human.rockScore;
 
-    } else if (humanChoice.className === 'block__block--scissors-choice') {
-      playerTwo.rockChoice += 20
-      playerTwo.paperChoice -= 20;
-      var humanScore = playerOne.scissorsScore
-      return humanScore
+    } else if (humanChoice.className === 'block--scissors') {
+      var humanScore = human.scissorsScore;
     }
+    logWinner(humanScore, player.score) // or var compScore = player.score
   }
 
-  playerChoice(choice) {
-
-  }
-
-  determineComputerChoice() {
-    RNG
+  determineComputerChoice(array) {
+    return Math.floor(Math.random() * array.length);
   }
 
   determineWinner() {
@@ -47,18 +73,16 @@ class Game {
     this.human = new Player();
     this.computer = new Player();
 
-
     // var selectedParent = docQuery, selectedParent.addListener(invoke determineWinner) <<<< goes in main.js
+    determineClassicScores(this.human);
 
-    var humanTotalScore = determineHumanChoice(this.human, this.computer);
-  }
-
-  saveWinner() {
 
   }
 
-  updateWinCount() {
+  updateWinCount(winner) {
+    winner.winCount += 1;
 
+    showWinCount()
   }
 
     // DOM-changeViewToOutcome()
@@ -67,11 +91,5 @@ class Game {
     // DOM-displayPlayerChoice()
     // DOM-displayComputerChoice()
     // DOM-showWinCount()
-  setTimeout(showGameChangeButton, 3000){
 
-  }
-
-  setTimeout(changeViewToClassic, 3000){
-
-  }
 }
