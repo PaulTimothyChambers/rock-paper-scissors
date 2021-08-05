@@ -1,9 +1,9 @@
 class Player {
-  constructor(player) {
-    this.player = player;
-    this.paperChoice = 20;
-    this.rockChoice = 20;
-    this.scissorsChoice = 20;
+  constructor() {
+    this.paperScore = 20;
+    this.rockScore = 20;
+    this.scissorsScore = 20;
+    this.wins = 0;
   }
 
   saveWinToStorage() {
