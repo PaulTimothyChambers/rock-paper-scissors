@@ -48,6 +48,8 @@ class Game {
       setTimeout(showGameChangeButton, 3000)
       return
     }
+    setTimeout(changeViewToClassic, 3000)
+    setTimeout(showGameChangeButton, 3000)
   }
 
   playerChoice(humanChoice) {
