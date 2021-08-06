@@ -1,1 +1,82 @@
-font-family: 'Bungee', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+
+body {
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gloria Hallelujah';
+  font-weight: lighter;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gloria Hallelujah';
+}
+
+button {
+  font-family: 'Gloria Hallelujah';
+}
+
+text {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-border {
+  flex-direction: column;
+  align-items:flex-end;
+  height: 20%;
+  margin: 0px;
+  border-style: solid;
+}
+
+.top-border__secret-alien-name {
+  flex-direction: column;
+  font-family: 'Gloria Hallelujah';
+}
+
+.top-border__secret-alien-image {
+  height: 39px;
+  width: 45px;
+  position: absolute;
+  margin-top: 27px;
+  padding-right: 35px;
+}
+
+.top-border__secret-alien-image-two {
+  height: 61px;
+  width: 48px;
+  position: absolute;
+  padding: 14px 34px;
+}
+
+.top-border__secret-alien-name{
+  margin: 78px 23px -12px 8px;
+}
+
+.top-border__secret-alien-win-count {
+  margin: -2px 36px;
+}
+
+.game-board {
+  height: 60%;
+  width: 100%;
+  border-style: solid;
+  margin: 0px;
+}
+.game-board__classic-game-button{
+  flex-direction: column;
+}
+
+.classic-card{
+  flex-direction: column;
+}
+
+.bottom-border {
+  height: 20%;
+  width: 100%;
+  border-style: solid;
+}
