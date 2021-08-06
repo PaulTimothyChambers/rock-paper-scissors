@@ -1,25 +1,45 @@
 <html>
   <head>
-    <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-    <title>ROCK, PAPER, SCISSORS: TO THE DEATH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>ROCK, PAPER, SCiSSORS: TO THE DEATH</title>
   </head>
-  <body class="">
-    <div class="bottom-border">
-      <img class="bottom-border__player-icon">
-      <text class="bottom-border__player-name">HOOMON</text>
-      <text class="bottom-border__player-win-count">WINZS: 0</text>
-    </div>
+  <body>
     <div class="top-border">
-      <img class="top-border__secret-alien-icon">
-      <text class="top-border__secret-alien-name">NOTT SEEKRIT AHLEEIN</text>
-      <text class="top-border__secret-alien-win-count">WINZS: 0</text>
+      <img class="top-border__secret-alien-image" src="./assets/computer-player.png">
+      <img class="top-border__secret-alien-image-two" src="./assets/disguise.png">
+      <text class="top-border__secret-alien-name">N0TT SEEKRiT AHLEEiN</text>
+      <text class="top-border__secret-alien-win-count">WiNZES: 0</text>
     </div>
     <section class="game-board">
-      <button class="game-board__classic-game-btn">STOHRT CLASIK GAYM (NO DETH I PROHMIS)</button>
+      <button class="game-board__classic-game-button">STORHT CLASEK GAYM (NO DETH i PROHMiS)
+        <div class="classic-card">
+          <text class="classic-card__classic-game">CLASiEK GAEM ===
+            <text class="classic-card__game-rules">ROK -BEETZ- SiHZRZ</text>
+            <text class="classic-card__game-rules">SiSORZ -BEEZ- PAiPR</text>
+            <text class="classic-card__game-rules">PAPRE -BEiT- ... ??? i FRGiT SRY</text>
+            <text class="classic-card__game-rules">LEZ PLAE NOUW HUREEE</text>
+          </text>
+        </div>
+      </button>
+      <button class="game-board__classic-game-btn">STRAHT PiESFiL REELAKSiENG GAiME (BEZ TOBSHUN)
+        <div class="difficult-card">
+          <text class="classic-card__classic-game">EiZEE GMAE!!! YAS AN ViREE HAPiE GAEM SEEE LOUK:
+            <text class="classic-card__game-rules">AiLAEEN -BEETZ- SiHZRZ</text>
+            <text class="classic-card__game-rules">AHLiEEN -BEEZ- PAiPR</text>
+            <text class="classic-card__game-rules">i -BiET- ... UH UM ... i MEEN ... UHEM ... AHLEiEN -BEEST- EVFREETiNG</text>
+            <h2 class="classic-card__game-rules">**THIZ WUN MOAR FUHN TRUZ MEE**</h2>
+          </text>
+        </div>
+      </button>
     </section>
+    <div class="bottom-border">
+      <img class="bottom-border__player-icon">
+      <text class="bottom-border__player-name">HOOMOHN</text>
+      <text class="bottom-border__player-win-count">WiNZS: 0</text>
+    </div>
     <script type="text/javascript" src="./Player.js"></script>
     <script type="text/javascript" src="./Game.js"></script>
     <script type="text/javascript" src="./main.js"></script>
