@@ -3,6 +3,7 @@ font-family: 'Gloria Hallelujah', cursive;
 /* #7CB696 greengray */
 /* #897CB6 purplegray */
 /* #BCC9D2 shipgray */
+/* #945CA3 decobtns */
 
 body {
 }
@@ -33,7 +34,7 @@ text {
 
 .top-border {
   flex-direction: column;
-  align-items:flex-end;
+  align-items: flex-end;
   height: 20%;
   width: 100%;
   margin: 0px;
@@ -46,17 +47,17 @@ text {
 }
 
 .top-border__secret-alien-image {
+  position: absolute;
   height: 39px;
   width: 45px;
-  position: absolute;
   margin-top: 27px;
   padding-right: 35px;
 }
 
 .top-border__secret-alien-image-two {
+  position: absolute;
   height: 61px;
   width: 48px;
-  position: absolute;
   padding: 14px 34px;
 }
 
@@ -68,70 +69,162 @@ text {
   margin: -2px 36px;
 }
 
-.game-board {
+.game-board,
+.game-board-difficult {
   height: 60%;
   width: 100%;
   margin: 0px;
   border-style: solid;
 }
 
-.game-board__classic-game-button {
-  margin: 56px 0px 0px 150px;
-  border-radius: 68px;
-  padding-bottom: 20px;
+.game-board-difficult {
+  flex-direction: row;
+}
+
+.game-board-difficult__rock-button,
+.game-board-difficult__paper-button,
+.game-board-difficult__paper-button-two,
+.game-board-difficult__scissors-button {
   position: absolute;
+  height: 200px;
+  width: 200px;
+}
+
+.game-board-difficult__rock-button {
+  margin: 115px 0px 0px 215px;
+}
+
+.game-board-difficult__paper-button {
+  height: 140px;
+  width: 255px;
+  margin: 168px 0px 0px 557px;
+}
+
+.game-board-difficult__paper-button-two {
+  height: 245px;
+  margin: 96px 0px 0px 672px;
+}
+.game-board-difficult__scissors-button {
+  margin: 115px 0px 0px 985px;
+}
+
+.game-board__choose-mode {
+  position: absolute;
+  margin: 34px 0px 0px 471px;
+  font-size: 13;
+  font-weight: bolder;
+}
+
+.game-board__click-here {
+  position: absolute;
+  margin: 74px 0px 0px 460px;
+  font-size: 20;
+  font-weight: bolder;
+}
+
+.game-board__classic-game-button {
+  position: absolute;
+  margin: 56px 0px 0px 150px;
+  padding-bottom: 20px;
+  border-radius: 44px;
 }
 
 .game-board__classic-game-button,
 .game-board__difficult-game-button {
   flex-direction: column;
-  cursor: pointer;
   border-style: none;
   background-color: #897CB6;
+  cursor: pointer;
 }
 
 .game-board__difficult-game-button {
-  margin: 90px 0px 7px 644px;
-  padding: 1px 8px;
-  border-radius: 76px;
   align-items: center;
   width: 604px;
+  margin: 70px 0px 7px 644px;
+  padding: 1px 8px;
+  border-radius: 76px;
 }
 
-.classic-card, .difficult-card{
+.classic-card,
+.difficult-card{
   flex-direction: column;
   background: none;
 }
 
 .classic-card__cross-out {
+  position: absolute;
   height: 191px;
   width: 175px;
-  position: absolute;
   margin: -104px 0px 0px -197px;
 }
 
 .difficult-card__arrow-one {
+  position: absolute;
   height: 150px;
   width: 150px;
-  margin: 138px 0px 0px 163px;
+  margin: 172px 0px 0px 174px;
+  cursor: default;
 }
 
 .difficult-card__arrow-two {
+  position: absolute;
   height: 148px;
   width: 100px;
-  margin: -192px 0px 0px -145px;
+  margin: -205px 0px 0px -145px;
+  cursor: default;
 }
 
 .difficult-card__arrow-three {
+  position: absolute;
   height: 99px;
   width: 191px;
   margin: 135px 0px 0px -397px;
+  cursor: default;
 }
 
-.difficult-card__arrow-one,
-.difficult-card__arrow-two,
-.difficult-card__arrow-three {
+.difficult-card__deco-button {
+  cursor: pointer;
+}
+
+.difficult-card__deco-button-one {
+  height: 32px;
+  width: 456px;
+  margin: 87px 0px 0px 718px;
+  mix-blend-mode: color;
+  background-color: #E6DB14;
+}
+
+.difficult-card__deco-button-two {
+  height: 32px;
+  width: 374px;
+  margin: 130px 0px 0px 758px;
+  mix-blend-mode: hue;
+  background-color: #13B948;
+}
+
+.difficult-card__deco-button-three {
   position: absolute;
+  height: 86px;
+  width: 400px;
+  margin: 186px 0px 0px 745px;
+  border-style: none;
+  border-radius: 25px;
+  mix-blend-mode: hue;
+  background-color: #FA9999;
+}
+
+.difficult-card__deco-button-four {
+  height: 37px;
+  width: 329px;
+  margin: 341px 0px 0px 781px;
+  mix-blend-mode: color;
+  background-color: #6166FF;
+}
+
+.difficult-card__deco-button-helper{
+  position: absolute;
+  border-style: none;
+  border-radius: 40px;
 }
 
 .bottom-border {
@@ -141,17 +234,21 @@ text {
 }
 
 .bottom-border__player-name {
-  margin: 73px 0px 0px 19px;
   position: absolute;
+  margin: 73px 0px 0px 19px;
 }
 
 .bottom-border__player-win-count {
-  margin: 91px 0px 0px 24px;
   position: absolute;
+  margin: 91px 0px 0px 24px;
 }
 
 .bottom-border__player-icon {
   height: 46px;
   width: 46px;
   margin: 24px 26px;
+}
+
+.hidden {
+  display: none;
 }
