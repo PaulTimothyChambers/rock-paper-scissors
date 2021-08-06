@@ -1,6 +1,3 @@
-var startClassicGame = document.querySelector('.game-board__classic-game-btn');
-var btnClassicGame = document.querySelector('.game-board__classic-game-button');
-var btnDifficultGame = document.querySelector('.game-board__difficult-game-button');
 var rockChoice = document.querySelector('.classic-card__rock');
 var paperChoice = document.querySelector('.classic-card__paper');
 var scissorsChoice = document.querySelector('.classic-card__scissors');
@@ -10,20 +7,39 @@ var scissorsChoiceDifficult = document.querySelector('.difficult-card__scissors'
 var alienChoiceDifficult = document.querySelector('.difficult-card__alien');
 var biggerAlienChoiceDifficult = document.querySelector('.difficult-card__bigger-alien');
 var wimpyAlienChoiceDifficult = document.querySelector('.difficult-card__wimpy-alien');
-var changeGameMode = document.querySelector('.bottom-border__change-game-button')
 
-changeGameMode.addEventListener('click', changeViewToMain);
-rockChoice.addEventListener('click', gameInPlay); // <<<change this, don't forget
-paperChoice.addEventListener('click', gameInPlay);
-scissorsChoice.addEventListener('click', gameInPlay);
-rockChoiceDifficult.addEventListener('click', gameInPlay);
-paperChoiceDifficult.addEventListener('click', gameInPlay);
-scissorsChoiceDifficult.addEventListener('click', gameInPlay);
-alienChoiceDifficult.addEventListener('click', gameInPlay);
-biggerAlienChoiceDifficult.addEventListener('click', gameInPlay);
-wimpyAlienChoiceDifficult.addEventListener('click', gameInPlay);
+var hideMainCard = document.querySelector('.game-board');
+var showDifficultGameCard = document.querySelector('.game-board-difficult');
+
+var btnChangeGameMode = document.querySelector('.bottom-border__change-game-button');
+
+var startClassicGame = document.querySelector('.game-board__classic-game-btn');
+var startDifficultGame = document.querySelector('.game-board__difficult-game-button');
+var alsoStartDifficultGame = document.querySelector('.difficult-card__deco-button-one');
+var alsoStartDifficultGameTwo = document.querySelector('.difficult-card__deco-button-two');
+var alsoStartDifficultGameThree = document.querySelector('.difficult-card__deco-button-three');
+var alsoStartDifficultGameFour = document.querySelector('.difficult-card__deco-button-four');
 
 
+startDifficultGame.addEventListener('click', changeViewToDifficult);
+alsoStartDifficultGame.addEventListener('click', changeViewToDifficult);
+alsoStartDifficultGameTwo.addEventListener('click', changeViewToDifficult);
+alsoStartDifficultGameThree.addEventListener('click', changeViewToDifficult);
+alsoStartDifficultGameFour.addEventListener('click', changeViewToDifficult);
+// changeGameMode.addEventListener('click', changeViewToMain);
+// rockChoice.addEventListener('click', gameInPlay); // <<<change this, don't forget
+// paperChoice.addEventListener('click', gameInPlay);
+// scissorsChoice.addEventListener('click', gameInPlay);
+// rockChoiceDifficult.addEventListener('click', gameInPlay);
+// paperChoiceDifficult.addEventListener('click', gameInPlay);
+// scissorsChoiceDifficult.addEventListener('click', gameInPlay);
+// alienChoiceDifficult.addEventListener('click', gameInPlay);
+// biggerAlienChoiceDifficult.addEventListener('click', gameInPlay);
+// wimpyAlienChoiceDifficult.addEventListener('click', gameInPlay);
+
+function test() {
+  console.log('this worked');
+}
 
 function gameInPlay() {
   var newGame = new Game();
@@ -65,6 +81,12 @@ function changeViewToClassic() {
 
 }
 
+function changeViewToDifficult() {
+  hideElement(hideMainCard);
+
+  showElement(showDifficultGameCard);
+}
+
 function changeViewToOutcome() {
 
 }
@@ -91,4 +113,12 @@ function showWinCount() {
 
 function showGameChangeButton() {
 
+}
+
+function hideElement(element) {
+  element.classList.add('hidden');
+}
+
+function showElement(element) {
+  element.classList.remove('hidden');
 }
