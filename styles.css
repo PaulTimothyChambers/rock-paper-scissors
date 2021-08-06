@@ -83,14 +83,14 @@ text {
 }
 
 .game-board__classic-game-button,
-.game-board__difficult-game-btn {
+.game-board__difficult-game-button {
   flex-direction: column;
   cursor: pointer;
   border-style: none;
   background-color: #897CB6;
 }
 
-.game-board__difficult-game-btn {
+.game-board__difficult-game-button {
   margin: 90px 0px 7px 644px;
   padding: 1px 8px;
   border-radius: 76px;
