@@ -1,1 +1,355 @@
-font-family: 'Bungee', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+
+/* #7CB696 greengray */
+/* #897CB6 purplegray */
+/* #BCC9D2 shipgray */
+/* #945CA3 decobtns */
+
+body {
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gloria Hallelujah';
+  font-weight: lighter;
+  background-color: #7CB696;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gloria Hallelujah';
+  background-color: #BCC9D2;
+}
+
+button {
+  font-family: 'Gloria Hallelujah';
+}
+
+text {
+  display: flex;
+  flex-direction: column;
+}
+
+.cia-warning {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: #ADB8BD;
+}
+
+.cia-warning__disclaimer {
+  text-align: center;
+  padding: 0px 55px 22px 85px;
+}
+
+.cia-warning__cia-logo {
+  align-self: center;
+  height: 450;
+  width: 450px;
+}
+
+.cia-warning__proceed-button {
+  align-self: center;
+  width: 100px;
+}
+
+
+.top-border {
+  flex-direction: column;
+  align-items: flex-end;
+  height: 20%;
+  min-width: 100%;
+  margin: 0px;
+  border-style: solid;
+}
+
+.top-border__secret-alien-name {
+  flex-direction: column;
+  font-family: 'Gloria Hallelujah';
+}
+
+.top-border__secret-alien-image {
+  position: absolute;
+  height: 39px;
+  width: 45px;
+  margin-top: 27px;
+  padding-right: 35px;
+}
+
+.top-border__secret-alien-image-two {
+  position: absolute;
+  height: 61px;
+  width: 48px;
+  padding: 14px 34px;
+}
+
+.top-border__secret-alien-name{
+  margin: 78px 23px -12px 8px;
+}
+
+.top-border__secret-alien-win-count {
+  margin: -2px 36px;
+}
+
+.game-board,
+.game-board-classic,
+.game-board-difficult {
+  height: 60%;
+  min-width: 100%;
+  margin: 0px;
+  border-style: solid;
+}
+
+.game-board__bad-text {
+  position: absolute;
+  margin: 99px 0px 0px 0px;
+}
+
+.game-board__good-text {
+  position: absolute;
+  margin: 119px 0px 0px 70px;
+}
+
+.game-board__choose-one-arrows {
+  position: absolute;
+  height: 75px;
+  width: 200px;
+  margin: 119px 0px 0px 422px;
+}
+
+.game-board-classic,
+.game-board-difficult {
+  flex-direction: row;
+}
+
+.game-board-classic__explanation-text {
+  position: absolute;
+  margin: 313px 0px 0px 1042px;
+  font-size: 3.5;
+}
+
+.game-board-classic__rock-button,
+.game-board-classic__paper-button,
+.game-board-classic__paper-button-two,
+.game-board-classic__scissors-button,
+.game-board-difficult__rock-button,
+.game-board-difficult__paper-button,
+.game-board-difficult__paper-button-two,
+.game-board-difficult__scissors-button,
+.game-board-difficult__wimpy-alien-button,
+.game-board-difficult__alien-button,
+.game-board-difficult__bigger-alien-button {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.game-board-classic__rock-button {
+  margin: 115px 0px 0px 215px;
+}
+
+.game-board-classic__paper-button {
+  height: 140px;
+  width: 255px;
+  margin: 168px 0px 0px 557px;
+}
+
+.game-board-classic__paper-button-two {
+  height: 245px;
+  margin: 96px 0px 0px 672px;
+}
+.game-board-classic__scissors-button {
+  margin: 115px 0px 0px 985px;
+}
+
+.game-board-difficult__rock-button {
+  margin: 0px 0px 0px 215px;
+}
+
+.game-board-difficult__paper-button {
+  height: 140px;
+  width: 255px;
+  margin: 39px 0px 0px 557px;
+}
+
+.game-board-difficult__paper-button-two {
+  height: 245px;
+  margin: -40px 0px 0px 672px;
+}
+
+.game-board-difficult__scissors-button {
+  margin: 0px 0px 0px 985px;
+}
+
+.game-board-difficult__wimpy-alien-button{
+  margin: 231px 0px 0px 985px;
+  cursor: not-allowed;
+}
+
+.game-board-difficult__alien-button {
+  margin: 232px 0px 0px 245px;
+  cursor: not-allowed;
+}
+
+.game-board-difficult__bigger-alien-button {
+  width: 400px;
+  margin: 217px 0px 0px 499px;
+  cursor: not-allowed;
+}
+
+.game-board-difficult__no-touchy {
+  margin: 256px 0px 0px 150px;
+  color: #FF80F7;
+  font-size: 65px;
+  mix-blend-mode: color-dodge;
+  cursor: not-allowed;
+}
+
+.game-board__choose-mode {
+  position: absolute;
+  margin: 34px 0px 0px 471px;
+  font-size: 13;
+  font-weight: bolder;
+}
+
+.game-board__click-here {
+  position: absolute;
+  margin: 74px 0px 0px 421px;
+  font-size: 20;
+  font-weight: bolder;
+}
+
+.game-board__classic-game-button {
+  position: absolute;
+  margin: 56px 0px 0px 60px;
+  padding-bottom: 20px;
+  border-radius: 44px;
+}
+
+.game-board__classic-game-button,
+.game-board__difficult-game-button {
+  flex-direction: column;
+  border-style: none;
+  background-color: #897CB6;
+  cursor: pointer;
+}
+
+.game-board__difficult-game-button {
+  align-items: center;
+  width: 604px;
+  margin: 70px 0px 7px 644px;
+  padding: 1px 8px;
+  border-radius: 76px;
+}
+
+.classic-card,
+.difficult-card{
+  flex-direction: column;
+  background: none;
+}
+
+.classic-card__cross-out {
+  position: absolute;
+  height: 191px;
+  width: 175px;
+  margin: -104px 0px 0px -197px;
+}
+
+.difficult-card__arrow-one {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  margin: 172px 0px 0px 174px;
+  cursor: default;
+}
+
+.difficult-card__arrow-two {
+  position: absolute;
+  height: 148px;
+  width: 100px;
+  margin: -205px 0px 0px -145px;
+  cursor: default;
+}
+
+.difficult-card__arrow-three {
+  position: absolute;
+  height: 99px;
+  width: 191px;
+  margin: 135px 0px 0px -397px;
+  cursor: default;
+}
+
+.difficult-card__deco-button {
+  cursor: pointer;
+}
+
+.difficult-card__deco-button-one {
+  height: 32px;
+  width: 456px;
+  margin: 87px 0px 0px 718px;
+  mix-blend-mode: color;
+  background-color: #E6DB14;
+}
+
+.difficult-card__deco-button-two {
+  height: 32px;
+  width: 374px;
+  margin: 130px 0px 0px 758px;
+  mix-blend-mode: hue;
+  background-color: #13B948;
+}
+
+.difficult-card__deco-button-three {
+  position: absolute;
+  height: 86px;
+  width: 400px;
+  margin: 186px 0px 0px 745px;
+  border-style: none;
+  border-radius: 25px;
+  mix-blend-mode: hue;
+  background-color: #FA9999;
+}
+
+.difficult-card__deco-button-four {
+  height: 37px;
+  width: 329px;
+  margin: 341px 0px 0px 781px;
+  mix-blend-mode: color;
+  background-color: #6166FF;
+}
+
+.difficult-card__deco-button-helper{
+  position: absolute;
+  border-style: none;
+  border-radius: 40px;
+}
+
+.bottom-border {
+  height: 20%;
+  min-width: 100%;
+  border-style: solid;
+}
+
+.bottom-border__player-name {
+  position: absolute;
+  margin: 73px 0px 0px 19px;
+}
+
+.bottom-border__player-win-count {
+  position: absolute;
+  margin: 91px 0px 0px 24px;
+}
+
+.bottom-border__player-icon {
+  height: 46px;
+  width: 46px;
+  margin: 24px 26px;
+}
+
+.hidden {
+  display: none;
+}

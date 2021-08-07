@@ -10,66 +10,66 @@ class Game {
     if (computerChoice === 0) { //paper
       human.scissorsScore += 20
       human.rockScore -= 20;
+      console.log(computerChoice)
 
     } else if (computerChoice === 1) { //rock
       human.paperScore += 20
       human.scissorsScore -= 20;
+      console.log(computerChoice)
+
 
     } else if (computerChoice === 2) { //scissors
       human.rockScore += 20
       human.paperScore -= 20;
+      console.log(computerChoice)
     }
-    console.log(human.scissorsScore)
-    console.log(this.human, this.computer)
+    this.logComputerChoice(computerChoice);
   }
 
   determineWinner() {
     this.human = new Player();
     this.computer = new Player();
-    console.log(this.human, this.computer)
 
     // var selectedParent = docQuery, selectedParent.addListener(invoke determineWinner) <<<< goes in main.js
   }
 
-  logWinner(humanScore, computerScore) {
+  logClassicWinner(humanScore, computerScore) {
     if (humanScore > computerScore) {
-      player.saveWinToStorage(this.human);
-      displayWinner(this.human);
-      var winner = this.human
+      this.human.winCount += 1
+      displayClassicWinner(this.human);
 
     } else if (humanScore < computerScore) {
-      player.saveWinToStorage(this.computer);
-      displayWinner(this.computer);
-      var winner = this.computer
+      this.computer.winCount += 1
+      displayClassicWinner(this.computer);
 
     } else {
-      displayDraw();
+      displayClassicDraw();
       setTimeout(changeViewToClassic, 3000)
       setTimeout(showGameChangeButton, 3000)
       return
     }
-    this.updateWinCount(winner)
-
-    player.saveWinToStorage(winner)
-
     setTimeout(changeViewToClassic, 3000)
-
     setTimeout(showGameChangeButton, 3000)
   }
 
-  playerChoice(human) {
-    var humanChoice = event.target;
-
-    if (humanChoice.className === 'block--paper') {
-      this.humanScore = human.paperScore;
-
-    } else if (humanChoice.className === 'block--rock') {
-      this.humanScore = human.rockScore;
-
-    } else if (humanChoice.className === 'block--scissors') {
-      this.humanScore = human.scissorsScore;
+  logComputerChoice(computerChoice) {
+    if (computerChoice === 0) {
+      return computerChoice = {paperOne: "./assets/pay.png", paperTwo: "./assets/pear.png"}
     }
-    console.log(this.human, this.computer)
+  }
+
+  playerChoice(humanChoice) {
+    if (humanChoice.className === 'icons__paper') {
+      this.humanScore = this.human.paperScore;
+
+    } else if (humanChoice.className === 'icons__rock') {
+      this.humanScore = this.human.rockScore;
+
+    } else if (humanChoice.className === 'icons__scissors') {
+      this.humanScore = this.human.scissorsScore;
+    }
+    console.log('human score', this.human)
+    console.log('computer score', this.computer)
     // this.logWinner(humanScore, player.score) // or var compScore = player.score
   }
 
@@ -77,11 +77,9 @@ class Game {
     return Math.floor(Math.random() * array.length);
   }
 
-  updateWinCount(winner) {
-    winner.winCount += 1;
-
-    // showWinCount()
-  }
+  // saveWinToStorage() {
+  //
+  // }
 
     // DOM-changeViewToOutcome()
     // DOM-displayWinner()
