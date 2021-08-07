@@ -22,8 +22,8 @@ class Game {
       human.rockScore += 20
       human.paperScore -= 20;
       console.log(computerChoice)
-
     }
+    this.logComputerChoice(computerChoice);
   }
 
   determineWinner() {
@@ -50,6 +50,12 @@ class Game {
     }
     setTimeout(changeViewToClassic, 3000)
     setTimeout(showGameChangeButton, 3000)
+  }
+
+  logComputerChoice(computerChoice) {
+    if (computerChoice === 0) {
+      return computerChoice = {paperOne: "./assets/pay.png", paperTwo: "./assets/pear.png"}
+    }
   }
 
   playerChoice(humanChoice) {
