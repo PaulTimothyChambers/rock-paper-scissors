@@ -1,35 +1,50 @@
-var rockChoice = document.querySelector('.classic-card__rock');
-var paperChoice = document.querySelector('.classic-card__paper');
-var scissorsChoice = document.querySelector('.classic-card__scissors');
-var rockChoiceDifficult = document.querySelector('.difficult-card__rock');
-var paperChoiceDifficult = document.querySelector('.difficult-card__paper');
-var scissorsChoiceDifficult = document.querySelector('.difficult-card__scissors');
-var alienChoiceDifficult = document.querySelector('.difficult-card__alien');
-var biggerAlienChoiceDifficult = document.querySelector('.difficult-card__bigger-alien');
-var wimpyAlienChoiceDifficult = document.querySelector('.difficult-card__wimpy-alien');
+var rockChoice = document.querySelector('.game-board-classic__rock-button');
+var paperChoice = document.querySelector('.game-board-classic__paper-button');
+var paperChoiceTwo = document.querySelector('.game-board-classic__paper-button-two');
+var scissorsChoice = document.querySelector('.game-board-classic__scissors-button');
+var rockChoiceDifficult = document.querySelector('.game-board-difficult__rock-button');
+var paperChoiceDifficult = document.querySelector('.game-board-difficult__paper-button');
+var paperChoiceDifficultTwo = document.querySelector('.game-board-difficult__paper-button-two');
+var scissorsChoiceDifficult = document.querySelector('.game-board-difficult__scissors-button');
+var alienChoiceDifficult = document.querySelector('.game-board-difficult__wimpy-alien-button');
+var biggerAlienChoiceDifficult = document.querySelector('.game-board-difficult__alien-button');
+var wimpyAlienChoiceDifficult = document.querySelector('.game-board-difficult__bigger-alien-button');
 
-var hideMainCard = document.querySelector('.game-board');
-var showDifficultGameCard = document.querySelector('.game-board-difficult');
+var topBorder = document.querySelector('.top-border');
+var bottomBorder = document.querySelector('.bottom-border');
+var mainCard = document.querySelector('.game-board');
+var classicGameCard = document.querySelector('.game-board-classic');
+var difficultGameCard = document.querySelector('.game-board-difficult');
+var noTouchy = document.querySelector('.game-board-difficult__no-touchy');
+var ciaWarning = document.querySelector('.cia-warning');
 
+var btnCiaProceed = document.querySelector('.cia-warning__proceed-button');
 var btnChangeGameMode = document.querySelector('.bottom-border__change-game-button');
 
-var startClassicGame = document.querySelector('.game-board__classic-game-btn');
+var startClassicGame = document.querySelector('.game-board__classic-game-button');
 var startDifficultGame = document.querySelector('.game-board__difficult-game-button');
 var alsoStartDifficultGame = document.querySelector('.difficult-card__deco-button-one');
 var alsoStartDifficultGameTwo = document.querySelector('.difficult-card__deco-button-two');
 var alsoStartDifficultGameThree = document.querySelector('.difficult-card__deco-button-three');
 var alsoStartDifficultGameFour = document.querySelector('.difficult-card__deco-button-four');
 
-
+btnCiaProceed.addEventListener('click', changeViewToMain)
+alienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
+biggerAlienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
+wimpyAlienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
+rockChoice.addEventListener('click', gameInPlay);
+paperChoice.addEventListener('click', gameInPlay);
+paperChoiceTwo.addEventListener('click', gameInPlay);
+scissorsChoice.addEventListener('click', gameInPlay);
+startClassicGame.addEventListener('click', changeViewToClassic);
 startDifficultGame.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGame.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGameTwo.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGameThree.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGameFour.addEventListener('click', changeViewToDifficult);
-// changeGameMode.addEventListener('click', changeViewToMain);
-// rockChoice.addEventListener('click', gameInPlay); // <<<change this, don't forget
-// paperChoice.addEventListener('click', gameInPlay);
-// scissorsChoice.addEventListener('click', gameInPlay);
+// alienChoiceDifficult.addEventListener('click', dontTouchMyAliens);
+// biggerAlienChoiceDifficult.addEventListener('click', dontTouchMyAliens);
+// wimpyAlienChoiceDifficult.addEventListener('click', dontTouchMyAliens);
 // rockChoiceDifficult.addEventListener('click', gameInPlay);
 // paperChoiceDifficult.addEventListener('click', gameInPlay);
 // scissorsChoiceDifficult.addEventListener('click', gameInPlay);
@@ -73,18 +88,34 @@ function gameInPlay() {
   // }
 }
 
-function changeViewToMain() {
+function dontTouchMyAliens() {
+  showElement(noTouchy);
+}
 
+function andDontComeBack() {
+  hideElement(noTouchy);
+}
+
+function changeViewToMain() {
+  hideElement(ciaWarning);
+
+  showElement(topBorder);
+
+  showElement(bottomBorder);
+
+  showElement(mainCard);
 }
 
 function changeViewToClassic() {
+  hideElement(mainCard);
 
+  showElement(classicGameCard);
 }
 
 function changeViewToDifficult() {
-  hideElement(hideMainCard);
+  hideElement(mainCard);
 
-  showElement(showDifficultGameCard);
+  showElement(difficultGameCard);
 }
 
 function changeViewToOutcome() {
