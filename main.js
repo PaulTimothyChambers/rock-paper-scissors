@@ -17,6 +17,8 @@ var classicGameCard = document.querySelector('.game-board-classic');
 var difficultGameCard = document.querySelector('.game-board-difficult');
 var noTouchy = document.querySelector('.game-board-difficult__no-touchy');
 var ciaWarning = document.querySelector('.cia-warning');
+var winnerCard = document.querySelector('.winner-card__outcome-is');
+var classicGameOutcome = document.querySelector('.winner-card__display-winner');
 
 var btnCiaProceed = document.querySelector('.cia-warning__proceed-button');
 var btnChangeGameMode = document.querySelector('.bottom-border__change-game-button');
@@ -32,10 +34,10 @@ btnCiaProceed.addEventListener('click', changeViewToMain)
 alienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
 biggerAlienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
 wimpyAlienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
-rockChoice.addEventListener('click', gameInPlay);
-paperChoice.addEventListener('click', gameInPlay);
-paperChoiceTwo.addEventListener('click', gameInPlay);
-scissorsChoice.addEventListener('click', gameInPlay);
+rockChoice.addEventListener('click', classicGameInPlay);
+paperChoice.addEventListener('click', classicGameInPlay);
+paperChoiceTwo.addEventListener('click', classicGameInPlay);
+scissorsChoice.addEventListener('click', classicGameInPlay);
 startClassicGame.addEventListener('click', changeViewToClassic);
 startDifficultGame.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGame.addEventListener('click', changeViewToDifficult);
@@ -56,7 +58,7 @@ function test() {
   console.log('this worked');
 }
 
-function gameInPlay() {
+function classicGameInPlay() {
   var newGame = new Game();
   event.preventDefault();
   newGame.determineWinner();
@@ -68,24 +70,7 @@ function gameInPlay() {
 
   newGame.playerChoice(humanChoice);
 
-  newGame.logWinner(newGame.humanScore, newGame.human.score);
-
-  // if (newGame.logWinner(newGame.humanScore, newGame.human.score) === 1) {
-  //   newGame.computer.winCount += 1
-  //   newGame.saveWinToStorage(newGame.human);
-  //   displayWinner(newGame.human);
-  //
-  // } else if (newGame.logWinner(newGame.humanScore, newGame.human.score) === 2) {
-  //   newGame.computer.winCount += 1
-  //   newGame.saveWinToStorage(newGame.computer);
-  //   displayWinner(newGame.computer);
-  //
-  // } else if (newGame.logWinner(newGame.humanScore, newGame.human.score) === 3) {}
-  //   displayDraw();
-  //   setTimeout(changeViewToClassic, 3000)
-  //   setTimeout(showGameChangeButton, 3000)
-  //   return
-  // }
+  newGame.logClassicWinner(newGame.humanScore, newGame.human.score);
 }
 
 function dontTouchMyAliens() {
@@ -118,15 +103,22 @@ function changeViewToDifficult() {
   showElement(difficultGameCard);
 }
 
-function changeViewToOutcome() {
+function displayClassicWinner(winner, computerChoice) {
+  hideElement(classicGameCard);
 
+  showElement(winnerCard);
+
+  if (winner === newGame.computer) {
+    classicGameOutcome.innerHTML = `
+      <text class="winner-card__chicken-dinner">${winner}
+        <img class="winner-card__player-choice" src="${humanChoice.src}">
+        <img class="winner-card__computer-choice" src=${}`
+  } else if (winner === newGame.human) {
+
+  }
 }
 
-function displayWinner(winner) {
-
-}
-
-function displayDraw() {
+function displayClassicDraw() {
 
 }
 
