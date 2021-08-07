@@ -32,11 +32,36 @@ text {
   flex-direction: column;
 }
 
+.cia-warning {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: #ADB8BD;
+}
+
+.cia-warning__disclaimer {
+  text-align: center;
+  padding: 0px 55px 22px 85px;
+}
+
+.cia-warning__cia-logo {
+  align-self: center;
+  height: 450;
+  width: 450px;
+}
+
+.cia-warning__proceed-button {
+  align-self: center;
+  width: 100px;
+}
+
+
 .top-border {
   flex-direction: column;
   align-items: flex-end;
   height: 20%;
-  width: 100%;
+  min-width: 100%;
   margin: 0px;
   border-style: solid;
 }
@@ -70,42 +95,118 @@ text {
 }
 
 .game-board,
+.game-board-classic,
 .game-board-difficult {
   height: 60%;
-  width: 100%;
+  min-width: 100%;
   margin: 0px;
   border-style: solid;
 }
 
+.game-board__bad-text {
+  position: absolute;
+  margin: 99px 0px 0px 0px;
+}
+
+.game-board__good-text {
+  position: absolute;
+  margin: 119px 0px 0px 70px;
+}
+
+.game-board__choose-one-arrows {
+  position: absolute;
+  height: 75px;
+  width: 200px;
+  margin: 119px 0px 0px 422px;
+}
+
+.game-board-classic,
 .game-board-difficult {
   flex-direction: row;
 }
 
+.game-board-classic__explanation-text {
+  position: absolute;
+  margin: 313px 0px 0px 1042px;
+  font-size: 3.5;
+}
+
+.game-board-classic__rock-button,
+.game-board-classic__paper-button,
+.game-board-classic__paper-button-two,
+.game-board-classic__scissors-button,
 .game-board-difficult__rock-button,
 .game-board-difficult__paper-button,
 .game-board-difficult__paper-button-two,
-.game-board-difficult__scissors-button {
+.game-board-difficult__scissors-button,
+.game-board-difficult__wimpy-alien-button,
+.game-board-difficult__alien-button,
+.game-board-difficult__bigger-alien-button {
   position: absolute;
   height: 200px;
   width: 200px;
+  cursor: pointer;
 }
 
-.game-board-difficult__rock-button {
+.game-board-classic__rock-button {
   margin: 115px 0px 0px 215px;
 }
 
-.game-board-difficult__paper-button {
+.game-board-classic__paper-button {
   height: 140px;
   width: 255px;
   margin: 168px 0px 0px 557px;
 }
 
-.game-board-difficult__paper-button-two {
+.game-board-classic__paper-button-two {
   height: 245px;
   margin: 96px 0px 0px 672px;
 }
-.game-board-difficult__scissors-button {
+.game-board-classic__scissors-button {
   margin: 115px 0px 0px 985px;
+}
+
+.game-board-difficult__rock-button {
+  margin: 0px 0px 0px 215px;
+}
+
+.game-board-difficult__paper-button {
+  height: 140px;
+  width: 255px;
+  margin: 39px 0px 0px 557px;
+}
+
+.game-board-difficult__paper-button-two {
+  height: 245px;
+  margin: -40px 0px 0px 672px;
+}
+
+.game-board-difficult__scissors-button {
+  margin: 0px 0px 0px 985px;
+}
+
+.game-board-difficult__wimpy-alien-button{
+  margin: 231px 0px 0px 985px;
+  cursor: not-allowed;
+}
+
+.game-board-difficult__alien-button {
+  margin: 232px 0px 0px 245px;
+  cursor: not-allowed;
+}
+
+.game-board-difficult__bigger-alien-button {
+  width: 400px;
+  margin: 217px 0px 0px 499px;
+  cursor: not-allowed;
+}
+
+.game-board-difficult__no-touchy {
+  margin: 256px 0px 0px 150px;
+  color: #FF80F7;
+  font-size: 65px;
+  mix-blend-mode: color-dodge;
+  cursor: not-allowed;
 }
 
 .game-board__choose-mode {
@@ -117,14 +218,14 @@ text {
 
 .game-board__click-here {
   position: absolute;
-  margin: 74px 0px 0px 460px;
+  margin: 74px 0px 0px 421px;
   font-size: 20;
   font-weight: bolder;
 }
 
 .game-board__classic-game-button {
   position: absolute;
-  margin: 56px 0px 0px 150px;
+  margin: 56px 0px 0px 60px;
   padding-bottom: 20px;
   border-radius: 44px;
 }
@@ -229,7 +330,7 @@ text {
 
 .bottom-border {
   height: 20%;
-  width: 100%;
+  min-width: 100%;
   border-style: solid;
 }
 
