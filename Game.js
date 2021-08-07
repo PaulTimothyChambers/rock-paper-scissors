@@ -33,17 +33,17 @@ class Game {
     // var selectedParent = docQuery, selectedParent.addListener(invoke determineWinner) <<<< goes in main.js
   }
 
-  logWinner(humanScore, computerScore) {
+  logClassicWinner(humanScore, computerScore) {
     if (humanScore > computerScore) {
       this.human.winCount += 1
-      displayWinner(this.human);
+      displayClassicWinner(this.human);
 
     } else if (humanScore < computerScore) {
       this.computer.winCount += 1
-      displayWinner(this.computer);
+      displayClassicWinner(this.computer);
 
     } else {
-      displayDraw();
+      displayClassicDraw();
       setTimeout(changeViewToClassic, 3000)
       setTimeout(showGameChangeButton, 3000)
       return
