@@ -17,7 +17,8 @@ var classicGameCard = document.querySelector('.game-board-classic');
 var difficultGameCard = document.querySelector('.game-board-difficult');
 var noTouchy = document.querySelector('.game-board-difficult__no-touchy');
 var ciaWarning = document.querySelector('.cia-warning');
-var winnerCard = document.querySelector('.winner-card__outcome-is');
+var classicCard = document.querySelector('#classicCard');
+var winnerCard = document.querySelector('#winnerCard');
 var classicGameOutcome = document.querySelector('.winner-card__display-winner');
 
 var btnCiaProceed = document.querySelector('.cia-warning__proceed-button');
@@ -66,11 +67,19 @@ function classicGameInPlay() {
   newGame.determineClassicScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors']), newGame.human);
   // console.log('computer choice (0=paper, 1=rock, 2=scissors)', newGame.determineComputerChoice)
 
-  var humanChoice = event.target;
-
+  var humanChoice = event.target.className
   newGame.playerChoice(humanChoice);
 
   newGame.logClassicWinner(newGame.humanScore, newGame.human.score);
+
+  displayClassicWinner();
+
+  displayPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
+
+  // displayComputerChoice(newGame.computerChoice);
+
+  // setTimeout(changeViewToClassic, 3000)
+  // setTimeout(showGameChangeButton, 3000)
 }
 
 function dontTouchMyAliens() {
@@ -103,26 +112,41 @@ function changeViewToDifficult() {
   showElement(difficultGameCard);
 }
 
-function displayClassicWinner(winner, computerChoice) {
-  hideElement(classicGameCard);
+function displayClassicWinner() {
+  hideElement(classicCard)
 
   showElement(winnerCard);
-
-  if (winner === newGame.computer) {
-    classicGameOutcome.innerHTML = `
-      <text class="winner-card__chicken-dinner">${winner}
-        <img class="winner-card__player-choice" src="${humanChoice.src}">
-        <img class="winner-card__computer-choice" src=${}`
-  } else if (winner === newGame.human) {
-
-  }
 }
+
+function displayPlayerChoice(winner, humanChoice, computerChoice) {
+  // if (humanChoice === {paperOne: './assets/pay.png', paperTwo: './assets/pear.png'}) {
+  classicGameOutcome.innerHTML += `
+    <div class="winner-card__chicken-dinner">${winner}
+      <img class="winner-card__player-one-choice" src="${humanChoice}">
+      <img class="winner-card__player-two-choice" src="${computerChoice}">
+    </div>`
+}
+//   } else {
+//     classicGameOutcome.innerHTML += `
+//       <div class="winner-card__chicken-dinner">${winner}
+//         <img class="winner-card__player-choice" src="${humanChoice}">`
+//   }
+// }
+//
+// function displayComputerChoice(computerChoice) {
+//   if (computerChoice === {paperOne: './assets/pay.png', paperTwo: './assets/pear.png'}) {
+//     classicGameOutcome.innerHTML += `
+//         <img class="winner-card__computer-choice" src="${computerChoice.paperOne}">
+//         <img class="winner-card__computer-choice" src="${computerChoice.paperTwo}">
+//       </div>`
+//   } else {
+//     classicGameOutcome.innerHTML += `
+//         <img class="winner-card__computer-choice" src="${computerChoice}">
+//       </div>`
+//   }
+// }
 
 function displayClassicDraw() {
-
-}
-
-function displayPlayerChoice() {
 
 }
 
