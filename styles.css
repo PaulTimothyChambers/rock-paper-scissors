@@ -13,7 +13,6 @@ div {
   flex-direction: column;
   font-family: 'Gloria Hallelujah';
   font-weight: lighter;
-  background-color: #7CB696;
 }
 
 section {
@@ -54,6 +53,7 @@ text {
 .cia-warning__proceed-button {
   align-self: center;
   width: 100px;
+  background-color: #FDE8EB;
 }
 
 
@@ -244,6 +244,39 @@ text {
   margin: 70px 0px 7px 644px;
   padding: 1px 8px;
   border-radius: 76px;
+}
+
+#winnerCard,
+.winner-card__display-winner
+.winner-card__chicken-dinner {
+  height: 60%;
+  min-width: 100%;
+  margin: 0px;
+  text-align: center;
+  background-color: #BCC9D2;
+}
+
+.winner-card__chicken-dinner {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.winner-card__player-one-choice,
+.winner-card__player-two-choice {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+}
+
+.winner-card__player-one-choice {
+  position: absolute;
+  margin: 42px 0px 0px 450px;
+}
+
+.winner-card__player-two-choice {
+  margin: 42px 0px 0px 775px;
+  position: absolute;
 }
 
 .classic-card,
