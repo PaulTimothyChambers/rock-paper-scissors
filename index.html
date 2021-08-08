@@ -9,7 +9,8 @@
   <body>
     <section class="cia-warning">
       <img class="cia-warning__cia-logo" src="./assets/cia-warning.png">
-      <text class="cia-warning__disclaimer">The following webpage was seized by special operations branch WEBSAF on July 5th, 1997. Reports had surfaced of an exquisitely designed, and intricately mesmerizing website and its apparent link to a string of disappearances in the Denver-Metro area of Colorado during that same year. Upon its seizure, WEBSAF agents reported that the site had been masquerading as a harmless web application, designed to provide its users with endless rounds of the highly intellectual and mentally stimulating game known colloquially as "Rock/Paper/Scissors". The website itself is now quarantined within secure, internal CIA servers, a feat that was accomplished purely by accident during our annual "Tour HQ Week" (a lively festival organized by HR, their specially trained staff travelling from office to office performing their widely-acclaimed black magic rituals/sacrifices. Their zealous fervor never fails to boost agency morale, and we are eternally grateful for them; but I digress). The descision was made to keep the site "live" (though partitioned off from public access) in the hopes that clues may someday be gleaned from the data it regularly attempts to send out into the ether. All attempts at tracing said data have failed, however, as it travels by unknown means.</text>
+      <text class="cia-warning__disclaimer">The following webpage was seized by special operations branch WEBSAF on July 5th, 1997. Reports had surfaced of an exquisitely designed, and intricately mesmerizing website and its apparent link to a string of disappearances in the Denver-Metro area of Colorado during that same year. Upon its seizure, WEBSAF agents reported that the site had been masquerading as a harmless web application, designed to provide its users with endless rounds of the highly intellectual and mentally stimulating game known colloquially as "Rock/Paper/Scissors". The website itself is now quarantined within secure, internal CIA servers, a feat that was accomplished purely by accident during our annual "Tour HQ Week", when special agent REDACTED threw thier REDACTED REDACTED REDACTED off the roof of building REDACTED. By then, a large crowd of horrified onlookers had gathered around the REDACTED REDACTED as agent REDACTED began to REDACTED REDACTED SUPER-REDACTED with the REDACTED REDACTED, like a some sort of twisted and mercurial Cricket match. So naturally, everyone finally warmed up to the idea, and the entire agency participated in the DEH-HEH-HEFINTELY-REDACTED festivities, happily attending all the REDACTED REDACTED SUPER-OMEGA-REDACTED various black magic tutorials/workshops. But I digress.</text>
+      <text class="cia-warning__disclaimer">The descision was made to keep the site "live" (though partitioned off from public access) in the hopes that clues may someday be gleaned from the data it regularly attempts to send out into the ether. All attempts at tracing said data have failed, however, as it travels by unknown means.</text>
       <text class="cia-warning__disclaimer">Extreme caution and great mental fortitude are both required when accessing the site. Those who have not achieved complete mastery over their own impulses/instincts will quickly succumb to the raw, terrible beauty and sophistication of the website (which appears designed to lull its victims into a false sense of security, perhaps to make them easier targets for abduction). The only thing we know for sure is that the site is NOT RUN BY ALIENS.</text>
       <text class="cia-warning__disclaimer">You may now proceed to the website via the link provided below. And, agent? If you choose to continue down this dreadful road, you're on your own; consider yourself warned, you brave fool.</text>
       <text class="cia-warning__disclaimer">It was truly an honor serving with you. Methodalis functionalis, and...good luck.</text>
@@ -64,11 +65,18 @@
       </button>
     </section>
     <section class="game-board-classic hidden">
-      <img class="game-board-classic__rock-button" src="./assets/rock.png">
-      <img class="game-board-classic__paper-button" src="./assets/pay.png">
-      <img class="game-board-classic__paper-button-two" src="./assets/pear.png">
-      <img class="game-board-classic__scissors-button" src="./assets/scissors-romero.png">
-      <text class="game-board-classic__explanation-text">the actor's name is cesar romero...that's the joke...feel free to lol, now</text>
+      <div class="" id="classicCard">
+        <img class="game-board-classic__rock-button" src="./assets/rock.png">
+        <img class="game-board-classic__paper-button" src="./assets/pay.png">
+        <img class="game-board-classic__paper-button-two" src="./assets/pear.png">
+        <img class="game-board-classic__scissors-button" src="./assets/scissors-romero.png">
+        <text class="game-board-classic__explanation-text">the actor's name is cesar romero...that's the joke...feel free to lol, now</text>
+      </div>
+      <div class="hidden" id="winnerCard">
+        <text class="winner-card__outcome-is">AND TEH WINNR... ... .......... IZ.. . ........</text>
+        <div class="winner-card__display-winner">
+        </div>
+      </div>
     </section>
     <section class="game-board-difficult hidden">
       <img class="game-board-difficult__rock-button" src="./assets/rock.png">
@@ -80,7 +88,7 @@
       <img class="game-board-difficult__bigger-alien-button" src="./assets/bigger-alien.png" onmousemove="dontTouchMyAliens()" onmouseleave="andDontComeBack()">
       <text class="game-board-difficult__no-touchy hidden" onmousemove="dontTouchMyAliens()" onmouseleave="andDontComeBack()">THIEZ ARNT YORS NO TUCHEE!!!</text>
     </section>
-    <section class="winner-card">
+    <section class="winner-card hidden">
       <text class="winner-card__outcome-is">AND TEH WINNR... ... .......... IZ.. . ........</text>
       <div class="winner-card__display-winner">
       </div>
