@@ -3,6 +3,9 @@ class Game {
     this.human = '';
     this.computer = '';
     this.humamScore = '';
+    this.humanChoice = '';
+    this.computerChoice = '';
+    this.winner = '';
   }
 
 
@@ -10,67 +13,57 @@ class Game {
     if (computerChoice === 0) { //paper
       human.scissorsScore += 20
       human.rockScore -= 20;
-      console.log(computerChoice)
+      this.computerChoice = './assets/pay.png'
 
     } else if (computerChoice === 1) { //rock
       human.paperScore += 20
       human.scissorsScore -= 20;
-      console.log(computerChoice)
-
+      this.computerChoice = './assets/rock.png'
 
     } else if (computerChoice === 2) { //scissors
       human.rockScore += 20
       human.paperScore -= 20;
-      console.log(computerChoice)
+      this.computerChoice = './assets/scissors-romero.png'
     }
-    this.logComputerChoice(computerChoice);
   }
 
   determineWinner() {
-    this.human = new Player();
-    this.computer = new Player();
+    this.human = new Player('PYUNEE DUM HOOMOHN');
+    this.computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
 
     // var selectedParent = docQuery, selectedParent.addListener(invoke determineWinner) <<<< goes in main.js
   }
 
   logClassicWinner(humanScore, computerScore) {
     if (humanScore > computerScore) {
+      this.winner = this.human.name
       this.human.winCount += 1
-      displayClassicWinner(this.human);
 
     } else if (humanScore < computerScore) {
+      this.winner = this.computer.name
       this.computer.winCount += 1
-      displayClassicWinner(this.computer);
 
     } else {
-      displayClassicDraw();
-      setTimeout(changeViewToClassic, 3000)
-      setTimeout(showGameChangeButton, 3000)
-      return
-    }
-    setTimeout(changeViewToClassic, 3000)
-    setTimeout(showGameChangeButton, 3000)
-  }
-
-  logComputerChoice(computerChoice) {
-    if (computerChoice === 0) {
-      return computerChoice = {paperOne: "./assets/pay.png", paperTwo: "./assets/pear.png"}
+      this.winner = 'NOBUDDY'
     }
   }
 
   playerChoice(humanChoice) {
-    if (humanChoice.className === 'icons__paper') {
+    console.log(event)
+    console.log(event.target.className)
+    if (humanChoice === 'game-board-classic__paper-button' || humanChoice === 'game-board-classic__paper-button-two') {
       this.humanScore = this.human.paperScore;
+      this.humanChoice = './assets/pay.png'
 
-    } else if (humanChoice.className === 'icons__rock') {
+    } else if (humanChoice === 'game-board-classic__rock-button') {
       this.humanScore = this.human.rockScore;
+      this.humanChoice = './assets/rock.png'
 
-    } else if (humanChoice.className === 'icons__scissors') {
+
+    } else if (humanChoice === 'game-board-classic__scissors-button') {
       this.humanScore = this.human.scissorsScore;
+      this.humanChoice= './assets/scissors-romero.png'
     }
-    console.log('human score', this.human)
-    console.log('computer score', this.computer)
-    // this.logWinner(humanScore, player.score) // or var compScore = player.score
   }
 
   determineComputerChoice(array) {
