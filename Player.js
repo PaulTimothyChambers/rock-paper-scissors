@@ -1,5 +1,6 @@
 class Player {
-  constructor() {
+  constructor(name) {
+    this.name = name
     this.paperScore = 20;
     this.rockScore = 20;
     this.scissorsScore = 20;
