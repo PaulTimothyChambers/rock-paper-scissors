@@ -9,6 +9,10 @@ font-family: 'IBM Plex Mono', monospace;
 body {
 }
 
+.body {
+  margin: 0px;
+}
+
 div {
   display: flex;
   flex-direction: column;
@@ -43,6 +47,7 @@ text {
 .cia-warning__disclaimer {
   font-family: 'IBM Plex Mono';
   padding: 0px 35px 28px 35px;
+  cursor: default;
 }
 
 .cia-warning__cia-logo {
@@ -66,11 +71,13 @@ text {
   margin: 0px;
   background-color: #7CB696;
   border-style: solid;
+  border-color: #660381;
 }
 
 .top-border__secret-alien-name {
   flex-direction: column;
   font-family: 'Gloria Hallelujah';
+  cursor: default;
 }
 
 .top-border__secret-alien-image {
@@ -90,10 +97,12 @@ text {
 
 .top-border__secret-alien-name {
   margin: 78px 23px -12px 8px;
+  cursor: default;
 }
 
 .top-border__secret-alien-win-count {
   margin: -2px 36px;
+  cursor: default;
 }
 
 .game-board,
@@ -103,16 +112,19 @@ text {
   min-width: 100%;
   margin: 0px;
   border-style: solid;
+  border-color: #660381;
 }
 
 .game-board__bad-text {
   position: absolute;
   margin: 99px 0px 0px 0px;
+  cursor: default;
 }
 
 .game-board__good-text {
   position: absolute;
   margin: 119px 0px 0px 70px;
+  cursor: default;
 }
 
 .game-board__choose-one-arrows {
@@ -173,7 +185,7 @@ text {
 }
 
 .game-board-difficult__paper-button {
-  margin: 39px 0px 0px 557px;
+  margin: 8px 0px 0px 557px;
 }
 
 .game-board-difficult__scissors-button {
@@ -190,7 +202,7 @@ text {
 
 .game-board-difficult__bigger-alien-button {
   width: 400px;
-  margin: 217px 0px 0px 499px;
+  margin: 222px 0px 0px 499px;
 }
 
 .game-board-difficult__no-touchy {
@@ -212,6 +224,7 @@ text {
   margin: 74px 0px 0px 421px;
   font-size: 20;
   font-weight: bolder;
+  cursor: default;
 }
 
 .game-board__classic-game-button {
@@ -259,6 +272,7 @@ text {
   display: flex;
   flex-direction: column;
   text-align: center;
+  cursor: default;
 }
 
 .winner-card__chicken-dinner-human,
@@ -274,6 +288,7 @@ text {
 .winner-card__outcome-is,
 .winner-card-difficult__outcome-is {
   font-size: 25;
+  cursor: default;
 }
 
 .winner-card__player-one-choice,
@@ -301,13 +316,6 @@ text {
 .difficult-card {
   flex-direction: column;
   background: none;
-}
-
-.classic-card__cross-out {
-  position: absolute;
-  height: 191px;
-  width: 175px;
-  margin: -104px 0px 0px -197px;
 }
 
 .difficult-card__arrow-one {
@@ -384,16 +392,19 @@ text {
   min-width: 100%;
   background-color: #7CB696;
   border-style: solid;
+  border-color: #660381;
 }
 
 .bottom-border__player-name {
   position: absolute;
   margin: 73px 0px 0px 19px;
+  cursor: default;
 }
 
 .bottom-border__player-win-count {
   position: absolute;
   margin: 91px 0px 0px 24px;
+  cursor: default;
 }
 
 .bottom-border__player-icon {
@@ -417,6 +428,15 @@ text {
   border-style: dotted;
   background-color: antiquewhite;
   color: darkviolet;
+}
+
+.bottom-border__play-fairly {
+  height: 14px;
+  width: 163px;
+  font-size: 7;
+  background-color: darkseagreen;
+  margin: -86px 0px 0px 1273px;
+  border-style: none;
 }
 
 .not-allowed {
