@@ -1,30 +1,33 @@
 var rockChoice = document.querySelector('.game-board-classic__rock-button');
 var paperChoice = document.querySelector('.game-board-classic__paper-button');
-var paperChoiceTwo = document.querySelector('.game-board-classic__paper-button-two');
 var scissorsChoice = document.querySelector('.game-board-classic__scissors-button');
 var rockChoiceDifficult = document.querySelector('.game-board-difficult__rock-button');
 var paperChoiceDifficult = document.querySelector('.game-board-difficult__paper-button');
-var paperChoiceDifficultTwo = document.querySelector('.game-board-difficult__paper-button-two');
 var scissorsChoiceDifficult = document.querySelector('.game-board-difficult__scissors-button');
-var alienChoiceDifficult = document.querySelector('.game-board-difficult__wimpy-alien-button');
-var biggerAlienChoiceDifficult = document.querySelector('.game-board-difficult__alien-button');
-var wimpyAlienChoiceDifficult = document.querySelector('.game-board-difficult__bigger-alien-button');
+var alienChoiceDifficult = document.querySelector('.game-board-difficult__alien-button');
+var biggerAlienChoiceDifficult = document.querySelector('.game-board-difficult__bigger-alien-button');
+var wimpyAlienChoiceDifficult = document.querySelector('.game-board-difficult__wimpy-alien-button');
+var secretAlienChoiceDifficult = document.querySelector('.top-border__secret-alien-image-two');
 
 var topBorder = document.querySelector('.top-border');
-var bottomBorder = document.querySelector('.bottom-border');
 var mainCard = document.querySelector('.game-board');
-var classicGameCard = document.querySelector('.game-board-classic');
-var difficultGameCard = document.querySelector('.game-board-difficult');
+var bottomBorder = document.querySelector('.bottom-border');
 var noTouchy = document.querySelector('.game-board-difficult__no-touchy');
 var ciaWarning = document.querySelector('.cia-warning');
+var classicGameCard = document.querySelector('.game-board-classic');
+var difficultGameCard = document.querySelector('.game-board-difficult');
 var classicCard = document.querySelector('#classicCard');
-var winnerCard = document.querySelector('#winnerCard');
+var difficultCard = document.querySelector('#difficultCard');
+var classicWinnerCard = document.querySelector('#classicWinnerCard');
+var difficultWinnerCard = document.querySelector('#difficultWinnerCard');
 var classicGameOutcome = document.querySelector('.winner-card__display-winner');
+var difficultGameOutcome = document.querySelector('.winner-card-difficult__display-winner');
 var humanWinCount = document.querySelector('.bottom-border__player-win-count');
 var computerWinCount = document.querySelector('.top-border__secret-alien-win-count');
 
+var playFairly = document.querySelector('.bottom-border__play-fairly');
 var btnCiaProceed = document.querySelector('.cia-warning__proceed-button');
-var btnChangeGameMode = document.querySelector('.bottom-border__change-game-button');
+var changeGameMode = document.querySelector('.bottom-border__change-mode-button');
 
 var startClassicGame = document.querySelector('.game-board__classic-game-button');
 var startDifficultGame = document.querySelector('.game-board__difficult-game-button');
@@ -32,7 +35,6 @@ var alsoStartDifficultGame = document.querySelector('.difficult-card__deco-butto
 var alsoStartDifficultGameTwo = document.querySelector('.difficult-card__deco-button-two');
 var alsoStartDifficultGameThree = document.querySelector('.difficult-card__deco-button-three');
 var alsoStartDifficultGameFour = document.querySelector('.difficult-card__deco-button-four');
-var changeGameMode = document.querySelector('.bottom-border__change-mode-button');
 
 changeGameMode.addEventListener('click', changeViewToMain);
 btnCiaProceed.addEventListener('click', changeViewToMain);
@@ -48,17 +50,16 @@ alsoStartDifficultGame.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGameTwo.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGameThree.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGameFour.addEventListener('click', changeViewToDifficult);
-// alienChoiceDifficult.addEventListener('click', dontTouchMyAliens);
-// biggerAlienChoiceDifficult.addEventListener('click', dontTouchMyAliens);
-// wimpyAlienChoiceDifficult.addEventListener('click', dontTouchMyAliens);
-// rockChoiceDifficult.addEventListener('click', gameInPlay);
-// paperChoiceDifficult.addEventListener('click', gameInPlay);
-// scissorsChoiceDifficult.addEventListener('click', gameInPlay);
-// alienChoiceDifficult.addEventListener('click', gameInPlay);
-// biggerAlienChoiceDifficult.addEventListener('click', gameInPlay);
-// wimpyAlienChoiceDifficult.addEventListener('click', gameInPlay);
+rockChoiceDifficult.addEventListener('click', difficultGameInPlay);
+paperChoiceDifficult.addEventListener('click', difficultGameInPlay);
+scissorsChoiceDifficult.addEventListener('click', difficultGameInPlay);
+alienChoiceDifficult.addEventListener('click', difficultGameInPlay);
+biggerAlienChoiceDifficult.addEventListener('click', difficultGameInPlay);
+wimpyAlienChoiceDifficult.addEventListener('click', difficultGameInPlay);
+playFairly.addEventListener('click', fairGameMode);
+
 var newGame = new Game();
-// newGame.computer = computer;
+
 retrieveWinsOnLoad();
 
 function classicGameInPlay() {
@@ -72,19 +73,45 @@ function classicGameInPlay() {
 
   hideElement(changeGameMode);
 
-  newGame.determineClassicScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors']), human);
+  newGame.determineClassicScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors']), newGame.human);
 
   var humanChoice = event.target.className;
-  newGame.playerChoice(humanChoice);
+  newGame.playerClassicChoice(humanChoice);
 
-  newGame.logClassicWinner(newGame.humanScore, computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
+  newGame.logWinner(newGame.humanScore, computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
 
   displayClassicWinner();
 
-  displayPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
+  displayClassicPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
-  setTimeout(changeViewToClassic, 3000);
-  setTimeout(showGameChangeButton, 3000);
+  setTimeout(changeViewToClassic, 2500);
+  setTimeout(showGameChangeButton, 2500);
+};
+
+function difficultGameInPlay() {
+  event.preventDefault();
+
+  var human = new Player('PYUNEE DUM HOOMOHN');
+  var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
+
+  newGame.human = human;
+  newGame.computer = computer;
+
+  hideElement(changeGameMode);
+
+  newGame.determineDifficultScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors', 'secret alien', 'bigger alien', 'alien', 'wimpy alien']), newGame.human);
+
+  var humanChoice = event.target.className;
+  newGame.playerDifficultChoice(humanChoice);
+
+  newGame.logWinner(newGame.humanScore, newGame.computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
+
+  displayDifficultWinner();
+
+  displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
+
+  setTimeout(changeViewToDifficult, 2500);
+  setTimeout(showPlayFairlyButton, 2500);
 };
 
 setInterval(flashChangeModeButton, 350);
@@ -106,18 +133,21 @@ function changeViewToMain() {
 
   showElement(mainCard);
 
-  hideElement(classicGameCard);
-
   hideElement(classicCard);
 
-  hideElement(changeGameMode);
+  hideElement(classicGameCard);
 
+  hideElement(difficultCard);
+
+  hideElement(difficultGameCard);
+
+  hideElement(changeGameMode);
 };
 
 function changeViewToClassic() {
   hideElement(mainCard);
 
-  hideElement(winnerCard);
+  hideElement(classicWinnerCard);
 
   showElement(classicGameCard);
 
@@ -127,16 +157,29 @@ function changeViewToClassic() {
 function changeViewToDifficult() {
   hideElement(mainCard);
 
+  hideElement(difficultWinnerCard);
+
   showElement(difficultGameCard);
+
+  showElement(difficultCard);
+
+  secretAlienChoiceDifficult.addEventListener('click', difficultGameInPlay);
+  secretAlienChoiceDifficult.classList.add('cursor');
 };
 
 function displayClassicWinner() {
   hideElement(classicCard);
 
-  showElement(winnerCard);
+  showElement(classicWinnerCard);
 };
 
-function displayPlayerChoice(winner, humanChoice, computerChoice) {
+function displayDifficultWinner() {
+  hideElement(difficultCard);
+
+  showElement(difficultWinnerCard);
+};
+
+function displayClassicPlayerChoice(winner, humanChoice, computerChoice) {
   classicGameOutcome.innerHTML = '';
   if (winner === 'PYUNEE DUM HOOMOHN') {
     classicGameOutcome.innerHTML += `
@@ -155,6 +198,29 @@ function displayPlayerChoice(winner, humanChoice, computerChoice) {
       <div class="winner-card__chicken-dinner">${winner}
         <img class="winner-card__player-one-choice" src="${humanChoice}">
         <img class="winner-card__player-two-choice" src="${computerChoice}">
+      </div>`;
+  }
+};
+
+function displayDifficultPlayerChoice(winner, humanChoice, computerChoice) {
+  difficultGameOutcome.innerHTML = '';
+  if (winner === 'PYUNEE DUM HOOMOHN') {
+    difficultGameOutcome.innerHTML += `
+      <div class="winner-card-difficult__chicken-dinner-human">${winner}
+        <img class="winner-card-difficult__player-one-choice" src="${humanChoice}">
+        <img class="winner-card-difficult__player-two-choice" src="${computerChoice}">
+      </div>`;
+  } else if (winner === 'POWREFUL BAUEUATIFUL ALEIN') {
+    difficultGameOutcome.innerHTML += `
+      <div class="winner-card-difficult__chicken-dinner-computer">${winner}
+        <img class="winner-card-difficult__player-one-choice" src="${humanChoice}">
+        <img class="winner-card-difficult__player-two-choice" src="${computerChoice}">
+      </div>`;
+  } else {
+    difficultGameOutcome.innerHTML += `
+      <div class="winner-card-difficult__chicken-dinner">${winner}
+        <img class="winner-card-difficult__player-one-choice" src="${humanChoice}">
+        <img class="winner-card-difficult__player-two-choice" src="${computerChoice}">
       </div>`;
   }
 };
@@ -179,6 +245,10 @@ function updateHumanWinCount(parsedHumanWinCount) {
 
 function updateComputerWinCount(parsedComputerWinCount) {
   computerWinCount.innerText = `WiNS: ${parsedComputerWinCount}`;
+};
+
+function showPlayFairlyButton() {
+  showElement(playFairly);
 };
 
 function showGameChangeButton() {
