@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles.css">
     <title>DA ROK, PAYPEAR, CEESARZ: 2 DETH 2 FJUREEUS</title>
   </head>
-  <body>
+  <body class="body">
     <section class="cia-warning">
       <img class="cia-warning__cia-logo" src="./assets/cia-warning.png">
       <text class="cia-warning__disclaimer">ACCESS GRANTED</text>
@@ -101,11 +101,27 @@
         </div>
       </div>
     </section>
+    <section class="game-board-fair hidden">
+      <div class="" id="fairCard">
+        <img class="game-board-fair__rock-button" src="./assets/rock.png">
+        <img class="game-board-fair__paper-button" src="./assets/paypear.png">
+        <img class="game-board-fair__scissors-button" src="./assets/scissors-romero.png">
+        <img class="game-board-fair__wimpy-alien-button not-allowed" src="./assets/wimpy-alien.png">
+        <img class="game-board-fair__alien-button not-allowed" src="./assets/alien.png">
+        <img class="game-board-fair__bigger-alien-button not-allowed" src="./assets/bigger-alien.png">
+      </div>
+      <div class="hidden" id="fairWinnerCard">
+        <text class="winner-card-fair__outcome-is">AND TEH WINNR IZ --</text>
+        <div class="winner-card-fair__display-winner">
+        </div>
+      </div>
+    </section>
     <div class="bottom-border hidden">
       <img class="bottom-border__player-icon" src="./assets/human-player.png">
       <text class="bottom-border__player-name">PYUNEE HOOMOHN</text>
       <text class="bottom-border__player-win-count">WiNZS: 0</text>
       <button class="bottom-border__change-mode-button hidden">LETZ PLAI BEDDER GAYM CLIK HEER K?</button>
+      <button class="bottom-border__change-mode-alt-button hidden">NO PLAI FAER! GO BAK NOW!</button>
       <button class="bottom-border__play-fairly hidden">pssst...click here for a FAIR game... *smile*</button>
     </div>
     <script type="text/javascript" src="./Player.js"></script>
