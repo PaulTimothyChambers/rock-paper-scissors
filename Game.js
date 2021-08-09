@@ -2,67 +2,61 @@ class Game {
   constructor() {
     this.human = '';
     this.computer = '';
-    this.humamScore = '';
+    this.humanScore = '';
     this.humanChoice = '';
     this.computerChoice = '';
     this.winner = '';
   }
 
-
   determineClassicScores(computerChoice, human) {
-    if (computerChoice === 0) { //paper
-      human.scissorsScore += 20
+    if (computerChoice === 0) {
+      human.scissorsScore += 20;
       human.rockScore -= 20;
-      this.computerChoice = './assets/pay.png'
+      this.computerChoice = './assets/paypear.png';
 
-    } else if (computerChoice === 1) { //rock
-      human.paperScore += 20
+    } else if (computerChoice === 1) {
+      human.paperScore += 20;
       human.scissorsScore -= 20;
-      this.computerChoice = './assets/rock.png'
+      this.computerChoice = './assets/rock.png';
 
-    } else if (computerChoice === 2) { //scissors
-      human.rockScore += 20
+    } else if (computerChoice === 2) {
+      human.rockScore += 20;
       human.paperScore -= 20;
-      this.computerChoice = './assets/scissors-romero.png'
+      this.computerChoice = './assets/scissors-romero.png';
     }
   }
 
-  determineWinner() {
-    this.human = new Player('PYUNEE DUM HOOMOHN');
-    this.computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
-
-    // var selectedParent = docQuery, selectedParent.addListener(invoke determineWinner) <<<< goes in main.js
-  }
-
-  logClassicWinner(humanScore, computerScore) {
+  logClassicWinner(humanScore, computerScore, parsedWinCountHuman, parsedWinCountComputer) {
     if (humanScore > computerScore) {
-      this.winner = this.human.name
-      this.human.winCount += 1
+      this.winner = this.human.name;
+      parsedWinCountHuman += 1;
+      updateHumanWinCount(parsedWinCountHuman)
+      this.human.saveHumanWinToStorage(parsedWinCountHuman);
 
     } else if (humanScore < computerScore) {
-      this.winner = this.computer.name
-      this.computer.winCount += 1
+      this.winner = this.computer.name;
+      parsedWinCountComputer += 1;
+      updateComputerWinCount(parsedWinCountComputer)
+      this.computer.saveComputerWinToStorage(parsedWinCountComputer);
 
     } else {
-      this.winner = 'NOBUDDY'
+      this.winner = 'NOBUDDY';
     }
   }
 
   playerChoice(humanChoice) {
-    console.log(event)
-    console.log(event.target.className)
-    if (humanChoice === 'game-board-classic__paper-button' || humanChoice === 'game-board-classic__paper-button-two') {
+    if (humanChoice === 'game-board-classic__paper-button') {
       this.humanScore = this.human.paperScore;
-      this.humanChoice = './assets/pay.png'
+      this.humanChoice = './assets/paypear.png';
 
     } else if (humanChoice === 'game-board-classic__rock-button') {
       this.humanScore = this.human.rockScore;
-      this.humanChoice = './assets/rock.png'
+      this.humanChoice = './assets/rock.png';
 
 
     } else if (humanChoice === 'game-board-classic__scissors-button') {
       this.humanScore = this.human.scissorsScore;
-      this.humanChoice= './assets/scissors-romero.png'
+      this.humanChoice= './assets/scissors-romero.png';
     }
   }
 
@@ -70,15 +64,8 @@ class Game {
     return Math.floor(Math.random() * array.length);
   }
 
-  // saveWinToStorage() {
-  //
-  // }
-
-    // DOM-changeViewToOutcome()
-    // DOM-displayWinner()
-    // DOM-displayDraw()
-    // DOM-displayPlayerChoice()
-    // DOM-displayComputerChoice()
-    // DOM-showWinCount()
-
-}
+  createPlayers() {
+    this.human = new Player('PYUNEE DUM HOOMOHN');
+    this.computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
+  }
+};
