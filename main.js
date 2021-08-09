@@ -20,6 +20,8 @@ var ciaWarning = document.querySelector('.cia-warning');
 var classicCard = document.querySelector('#classicCard');
 var winnerCard = document.querySelector('#winnerCard');
 var classicGameOutcome = document.querySelector('.winner-card__display-winner');
+var humanWinCount = document.querySelector('.bottom-border__player-win-count');
+var computerWinCount = document.querySelector('.top-border__secret-alien-win-count');
 
 var btnCiaProceed = document.querySelector('.cia-warning__proceed-button');
 var btnChangeGameMode = document.querySelector('.bottom-border__change-game-button');
@@ -30,14 +32,15 @@ var alsoStartDifficultGame = document.querySelector('.difficult-card__deco-butto
 var alsoStartDifficultGameTwo = document.querySelector('.difficult-card__deco-button-two');
 var alsoStartDifficultGameThree = document.querySelector('.difficult-card__deco-button-three');
 var alsoStartDifficultGameFour = document.querySelector('.difficult-card__deco-button-four');
+var changeGameMode = document.querySelector('.bottom-border__change-mode-button');
 
-btnCiaProceed.addEventListener('click', changeViewToMain)
+changeGameMode.addEventListener('click', changeViewToMain);
+btnCiaProceed.addEventListener('click', changeViewToMain);
 alienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
 biggerAlienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
 wimpyAlienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
 rockChoice.addEventListener('click', classicGameInPlay);
 paperChoice.addEventListener('click', classicGameInPlay);
-paperChoiceTwo.addEventListener('click', classicGameInPlay);
 scissorsChoice.addEventListener('click', classicGameInPlay);
 startClassicGame.addEventListener('click', changeViewToClassic);
 startDifficultGame.addEventListener('click', changeViewToDifficult);
@@ -54,41 +57,39 @@ alsoStartDifficultGameFour.addEventListener('click', changeViewToDifficult);
 // alienChoiceDifficult.addEventListener('click', gameInPlay);
 // biggerAlienChoiceDifficult.addEventListener('click', gameInPlay);
 // wimpyAlienChoiceDifficult.addEventListener('click', gameInPlay);
-
-function test() {
-  console.log('this worked');
-}
+var newGame = new Game();
 
 function classicGameInPlay() {
-  var newGame = new Game();
   event.preventDefault();
-  newGame.determineWinner();
+
+  hideElement(changeGameMode);
+
+  newGame.createPlayers();
 
   newGame.determineClassicScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors']), newGame.human);
-  // console.log('computer choice (0=paper, 1=rock, 2=scissors)', newGame.determineComputerChoice)
 
-  var humanChoice = event.target.className
+  var humanChoice = event.target.className;
   newGame.playerChoice(humanChoice);
 
-  newGame.logClassicWinner(newGame.humanScore, newGame.human.score);
+  newGame.logClassicWinner(newGame.humanScore, newGame.human.score, newGame.human.retrieveHumanWins(), newGame.computer.retrieveComputerWins());
 
   displayClassicWinner();
 
   displayPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
-  // displayComputerChoice(newGame.computerChoice);
+  setTimeout(changeViewToClassic, 3000);
+  setTimeout(showGameChangeButton, 3000);
+};
 
-  // setTimeout(changeViewToClassic, 3000)
-  // setTimeout(showGameChangeButton, 3000)
-}
+setInterval(flashChangeModeButton, 350);
 
 function dontTouchMyAliens() {
   showElement(noTouchy);
-}
+};
 
 function andDontComeBack() {
   hideElement(noTouchy);
-}
+};
 
 function changeViewToMain() {
   hideElement(ciaWarning);
@@ -98,74 +99,80 @@ function changeViewToMain() {
   showElement(bottomBorder);
 
   showElement(mainCard);
-}
+
+  hideElement(classicGameCard);
+
+  hideElement(classicCard);
+
+  hideElement(changeGameMode);
+
+};
 
 function changeViewToClassic() {
   hideElement(mainCard);
 
+  hideElement(winnerCard);
+
   showElement(classicGameCard);
-}
+
+  showElement(classicCard);
+};
 
 function changeViewToDifficult() {
   hideElement(mainCard);
 
   showElement(difficultGameCard);
-}
+};
 
 function displayClassicWinner() {
-  hideElement(classicCard)
+  hideElement(classicCard);
 
   showElement(winnerCard);
-}
+};
 
 function displayPlayerChoice(winner, humanChoice, computerChoice) {
-  // if (humanChoice === {paperOne: './assets/pay.png', paperTwo: './assets/pear.png'}) {
-  classicGameOutcome.innerHTML += `
-    <div class="winner-card__chicken-dinner">${winner}
-      <img class="winner-card__player-one-choice" src="${humanChoice}">
-      <img class="winner-card__player-two-choice" src="${computerChoice}">
-    </div>`
-}
-//   } else {
-//     classicGameOutcome.innerHTML += `
-//       <div class="winner-card__chicken-dinner">${winner}
-//         <img class="winner-card__player-choice" src="${humanChoice}">`
-//   }
-// }
-//
-// function displayComputerChoice(computerChoice) {
-//   if (computerChoice === {paperOne: './assets/pay.png', paperTwo: './assets/pear.png'}) {
-//     classicGameOutcome.innerHTML += `
-//         <img class="winner-card__computer-choice" src="${computerChoice.paperOne}">
-//         <img class="winner-card__computer-choice" src="${computerChoice.paperTwo}">
-//       </div>`
-//   } else {
-//     classicGameOutcome.innerHTML += `
-//         <img class="winner-card__computer-choice" src="${computerChoice}">
-//       </div>`
-//   }
-// }
+  classicGameOutcome.innerHTML = '';
+  if (winner === 'PYUNEE DUM HOOMOHN') {
+    classicGameOutcome.innerHTML += `
+      <div class="winner-card__chicken-dinner-human">${winner}
+        <img class="winner-card__player-one-choice" src="${humanChoice}">
+        <img class="winner-card__player-two-choice" src="${computerChoice}">
+      </div>`;
+  } else if (winner === 'POWREFUL BAUEUATIFUL ALEIN') {
+    classicGameOutcome.innerHTML += `
+      <div class="winner-card__chicken-dinner-computer">${winner}
+        <img class="winner-card__player-one-choice" src="${humanChoice}">
+        <img class="winner-card__player-two-choice" src="${computerChoice}">
+      </div>`;
+  } else {
+    classicGameOutcome.innerHTML += `
+      <div class="winner-card__chicken-dinner">${winner}
+        <img class="winner-card__player-one-choice" src="${humanChoice}">
+        <img class="winner-card__player-two-choice" src="${computerChoice}">
+      </div>`;
+  }
+};
 
-function displayClassicDraw() {
+function updateHumanWinCount(parsedHumanWinCount) {
+  humanWinCount.innerText = `WiNZS: ${parsedHumanWinCount}`;
+};
 
-}
-
-function displayComputerChoice()  {
-
-}
-
-function showWinCount() {
-
-}
+function updateComputerWinCount(parsedComputerWinCount) {
+  computerWinCount.innerText = `WiNS: ${parsedComputerWinCount}`;
+};
 
 function showGameChangeButton() {
+  showElement(changeGameMode);
+};
 
-}
+function flashChangeModeButton() {
+  changeGameMode.classList.toggle('bottom-border__change-mode-button-alt');
+};
 
 function hideElement(element) {
   element.classList.add('hidden');
-}
+};
 
 function showElement(element) {
   element.classList.remove('hidden');
-}
+};
