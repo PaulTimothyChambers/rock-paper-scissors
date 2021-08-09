@@ -5,6 +5,10 @@ class Player {
     this.rockScore = 20;
     this.scissorsScore = 20;
     this.score = 20;
+    this.alienScore = 20;
+    this.biggerAlienScore = 20;
+    this.wimpyAlienScore = 20;
+    this.secretAlienScore = 20;
     this.winCount = 0;
   }
 
@@ -27,8 +31,4 @@ class Player {
     var parsedComputerWinCount = JSON.parse(retrievedComputerWins);
     return parsedComputerWinCount;
   }
-
-  // takeTurn() {
-  //
-  // }
 };

@@ -26,7 +26,73 @@ class Game {
     }
   }
 
-  logClassicWinner(humanScore, computerScore, parsedWinCountHuman, parsedWinCountComputer) {
+  determineDifficultScores(computerChoice, human) {
+    if (computerChoice === 0) { // paper
+      this.human.scissorsScore += 20;
+      this.human.secretAlienScore += 20;
+      this.human.biggerAlienScore += 20;
+      this.human.rockScore -= 20 ;
+      this.human.alienScore -= 20;
+      this.human.wimpyAlienScore -= 20;
+      this.computerChoice = './assets/paypear.png';
+
+    } else if (computerChoice === 1) { // rock
+      this.human.paperScore += 20;
+      this.human.alienScore += 20;
+      this.human.secretAlienScore += 20;
+      this.human.scissorsScore -= 20 ;
+      this.human.biggerAlienScore -= 20;
+      this.human.wimpyAlienScore -= 20;
+      this.computerChoice = './assets/rock.png';
+
+    } else if (computerChoice === 2) { // scissors
+      this.human.rockScore += 20;
+      this.human.biggerAlienScore += 20;
+      this.human.wimpyAlienScore += 20;
+      this.human.paperScore -= 20 ;
+      this.human.secretAlienScore -= 20;
+      this.human.alienScore -= 20;
+      this.computerChoice = './assets/scissors-romero.png';
+
+    } else if (computerChoice === 3) { // secret alien
+      this.human.scissorsScore += 20;
+      this.human.alienScore += 20;
+      this.human.wimpyAlienScore += 20;
+      this.human.paperScore -= 20 ;
+      this.human.biggerAlienScore -= 20;
+      this.human.rockScore -= 20;
+      this.computerChoice = './assets/disguise.png';
+
+    } else if (computerChoice === 4) { // bigger alien
+      this.human.rockScore += 20;
+      this.human.secretAlienScore += 20;
+      this.human.wimpyAlienScore += 20;
+      this.human.paperScore -= 20 ;
+      this.human.alienScore -= 20;
+      this.human.scissorsScore -= 20;
+      this.computerChoice = './assets/bigger-alien.png';
+
+    } else if (computerChoice === 5) { // alien
+      this.human.paperScore += 20;
+      this.human.scissorsScore += 20;
+      this.human.biggerAlienScore += 20;
+      this.human.rockScore -= 20 ;
+      this.human.wimpyAlienScore -= 20;
+      this.human.secretAlienScore -= 20;
+      this.computerChoice = './assets/alien.png';
+
+    } else if (computerChoice === 6) { // wimpy alien
+      this.human.alienScore += 20;
+      this.human.rockScore += 20;
+      this.human.paperScore += 20;
+      this.human.biggerAlienScore -= 20 ;
+      this.human.scissorsScore -= 20;
+      this.human.secretAlienScore -= 20;
+      this.computerChoice = './assets/wimpy-alien.png';
+    }
+  }
+
+  logWinner(humanScore, computerScore, parsedWinCountHuman, parsedWinCountComputer) {
     if (humanScore > computerScore) {
       this.winner = this.human.name;
       parsedWinCountHuman += 1;
@@ -44,28 +110,53 @@ class Game {
     }
   }
 
-  playerChoice(humanChoice) {
+  playerClassicChoice(humanChoice) {
     if (humanChoice === 'game-board-classic__paper-button') {
       this.humanScore = this.human.paperScore;
       this.humanChoice = './assets/paypear.png';
 
-    } else if (humanChoice === 'game-board-classic__rock-button') {
+    } else if (humanChoice  === 'game-board-classic__rock-button') {
       this.humanScore = this.human.rockScore;
       this.humanChoice = './assets/rock.png';
 
-
-    } else if (humanChoice === 'game-board-classic__scissors-button') {
+    } else if (humanChoice  === 'game-board-classic__scissors-button') {
       this.humanScore = this.human.scissorsScore;
       this.humanChoice= './assets/scissors-romero.png';
+    }
+  }
+
+  playerDifficultChoice(humanChoice) {
+    if (humanChoice === 'game-board-difficult__paper-button') {
+      this.humanScore = this.human.paperScore;
+      this.humanChoice = './assets/paypear.png';
+
+    } else if (humanChoice  === 'game-board-difficult__rock-button') {
+      this.humanScore = this.human.rockScore;
+      this.humanChoice = './assets/rock.png';
+
+    } else if (humanChoice  === 'game-board-difficult__scissors-button') {
+      this.humanScore = this.human.scissorsScore;
+      this.humanChoice= './assets/scissors-romero.png';
+
+    } else if (humanChoice  === 'game-board-difficult__wimpy-alien-button') {
+      this.humanScore = this.human.wimpyAlienScore;
+      this.humanChoice= './assets/wimpy-alien.png';
+
+    } else if (humanChoice === 'game-board-difficult__alien-button') {
+      this.humanScore = this.human.alienScore;
+      this.humanChoice= './assets/alien.png';
+
+    } else if (humanChoice  === 'game-board-difficult__bigger-alien-button') {
+      this.humanScore = this.human.biggerAlienScore;
+      this.humanChoice= './assets/bigger-alien.png';
+
+    } else if (humanChoice  === 'top-border__secret-alien-image-two') {
+      this.humanScore = this.human.secretAlienScore;
+      this.humanChoice= './assets/disguise.png';
     }
   }
 
   determineComputerChoice(array) {
     return Math.floor(Math.random() * array.length);
   }
-
-  // createPlayers() {
-  //   this.human = new Player('PYUNEE DUM HOOMOHN');
-  //   this.computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
-  // }
 };
