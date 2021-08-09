@@ -1,4 +1,5 @@
 font-family: 'Gloria Hallelujah', cursive;
+font-family: 'IBM Plex Mono', monospace;
 
 /* #7CB696 greengray */
 /* #897CB6 purplegray */
@@ -40,8 +41,8 @@ text {
 }
 
 .cia-warning__disclaimer {
-  text-align: center;
-  padding: 0px 55px 22px 85px;
+  font-family: 'IBM Plex Mono';
+  padding: 0px 35px 28px 35px;
 }
 
 .cia-warning__cia-logo {
@@ -63,6 +64,7 @@ text {
   height: 20%;
   min-width: 100%;
   margin: 0px;
+  background-color: #7CB696;
   border-style: solid;
 }
 
@@ -144,7 +146,7 @@ text {
 .game-board-difficult__bigger-alien-button {
   position: absolute;
   height: 200px;
-  width: 200px;
+  width: 233px;
   cursor: pointer;
 }
 
@@ -153,15 +155,11 @@ text {
 }
 
 .game-board-classic__paper-button {
-  height: 140px;
-  width: 255px;
-  margin: 168px 0px 0px 557px;
+  height: 200px;
+  width: 258px;
+  margin: 128px 0px 0px 557px;
 }
 
-.game-board-classic__paper-button-two {
-  height: 245px;
-  margin: 96px 0px 0px 672px;
-}
 .game-board-classic__scissors-button {
   margin: 115px 0px 0px 985px;
 }
@@ -256,22 +254,36 @@ text {
   background-color: #BCC9D2;
 }
 
-.winner-card__chicken-dinner {
+.winner-card__chicken-dinner,
+.winner-card__chicken-dinner-human,
+.winner-card__chicken-dinner-computer {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.winner-card__chicken-dinner-human {
+  font-size: 10;
+}
+
+.winner-card__chicken-dinner-computer {
+  font-size: 30;
+}
+
+.winner-card__outcome-is {
+  font-size: 25;
 }
 
 .winner-card__player-one-choice,
 .winner-card__player-two-choice {
   position: absolute;
   height: 200px;
-  width: 200px;
+  width: 233px;
 }
 
 .winner-card__player-one-choice {
   position: absolute;
-  margin: 42px 0px 0px 450px;
+  margin: 42px 0px 0px 425px;
 }
 
 .winner-card__player-two-choice {
@@ -364,6 +376,7 @@ text {
 .bottom-border {
   height: 20%;
   min-width: 100%;
+  background-color: #7CB696;
   border-style: solid;
 }
 
@@ -381,6 +394,23 @@ text {
   height: 46px;
   width: 46px;
   margin: 24px 26px;
+}
+
+.bottom-border__change-mode-button,
+.bottom-border__change-mode-button-alt {
+  position: absolute;
+  margin: 56px 0px 0px 1059px;
+  border-style: dashed;
+  border-radius: 5px;
+  background-color: aqua;
+  color: deeppink;
+  cursor: pointer;
+}
+
+.bottom-border__change-mode-button-alt {
+  border-style: dotted;
+  background-color: antiquewhite;
+  color: darkviolet;
 }
 
 .hidden {
