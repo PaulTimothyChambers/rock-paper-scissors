@@ -58,20 +58,26 @@ alsoStartDifficultGameFour.addEventListener('click', changeViewToDifficult);
 // biggerAlienChoiceDifficult.addEventListener('click', gameInPlay);
 // wimpyAlienChoiceDifficult.addEventListener('click', gameInPlay);
 var newGame = new Game();
+// newGame.computer = computer;
+retrieveWinsOnLoad();
 
 function classicGameInPlay() {
   event.preventDefault();
 
+  var human = new Player('PYUNEE DUM HOOMOHN');
+  var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
+
+  newGame.human = human;
+  newGame.computer = computer;
+
   hideElement(changeGameMode);
 
-  newGame.createPlayers();
-
-  newGame.determineClassicScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors']), newGame.human);
+  newGame.determineClassicScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors']), human);
 
   var humanChoice = event.target.className;
   newGame.playerChoice(humanChoice);
 
-  newGame.logClassicWinner(newGame.humanScore, newGame.human.score, newGame.human.retrieveHumanWins(), newGame.computer.retrieveComputerWins());
+  newGame.logClassicWinner(newGame.humanScore, computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
 
   displayClassicWinner();
 
@@ -150,6 +156,20 @@ function displayPlayerChoice(winner, humanChoice, computerChoice) {
         <img class="winner-card__player-one-choice" src="${humanChoice}">
         <img class="winner-card__player-two-choice" src="${computerChoice}">
       </div>`;
+  }
+};
+
+function retrieveWinsOnLoad() {
+  if (localStorage.length > 0) {
+    var retrievedHumanWins = localStorage.getItem('newHumanWinCount');
+    var parsedHumanWinCount = JSON.parse(retrievedHumanWins);
+
+    updateHumanWinCount(parsedHumanWinCount);
+
+    var retrievedComputerWins = localStorage.getItem('newComputerWinCount');
+    var parsedComputerWinCount = JSON.parse(retrievedComputerWins);
+
+    updateComputerWinCount(parsedComputerWinCount);
   }
 };
 
