@@ -10,18 +10,18 @@ class Game {
 
   determineClassicScores(computerChoice, human) {
     if (computerChoice === 0) {
-      human.scissorsScore += 20;
-      human.rockScore -= 20;
+      this.human.scissorsScore += 20;
+      this.human.rockScore -= 20;
       this.computerChoice = './assets/paypear.png';
 
     } else if (computerChoice === 1) {
-      human.paperScore += 20;
-      human.scissorsScore -= 20;
+      this.human.paperScore += 20;
+      this.human.scissorsScore -= 20;
       this.computerChoice = './assets/rock.png';
 
     } else if (computerChoice === 2) {
-      human.rockScore += 20;
-      human.paperScore -= 20;
+      this.human.rockScore += 20;
+      this.human.paperScore -= 20;
       this.computerChoice = './assets/scissors-romero.png';
     }
   }
@@ -64,8 +64,8 @@ class Game {
     return Math.floor(Math.random() * array.length);
   }
 
-  createPlayers() {
-    this.human = new Player('PYUNEE DUM HOOMOHN');
-    this.computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
-  }
+  // createPlayers() {
+  //   this.human = new Player('PYUNEE DUM HOOMOHN');
+  //   this.computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
+  // }
 };
