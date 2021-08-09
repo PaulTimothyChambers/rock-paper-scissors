@@ -27,8 +27,4 @@ class Player {
     var parsedComputerWinCount = JSON.parse(retrievedComputerWins);
     return parsedComputerWinCount;
   }
-
-  // takeTurn() {
-  //
-  // }
 };

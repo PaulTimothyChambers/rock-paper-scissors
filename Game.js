@@ -63,9 +63,4 @@ class Game {
   determineComputerChoice(array) {
     return Math.floor(Math.random() * array.length);
   }
-
-  // createPlayers() {
-  //   this.human = new Player('PYUNEE DUM HOOMOHN');
-  //   this.computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
-  // }
 };
