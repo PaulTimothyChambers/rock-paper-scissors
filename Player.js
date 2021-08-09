@@ -19,16 +19,16 @@ class Player {
   retrieveHumanWins() {
     var retrievedHumanWins = localStorage.getItem('newHumanWinCount');
     var parsedHumanWinCount = JSON.parse(retrievedHumanWins);
-    return parsedHumanWinCount
+    return parsedHumanWinCount;
   }
 
   retrieveComputerWins() {
     var retrievedComputerWins = localStorage.getItem('newComputerWinCount');
     var parsedComputerWinCount = JSON.parse(retrievedComputerWins);
-    return parsedComputerWinCount
+    return parsedComputerWinCount;
   }
 
-  takeTurn() {
-
-  }
+  // takeTurn() {
+  //
+  // }
 };
