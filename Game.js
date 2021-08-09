@@ -110,43 +110,43 @@ class Game {
     }
   }
 
-  playerClassicChoice(humanChoice) {
-    if (humanChoice === 'game-board-classic__paper-button') {
+  playerChoice(humanChoice, paperButton, rockButton, scissorsButton) {
+    if (humanChoice === paperButton) {
       this.humanScore = this.human.paperScore;
       this.humanChoice = './assets/paypear.png';
 
-    } else if (humanChoice  === 'game-board-classic__rock-button') {
+    } else if (humanChoice  === rockButton) {
       this.humanScore = this.human.rockScore;
       this.humanChoice = './assets/rock.png';
 
-    } else if (humanChoice  === 'game-board-classic__scissors-button') {
+    } else if (humanChoice  === scissorsButton) {
       this.humanScore = this.human.scissorsScore;
       this.humanChoice= './assets/scissors-romero.png';
     }
   }
 
-  playerDifficultChoice(humanChoice) {
-    if (humanChoice === 'game-board-difficult__paper-button') {
+  playerFairChoice(humanChoice) {
+    if (humanChoice === 'game-board-fair__paper-button') {
       this.humanScore = this.human.paperScore;
       this.humanChoice = './assets/paypear.png';
 
-    } else if (humanChoice  === 'game-board-difficult__rock-button') {
+    } else if (humanChoice  === 'game-board-fair__rock-button') {
       this.humanScore = this.human.rockScore;
       this.humanChoice = './assets/rock.png';
 
-    } else if (humanChoice  === 'game-board-difficult__scissors-button') {
+    } else if (humanChoice  === 'game-board-fair__scissors-button') {
       this.humanScore = this.human.scissorsScore;
       this.humanChoice= './assets/scissors-romero.png';
 
-    } else if (humanChoice  === 'game-board-difficult__wimpy-alien-button') {
+    } else if (humanChoice  === 'game-board-fair__wimpy-alien-button') {
       this.humanScore = this.human.wimpyAlienScore;
       this.humanChoice= './assets/wimpy-alien.png';
 
-    } else if (humanChoice === 'game-board-difficult__alien-button') {
+    } else if (humanChoice === 'game-board-fair__alien-button') {
       this.humanScore = this.human.alienScore;
       this.humanChoice= './assets/alien.png';
 
-    } else if (humanChoice  === 'game-board-difficult__bigger-alien-button') {
+    } else if (humanChoice  === 'game-board-fair__bigger-alien-button') {
       this.humanScore = this.human.biggerAlienScore;
       this.humanChoice= './assets/bigger-alien.png';
 
