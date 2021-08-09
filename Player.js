@@ -1,6 +1,6 @@
 class Player {
   constructor(name) {
-    this.name = name
+    this.name = name;
     this.paperScore = 20;
     this.rockScore = 20;
     this.scissorsScore = 20;
@@ -8,15 +8,27 @@ class Player {
     this.winCount = 0;
   }
 
-  saveWinToStorage(player) {
-    // localstorage set item (player, stringify-this)
+  saveHumanWinToStorage(humanCount) {
+    localStorage.setItem('newHumanWinCount', JSON.stringify(humanCount));
   }
 
-  retrieveWins() {
-    // local storage .length   WON'T WORK PROBABLY: NEED THIS TO FUNCTION AS INSTANCE OF COMP, TOO
+  saveComputerWinToStorage(computerCount) {
+    localStorage.setItem('newComputerWinCount', JSON.stringify(computerCount));
+  }
+
+  retrieveHumanWins() {
+    var retrievedHumanWins = localStorage.getItem('newHumanWinCount');
+    var parsedHumanWinCount = JSON.parse(retrievedHumanWins);
+    return parsedHumanWinCount
+  }
+
+  retrieveComputerWins() {
+    var retrievedComputerWins = localStorage.getItem('newComputerWinCount');
+    var parsedComputerWinCount = JSON.parse(retrievedComputerWins);
+    return parsedComputerWinCount
   }
 
   takeTurn() {
 
   }
-}
+};
