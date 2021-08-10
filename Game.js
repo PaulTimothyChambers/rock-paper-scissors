@@ -8,6 +8,13 @@ class Game {
     this.winner = '';
   }
 
+  computerWins(parsedWinCountHuman, parsedWinCountComputer) {
+    this.winner = this.computer.name;
+    parsedWinCountComputer += 1;
+    updateComputerWinCount(parsedWinCountComputer)
+    this.computer.saveComputerWinToStorage(parsedWinCountComputer);
+  }
+
   determineClassicScores(computerChoice) {
     if (computerChoice === 0) {
       this.human.scissorsScore += 20;
@@ -26,15 +33,12 @@ class Game {
     }
   }
 
-  determineComputerWins(computerChoice) {
-    this.computerChoice = './assets/disguise.png';
+  determineComputerChoice(array) {
+    return Math.floor(Math.random() * array.length);
   }
 
-  computerWins(parsedWinCountHuman, parsedWinCountComputer) {
-    this.winner = this.computer.name;
-    parsedWinCountComputer += 1;
-    updateComputerWinCount(parsedWinCountComputer)
-    this.computer.saveComputerWinToStorage(parsedWinCountComputer);
+  determineComputerWins(computerChoice) {
+    this.computerChoice = './assets/secret-alien.png';
   }
 
   determineDifficultScores(computerChoice, human) {
@@ -72,7 +76,7 @@ class Game {
       this.human.paperScore -= 20 ;
       this.human.biggerAlienScore -= 20;
       this.human.rockScore -= 20;
-      this.computerChoice = './assets/disguise.png';
+      this.computerChoice = './assets/secret-alien.png';
 
     } else if (computerChoice === 4) {
       this.human.rockScore += 20;
@@ -147,27 +151,23 @@ class Game {
 
     } else if (humanChoice  === 'game-board-fair__scissors-button') {
       this.humanScore = this.human.scissorsScore;
-      this.humanChoice= './assets/scissors-romero.png';
+      this.humanChoice = './assets/scissors-romero.png';
 
     } else if (humanChoice  === 'game-board-fair__wimpy-alien-button') {
       this.humanScore = this.human.wimpyAlienScore;
-      this.humanChoice= './assets/wimpy-alien.png';
+      this.humanChoice = './assets/wimpy-alien.png';
 
     } else if (humanChoice === 'game-board-fair__alien-button') {
       this.humanScore = this.human.alienScore;
-      this.humanChoice= './assets/alien.png';
+      this.humanChoice = './assets/alien.png';
 
     } else if (humanChoice  === 'game-board-fair__bigger-alien-button') {
       this.humanScore = this.human.biggerAlienScore;
-      this.humanChoice= './assets/bigger-alien.png';
+      this.humanChoice = './assets/bigger-alien.png';
 
-    } else if (humanChoice  === 'top-border__secret-alien-image-two') {
+    } else if (humanChoice  === 'game-board-fair__secret-alien-button') {
       this.humanScore = this.human.secretAlienScore;
-      this.humanChoice= './assets/disguise.png';
+      this.humanChoice = './assets/secret-alien.png';
     }
-  }
-
-  determineComputerChoice(array) {
-    return Math.floor(Math.random() * array.length);
   }
 };
