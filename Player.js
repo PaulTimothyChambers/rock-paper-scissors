@@ -12,12 +12,10 @@ class Player {
     this.winCount = 0;
   }
 
-  saveHumanWinToStorage(humanCount) {
-    localStorage.setItem('newHumanWinCount', JSON.stringify(humanCount));
-  }
-
-  saveComputerWinToStorage(computerCount) {
-    localStorage.setItem('newComputerWinCount', JSON.stringify(computerCount));
+  retrieveComputerWins() {
+    var retrievedComputerWins = localStorage.getItem('newComputerWinCount');
+    var parsedComputerWinCount = JSON.parse(retrievedComputerWins);
+    return parsedComputerWinCount;
   }
 
   retrieveHumanWins() {
@@ -26,9 +24,11 @@ class Player {
     return parsedHumanWinCount;
   }
 
-  retrieveComputerWins() {
-    var retrievedComputerWins = localStorage.getItem('newComputerWinCount');
-    var parsedComputerWinCount = JSON.parse(retrievedComputerWins);
-    return parsedComputerWinCount;
+  saveComputerWinToStorage(computerCount) {
+    localStorage.setItem('newComputerWinCount', JSON.stringify(computerCount));
+  }
+
+  saveHumanWinToStorage(humanCount) {
+    localStorage.setItem('newHumanWinCount', JSON.stringify(humanCount));
   }
 };
