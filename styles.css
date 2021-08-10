@@ -105,6 +105,17 @@ text {
   cursor: default;
 }
 
+.top-border__change-mode-back {
+  margin-right: 15px;
+  height: 33px;
+  border-radius: 10px;
+  background-color: deepskyblue;
+}
+
+.top-border__change-mode-back-alt {
+  background-color: deeppink;
+}
+
 .game-board,
 .game-board-classic,
 .game-board-difficult,
@@ -212,6 +223,24 @@ text {
 .game-board-fair__bigger-alien-button {
   width: 400px;
   margin: 222px 0px 0px 499px;
+}
+
+.game-board-difficult__alien-button-alt {
+  height: 115px;
+  width: 128px;
+  margin-left: 731px;
+}
+
+.game-board-difficult__bigger-alien-button-alt {
+  height: 100px;
+  width: 178px;
+  margin: 257px 0px 0px 808px;
+}
+
+.game-board-difficult__wimpy-alien-button-alt {
+  height: 100px;
+  width: 100px;
+  margin-left: 963px;
 }
 
 .game-board-difficult__no-touchy {
@@ -332,6 +361,11 @@ text {
 .winner-card-fair__player-two-choice {
   position: absolute;
   margin: 42px 0px 0px 775px;
+}
+
+.winner-card-difficult__player-two-choice {
+  width: 169px;
+  margin-left: 809px;
 }
 
 .classic-card,
