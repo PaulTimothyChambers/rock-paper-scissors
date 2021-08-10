@@ -1,23 +1,31 @@
+// QUERY SELECTORS ************************************
+// clickable elements
 var rockChoice = document.querySelector('.game-board-classic__rock-button');
 var paperChoice = document.querySelector('.game-board-classic__paper-button');
 var scissorsChoice = document.querySelector('.game-board-classic__scissors-button');
 var rockChoiceDifficult = document.querySelector('.game-board-difficult__rock-button');
+var rockChoiceDifficultTwo = document.querySelector('.game-board-difficult__rock-button-two');
 var paperChoiceDifficult = document.querySelector('.game-board-difficult__paper-button');
+var paperChoiceDifficultTwo = document.querySelector('.game-board-difficult__paper-button-two');
 var scissorsChoiceDifficult = document.querySelector('.game-board-difficult__scissors-button');
+var scissorsChoiceDifficultTwo = document.querySelector('.game-board-difficult__scissors-button-two');
 var alienChoiceDifficult = document.querySelector('.game-board-difficult__alien-button');
 var biggerAlienChoiceDifficult = document.querySelector('.game-board-difficult__bigger-alien-button');
 var wimpyAlienChoiceDifficult = document.querySelector('.game-board-difficult__wimpy-alien-button');
-var secretAlienChoiceDifficult = document.querySelector('.top-border__secret-alien-image-two');
+var secretAlienChoiceFair = document.querySelector('.game-board-fair__secret-alien-button');
+var notSeekritAleinTwo = document.querySelector('.top-border__secret-alien-image-two');
 var rockChoiceFair = document.querySelector('.game-board-fair__rock-button');
 var paperChoiceFair = document.querySelector('.game-board-fair__paper-button');
 var scissorsChoiceFair = document.querySelector('.game-board-fair__scissors-button');
 var alienChoiceFair = document.querySelector('.game-board-fair__alien-button');
 var biggerAlienChoiceFair = document.querySelector('.game-board-fair__bigger-alien-button');
 var wimpyAlienChoiceFair = document.querySelector('.game-board-fair__wimpy-alien-button');
-
+// div elements and texts
 var ciaWarning = document.querySelector('.cia-warning');
 var topBorder = document.querySelector('.top-border');
 var mainCard = document.querySelector('.game-board');
+var bottomBorder = document.querySelector('.bottom-border');
+var mainCardTwo = document.querySelector('.game-board-two');
 var noTouchy = document.querySelector('.game-board-difficult__no-touchy');
 var classicGameCard = document.querySelector('.game-board-classic');
 var classicCard = document.querySelector('#classicCard');
@@ -27,30 +35,46 @@ var difficultGameCard = document.querySelector('.game-board-difficult');
 var difficultCard = document.querySelector('#difficultCard');
 var difficultWinnerCard = document.querySelector('#difficultWinnerCard');
 var difficultGameOutcome = document.querySelector('.winner-card-difficult__display-winner');
-var fairGameCard = document.querySelector('.game-board-fair')
+var fairGameCard = document.querySelector('.game-board-fair');
+var fairGameCardTwo = document.querySelector('.game-board-fair-two');
 var fairCard = document.querySelector('#fairCard');
 var fairWinnerCard = document.querySelector('#fairWinnerCard');
 var fairGameOutcome = document.querySelector('.winner-card-fair__display-winner');
-var bottomBorder = document.querySelector('.bottom-border');
 var humanWinCount = document.querySelector('.bottom-border__player-win-count');
 var computerWinCount = document.querySelector('.top-border__secret-alien-win-count');
-
+var stopThat = document.querySelector('.stop-that');
+var stopThatTwo = document.querySelector('.stop-that-two');
+var stopThatThree = document.querySelector('.stop-that-three');
+var stopThatFour = document.querySelector('.stop-that-four');
+var helpfulMessageOne = document.querySelector('.helpful-message-one');
+var helpfulMessageTwo = document.querySelector('.helpful-message-two');
+var helpfulMessageThree = document.querySelector('.helpful-message-three');
+var helpfulMessageFour = document.querySelector('.helpful-message-four');
+var helpfulMessageFive = document.querySelector('.helpful-message-five');
+var help = document.querySelector('.help');
+// buttons
 var playFairly = document.querySelector('.bottom-border__play-fairly');
 var btnCiaProceed = document.querySelector('.cia-warning__proceed-button');
 var changeGameMode = document.querySelector('.bottom-border__change-mode-button');
-var changeItBack = document.querySelector('.top-border__change-mode-back')
-
+var changeItBack = document.querySelector('.top-border__change-mode-back');
+// game mode buttons
 var startClassicGame = document.querySelector('.game-board__classic-game-button');
 var startDifficultGame = document.querySelector('.game-board__difficult-game-button');
 var alsoStartDifficultGame = document.querySelector('.difficult-card__deco-button-one');
 var alsoStartDifficultGameTwo = document.querySelector('.difficult-card__deco-button-two');
 var alsoStartDifficultGameThree = document.querySelector('.difficult-card__deco-button-three');
 var alsoStartDifficultGameFour = document.querySelector('.difficult-card__deco-button-four');
+var startDifficultGameAlt = document.querySelector('.game-board__difficult-game-button-alt');
+var alsoStartDifficultGameAlt = document.querySelector('.difficult-card__deco-button-one-alt');
+var alsoStartDifficultGameTwoAlt = document.querySelector('.difficult-card__deco-button-two-alt');
+var alsoStartDifficultGameThreeAlt = document.querySelector('.difficult-card__deco-button-three-alt');
+var alsoStartDifficultGameFourAlt = document.querySelector('.difficult-card__deco-button-four-alt');
 
+// EVENT LISTENERS ************************************
 alienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
 biggerAlienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
 wimpyAlienChoiceDifficult.addEventListener('hover', dontTouchMyAliens);
-changeItBack.addEventListener('click', changeViewToMain);
+changeItBack.addEventListener('click', changeViewToMainTwo);
 changeGameMode.addEventListener('click', changeViewToMain);
 btnCiaProceed.addEventListener('click', changeViewToMain);
 startClassicGame.addEventListener('click', changeViewToClassic);
@@ -59,13 +83,21 @@ alsoStartDifficultGame.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGameTwo.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGameThree.addEventListener('click', changeViewToDifficult);
 alsoStartDifficultGameFour.addEventListener('click', changeViewToDifficult);
+startDifficultGameAlt.addEventListener('click', changeViewToFairTwo);
+alsoStartDifficultGameAlt.addEventListener('click', changeViewToFairTwo);
+alsoStartDifficultGameTwoAlt.addEventListener('click', changeViewToFairTwo);
+alsoStartDifficultGameThreeAlt.addEventListener('click', changeViewToFairTwo);
+alsoStartDifficultGameFourAlt.addEventListener('click', changeViewToFairTwo);
 playFairly.addEventListener('click', changeViewToFair);
 rockChoice.addEventListener('click', classicGameInPlay);
 paperChoice.addEventListener('click', classicGameInPlay);
 scissorsChoice.addEventListener('click', classicGameInPlay);
 rockChoiceDifficult.addEventListener('click', difficultGameInPlay);
+rockChoiceDifficultTwo.addEventListener('click', difficultGameInPlayTwo);
 paperChoiceDifficult.addEventListener('click', difficultGameInPlay);
+paperChoiceDifficultTwo.addEventListener('click', difficultGameInPlayTwo);
 scissorsChoiceDifficult.addEventListener('click', difficultGameInPlay);
+scissorsChoiceDifficultTwo.addEventListener('click', difficultGameInPlayTwo);
 alienChoiceDifficult.addEventListener('click', difficultGameInPlay);
 biggerAlienChoiceDifficult.addEventListener('click', difficultGameInPlay);
 wimpyAlienChoiceDifficult.addEventListener('click', difficultGameInPlay);
@@ -75,11 +107,14 @@ scissorsChoiceFair.addEventListener('click', fairGameInPlay);
 alienChoiceFair.addEventListener('click', fairGameInPlay);
 biggerAlienChoiceFair.addEventListener('click', fairGameInPlay);
 wimpyAlienChoiceFair.addEventListener('click', fairGameInPlay);
+secretAlienChoiceFair.addEventListener('click', fairGameInPlay);
 
+// GLOBALS ************************************
 var newGame = new Game();
 
 retrieveWinsOnLoad();
 
+// FUNCTIONS: match instantiations ************************************
 function classicGameInPlay() {
   event.preventDefault();
 
@@ -118,7 +153,7 @@ function difficultGameInPlay() {
   newGame.determineComputerWins();
 
   var humanChoice = event.target.className;
-  newGame.playerChoice(humanChoice, 'game-board-difficult__rock-button', 'game-board-difficult__paper-button', 'game-board-difficult__scissors-button');
+  newGame.playerChoice(humanChoice, 'game-board-difficult__paper-button', 'game-board-difficult__rock-button', 'game-board-difficult__scissors-button');
 
   newGame.computerWins(human.retrieveHumanWins(), computer.retrieveComputerWins());
 
@@ -126,8 +161,38 @@ function difficultGameInPlay() {
 
   displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
-  setTimeout(changeViewToDifficult, 2500);
-  setTimeout(showPlayFairlyButton, 2500);
+  setTimeout(displayHelpfulMessage, 2500);
+  setTimeout(displayHelpfulMessageTwo, 5000);
+  setTimeout(displayHelpfulMessageThree, 14000);
+  setTimeout(displayHelpfulMessageFour, 20000);
+  setTimeout(displayHelpfulMessageFive, 25000);
+  setTimeout(changeViewToDifficultTwo, 33000);
+};
+
+function difficultGameInPlayTwo() {
+  event.preventDefault();
+
+  hideElement(playFairly);
+
+  var human = new Player('PYUNEE DUM HOOMOHN');
+  var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
+
+  newGame.human = human;
+  newGame.computer = computer;
+
+  newGame.determineComputerWins();
+
+  var humanChoice = event.target.className;
+  newGame.playerChoice(humanChoice, 'game-board-difficult__paper-button-two', 'game-board-difficult__rock-button-two', 'game-board-difficult__scissors-button-two');
+
+  newGame.computerWins(human.retrieveHumanWins(), computer.retrieveComputerWins());
+
+  displayDifficultWinner();
+
+  displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
+
+  setTimeout(changeViewToDifficultTwo, 2800);
+  setTimeout(showPlayFairlyButton, 20800);
 };
 
 function fairGameInPlay() {
@@ -139,11 +204,12 @@ function fairGameInPlay() {
   newGame.human = human;
   newGame.computer = computer;
 
-  hideElement(playFairly);
+  setInterval(hideElementPlayFairly, 1);
 
   newGame.determineDifficultScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors', 'secret alien', 'bigger alien', 'alien', 'wimpy alien']));
 
   var humanChoice = event.target.className;
+
   newGame.playerFairChoice(humanChoice);
 
   newGame.logWinner(newGame.humanScore, newGame.computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
@@ -152,14 +218,11 @@ function fairGameInPlay() {
 
   displayFairPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
-  setTimeout(changeViewToFair, 2500);
+  setTimeout(changeViewToFairTwo, 2500);
   setTimeout(showGameChangeButtonAlt, 2500);
 };
 
-setInterval(flashChangeModeButtonAlt, 90)
-
-setInterval(flashChangeModeButton, 300);
-
+// FUNCTIONS: view changes ************************************
 function dontTouchMyAliens() {
   showElement(noTouchy);
 };
@@ -187,6 +250,14 @@ function changeViewToMain() {
 
   hideElement(fairGameCard);
 
+  hideElement(stopThat);
+
+  hideElement(stopThatTwo);
+
+  hideElement(stopThatThree);
+
+  hideElement(stopThatFour);
+
   showElement(topBorder);
 
   showElement(bottomBorder);
@@ -194,10 +265,50 @@ function changeViewToMain() {
   showElement(mainCard);
 };
 
+function changeViewToMainTwo() {
+  hideElement(changeGameMode);
+
+  hideElement(changeItBack);
+
+  hideElement(classicCard);
+
+  hideElement(classicGameCard);
+
+  hideElement(difficultCard);
+
+  hideElement(difficultGameCard);
+
+  hideElement(fairCard);
+
+  hideElement(fairGameCard);
+
+  hideElement(stopThat);
+
+  hideElement(stopThatTwo);
+
+  hideElement(stopThatThree);
+
+  hideElement(stopThatFour);
+
+  showElement(topBorder);
+
+  showElement(bottomBorder);
+
+  showElement(mainCardTwo);
+}
+
 function changeViewToClassic() {
   hideElement(mainCard);
 
   hideElement(classicWinnerCard);
+
+  hideElement(stopThat);
+
+  hideElement(stopThatTwo);
+
+  hideElement(stopThatThree);
+
+  hideElement(stopThatFour);
 
   showElement(classicGameCard);
 
@@ -209,9 +320,51 @@ function changeViewToDifficult() {
 
   hideElement(difficultWinnerCard);
 
+  hideElement(stopThat);
+
+  hideElement(stopThatTwo);
+
+  hideElement(stopThatThree);
+
+  hideElement(stopThatFour);
+
+  hideElement(helpfulMessageFive);
+
   showElement(difficultGameCard);
 
   showElement(difficultCard);
+};
+
+function changeViewToDifficultTwo() {
+  hideElement(rockChoiceDifficult);
+
+  hideElement(paperChoiceDifficult);
+
+  hideElement(scissorsChoiceDifficult);
+
+  hideElement(mainCard);
+
+  hideElement(difficultWinnerCard);
+
+  hideElement(stopThat);
+
+  hideElement(stopThatTwo);
+
+  hideElement(stopThatThree);
+
+  hideElement(stopThatFour);
+
+  hideElement(helpfulMessageFive);
+
+  showElement(difficultGameCard);
+
+  showElement(difficultCard);
+
+  showElement(rockChoiceDifficultTwo);
+
+  showElement(paperChoiceDifficultTwo);
+
+  showElement(scissorsChoiceDifficultTwo);
 };
 
 function changeViewToFair() {
@@ -231,8 +384,33 @@ function changeViewToFair() {
 
   showElement(fairCard);
 
-  secretAlienChoiceDifficult.addEventListener('click', fairGameInPlay);
-  secretAlienChoiceDifficult.classList.add('cursor');
+  showElement(stopThat);
+
+  showElement(stopThatTwo);
+
+  showElement(stopThatThree);
+
+  showElement(stopThatFour);
+};
+
+function changeViewToFairTwo() {
+  hideElement(mainCard);
+
+  hideElement(mainCardTwo);
+
+  hideElement(fairWinnerCard);
+
+  hideElement(difficultCard);
+
+  hideElement(difficultGameCard);
+
+  hideElement(noTouchy);
+
+  hideElement(playFairly);
+
+  showElement(fairGameCard);
+
+  showElement(fairCard);
 };
 
 function displayClassicWinner() {
@@ -248,11 +426,80 @@ function displayDifficultWinner() {
 };
 
 function displayFairWinner() {
+  hideElement(changeItBack);
+
+  hideElement(stopThat);
+
+  hideElement(stopThatTwo);
+
+  hideElement(stopThatThree);
+
+  hideElement(stopThatFour);
+
   hideElement(fairCard);
+
+  hideElement(playFairly);
 
   showElement(fairWinnerCard);
 };
 
+function displayHelpfulMessage() {
+  hideElement(mainCard);
+
+  hideElement(fairWinnerCard);
+
+  hideElement(difficultCard);
+
+  hideElement(difficultWinnerCard);
+
+  hideElement(noTouchy);
+
+  showElement(help);
+
+  showElement(helpfulMessageOne);
+};
+
+function displayHelpfulMessageTwo() {
+  hideElement(helpfulMessageOne);
+
+  showElement(helpfulMessageTwo);
+};
+
+function displayHelpfulMessageThree() {
+  hideElement(helpfulMessageTwo);
+
+  showElement(helpfulMessageThree);
+};
+
+function displayHelpfulMessageFour() {
+  hideElement(helpfulMessageThree);
+
+  showElement(helpfulMessageFour);
+};
+
+function displayHelpfulMessageFive() {
+  hideElement(helpfulMessageFour);
+
+  showElement(helpfulMessageFive);
+};
+
+function showPlayFairlyButton() {
+  showElement(playFairly);
+};
+
+function showGameChangeButton() {
+  showElement(changeGameMode);
+};
+
+function showGameChangeButtonAlt() {
+  showElement(changeItBack);
+};
+
+function hideElementPlayFairly() {
+  hideElement(playFairly);
+}
+
+// FUNCTIONS: dynamic HTML ************************************
 function displayClassicPlayerChoice(winner, humanChoice, computerChoice) {
   classicGameOutcome.innerHTML = '';
   if (winner === 'PYUNEE DUM HOOMOHN') {
@@ -289,6 +536,7 @@ function displayDifficultPlayerChoice(winner, humanChoice, computerChoice) {
 };
 
 function displayFairPlayerChoice(winner, humanChoice, computerChoice) {
+  console.log(humanChoice)
   fairGameOutcome.innerHTML = '';
   if (winner === 'PYUNEE DUM HOOMOHN') {
     fairGameOutcome.innerHTML += `
@@ -309,9 +557,9 @@ function displayFairPlayerChoice(winner, humanChoice, computerChoice) {
         <img class="winner-card-fair__player-two-choice" src="${computerChoice}">
       </div>`;
   }
-  if ()
 };
 
+// FUNCTIONS: local storage ************************************
 function retrieveWinsOnLoad() {
   if (localStorage.length > 0) {
     var retrievedHumanWins = localStorage.getItem('newHumanWinCount');
@@ -334,21 +582,19 @@ function updateComputerWinCount(parsedComputerWinCount) {
   computerWinCount.innerText = `WiNS: ${parsedComputerWinCount}`;
 };
 
-function showPlayFairlyButton() {
-  showElement(playFairly);
+// FUNCTIONS: misc. ************************************
+function changeStyling(element, styleOne, styleTwo) {
+  element.classList.remove(styleOne);
+  element.classList.add(styleTwo);
 };
 
-function showGameChangeButton() {
-  showElement(changeGameMode);
-};
-
-function showGameChangeButtonAlt() {
-  showElement(changeItBack);
+function flashStopThat(element, newStyle) {
+  element.classList.toggle(newStyle);
 };
 
 function flashChangeModeButtonAlt() {
   changeItBack.classList.toggle('top-border__change-mode-back-alt');
-}
+};
 
 function flashChangeModeButton() {
   changeGameMode.classList.toggle('bottom-border__change-mode-button-alt');
@@ -361,3 +607,24 @@ function hideElement(element) {
 function showElement(element) {
   element.classList.remove('hidden');
 };
+
+// INTERVALS ************************************
+setInterval(flashChangeModeButtonAlt, 90);
+
+setInterval(flashChangeModeButton, 300);
+
+setInterval(function() {
+  flashStopThat(stopThat, 'stop-that-alt')
+}, 50);
+
+setInterval(function() {
+  flashStopThat(stopThatTwo, 'stop-that-two-alt')
+}, 80);
+
+setInterval(function() {
+  flashStopThat(stopThatThree, 'stop-that-three-alt')
+}, 70);
+
+setInterval(function() {
+  flashStopThat(stopThatFour, 'stop-that-four-alt')
+}, 120);
