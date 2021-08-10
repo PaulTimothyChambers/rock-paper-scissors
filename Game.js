@@ -8,7 +8,7 @@ class Game {
     this.winner = '';
   }
 
-  determineClassicScores(computerChoice, human) {
+  determineClassicScores(computerChoice) {
     if (computerChoice === 0) {
       this.human.scissorsScore += 20;
       this.human.rockScore -= 20;
@@ -26,8 +26,19 @@ class Game {
     }
   }
 
+  determineComputerWins(computerChoice) {
+    this.computerChoice = './assets/disguise.png';
+  }
+
+  computerWins(parsedWinCountHuman, parsedWinCountComputer) {
+    this.winner = this.computer.name;
+    parsedWinCountComputer += 1;
+    updateComputerWinCount(parsedWinCountComputer)
+    this.computer.saveComputerWinToStorage(parsedWinCountComputer);
+  }
+
   determineDifficultScores(computerChoice, human) {
-    if (computerChoice === 0) { // paper
+    if (computerChoice === 0) {
       this.human.scissorsScore += 20;
       this.human.secretAlienScore += 20;
       this.human.biggerAlienScore += 20;
@@ -36,7 +47,7 @@ class Game {
       this.human.wimpyAlienScore -= 20;
       this.computerChoice = './assets/paypear.png';
 
-    } else if (computerChoice === 1) { // rock
+    } else if (computerChoice === 1) {
       this.human.paperScore += 20;
       this.human.alienScore += 20;
       this.human.secretAlienScore += 20;
@@ -45,7 +56,7 @@ class Game {
       this.human.wimpyAlienScore -= 20;
       this.computerChoice = './assets/rock.png';
 
-    } else if (computerChoice === 2) { // scissors
+    } else if (computerChoice === 2) {
       this.human.rockScore += 20;
       this.human.biggerAlienScore += 20;
       this.human.wimpyAlienScore += 20;
@@ -54,7 +65,7 @@ class Game {
       this.human.alienScore -= 20;
       this.computerChoice = './assets/scissors-romero.png';
 
-    } else if (computerChoice === 3) { // secret alien
+    } else if (computerChoice === 3) {
       this.human.scissorsScore += 20;
       this.human.alienScore += 20;
       this.human.wimpyAlienScore += 20;
@@ -63,7 +74,7 @@ class Game {
       this.human.rockScore -= 20;
       this.computerChoice = './assets/disguise.png';
 
-    } else if (computerChoice === 4) { // bigger alien
+    } else if (computerChoice === 4) {
       this.human.rockScore += 20;
       this.human.secretAlienScore += 20;
       this.human.wimpyAlienScore += 20;
@@ -72,7 +83,7 @@ class Game {
       this.human.scissorsScore -= 20;
       this.computerChoice = './assets/bigger-alien.png';
 
-    } else if (computerChoice === 5) { // alien
+    } else if (computerChoice === 5) {
       this.human.paperScore += 20;
       this.human.scissorsScore += 20;
       this.human.biggerAlienScore += 20;
@@ -81,7 +92,7 @@ class Game {
       this.human.secretAlienScore -= 20;
       this.computerChoice = './assets/alien.png';
 
-    } else if (computerChoice === 6) { // wimpy alien
+    } else if (computerChoice === 6) {
       this.human.alienScore += 20;
       this.human.rockScore += 20;
       this.human.paperScore += 20;
