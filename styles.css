@@ -1,11 +1,6 @@
 font-family: 'Gloria Hallelujah', cursive;
 font-family: 'IBM Plex Mono', monospace;
 
-/* #7CB696 greengray */
-/* #897CB6 purplegray */
-/* #BCC9D2 shipgray */
-/* #945CA3 decobtns */
-
 body {
 }
 
@@ -106,7 +101,7 @@ text {
 }
 
 .top-border__change-mode-back {
-  margin-right: 15px;
+  margin: -50px 225px 0px 0px;
   height: 33px;
   border-radius: 10px;
   background-color: deepskyblue;
@@ -117,6 +112,7 @@ text {
 }
 
 .game-board,
+.game-board-two,
 .game-board-classic,
 .game-board-difficult,
 .game-board-fair {
@@ -155,20 +151,26 @@ text {
 
 .game-board-classic__rock-button,
 .game-board-classic__paper-button,
-.game-board-classic__paper-button-two,
 .game-board-classic__scissors-button,
 .game-board-difficult__rock-button,
+.game-board-difficult__rock-button-two,
 .game-board-difficult__paper-button,
+.game-board-difficult__paper-button-two,
 .game-board-difficult__scissors-button,
+.game-board-difficult__scissors-button-two,
 .game-board-difficult__wimpy-alien-button,
+.game-board-difficult__wimpy-alien-button-two,
 .game-board-difficult__alien-button,
+.game-board-difficult__alien-button-two,
 .game-board-difficult__bigger-alien-button,
+.game-board-difficult__bigger-alien-button-two,
 .game-board-fair__rock-button,
 .game-board-fair__paper-button,
 .game-board-fair__scissors-button,
 .game-board-fair__wimpy-alien-button,
 .game-board-fair__alien-button,
-.game-board-fair__bigger-alien-button {
+.game-board-fair__bigger-alien-button,
+.game-board-fair__secret-alien-button {
   position: absolute;
   height: 200px;
   width: 233px;
@@ -181,6 +183,7 @@ text {
 
 .game-board-classic__paper-button,
 .game-board-difficult__paper-button,
+.game-board-difficult__paper-button-two,
 .game-board-fair__paper-button {
   height: 200px;
   width: 258px;
@@ -195,34 +198,54 @@ text {
 }
 
 .game-board-difficult__rock-button,
+.game-board-difficult__rock-button-two,
 .game-board-fair__rock-button {
   margin: 0px 0px 0px 215px;
 }
 
+.game-board-fair__secret-alien-button {
+  margin: 216px 0px 0px 377px;
+}
+
 .game-board-difficult__paper-button,
+.game-board-difficult__paper-button-two,
 .game-board-fair__paper-button {
   margin: 8px 0px 0px 557px;
 }
 
 .game-board-difficult__scissors-button,
+.game-board-difficult__scissors-button-two,
 .game-board-fair__scissors-button {
   margin: 0px 0px 0px 985px;
 }
 
 .game-board-difficult__wimpy-alien-button,
-.game-board-fair__wimpy-alien-button {
+.game-board-difficult__wimpy-alien-button-two {
   margin: 231px 0px 0px 985px;
 }
 
+.game-board-fair__wimpy-alien-button {
+  margin: 231px 0px 0px 1143px;
+}
+
 .game-board-difficult__alien-button,
-.game-board-fair__alien-button {
+.game-board-difficult__alien-button-two {
   margin: 232px 0px 0px 245px;
 }
 
+.game-board-fair__alien-button {
+  margin: 232px 0px 0px 109px;
+}
+
 .game-board-difficult__bigger-alien-button,
-.game-board-fair__bigger-alien-button {
+.game-board-difficult__bigger-alien-button-two {
   width: 400px;
   margin: 222px 0px 0px 499px;
+}
+
+.game-board-fair__bigger-alien-button {
+  width: 400px;
+  margin: 222px 0px 0px 724px;
 }
 
 .game-board-difficult__alien-button-alt {
@@ -276,14 +299,16 @@ text {
 }
 
 .game-board__classic-game-button,
-.game-board__difficult-game-button {
+.game-board__difficult-game-button,
+.game-board__difficult-game-button-alt {
   flex-direction: column;
   border-style: none;
   background-color: #897CB6;
   cursor: pointer;
 }
 
-.game-board__difficult-game-button {
+.game-board__difficult-game-button,
+.game-board__difficult-game-button-alt {
   align-items: center;
   width: 604px;
   margin: 70px 0px 7px 644px;
@@ -405,7 +430,8 @@ text {
   cursor: pointer;
 }
 
-.difficult-card__deco-button-one {
+.difficult-card__deco-button-one,
+.difficult-card__deco-button-one-alt {
   height: 32px;
   width: 456px;
   margin: 87px 0px 0px 718px;
@@ -413,7 +439,8 @@ text {
   background-color: #E6DB14;
 }
 
-.difficult-card__deco-button-two {
+.difficult-card__deco-button-two,
+.difficult-card__deco-button-two-alt {
   height: 32px;
   width: 374px;
   margin: 130px 0px 0px 758px;
@@ -421,7 +448,8 @@ text {
   background-color: #13B948;
 }
 
-.difficult-card__deco-button-three {
+.difficult-card__deco-button-three,
+.difficult-card__deco-button-three-alt {
   position: absolute;
   height: 86px;
   width: 400px;
@@ -432,7 +460,8 @@ text {
   background-color: #FA9999;
 }
 
-.difficult-card__deco-button-four {
+.difficult-card__deco-button-four,
+.difficult-card__deco-button-four-alt {
   height: 37px;
   width: 329px;
   margin: 341px 0px 0px 781px;
@@ -498,6 +527,64 @@ text {
   font-size: 10;
   color: floralwhite;
   cursor: pointer;
+}
+
+.stop-that,
+.stop-that-two {
+  position: absolute;
+  mix-blend-mode: color-burn;
+  font-family: 'Gloria Hallelujah';
+  color: aqua;
+  cursor: default;
+}
+
+.stop-that {
+  margin: 0px 994px 0px 16px;
+  font-size: 80;
+}
+
+.stop-that-two {
+  margin: -31px 446px 0px 0px;
+  font-size: 120;
+}
+
+.stop-that-alt,
+.stop-that-two-alt {
+  color: palevioletred;
+}
+
+.stop-that-three,
+.stop-that-four {
+  position: absolute;
+  mix-blend-mode: color-burn;
+  font-family: 'Gloria Hallelujah';
+  color: aqua;
+  cursor: default;
+}
+
+.stop-that-three {
+  margin: -17px 0px 0px 17px;
+  font-size: 130;
+}
+
+.stop-that-four {
+  margin: -58px 0px 0px 696px;
+  font-size: 70;
+}
+
+.stop-that-three-alt,
+.stop-that-four-alt {
+  color: palevioletred;
+}
+
+.helpful-message-one,
+.helpful-message-two,
+.helpful-message-three,
+.helpful-message-four,
+.helpful-message-five {
+  margin: 120px;
+  font-family: 'IBM Plex Mono';
+  font-size: 40;
 }
 
 .not-allowed {
