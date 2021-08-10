@@ -295,7 +295,7 @@ function changeViewToMainTwo() {
   showElement(bottomBorder);
 
   showElement(mainCardTwo);
-}
+};
 
 function changeViewToClassic() {
   hideElement(mainCard);
