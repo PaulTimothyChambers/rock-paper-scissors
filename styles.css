@@ -23,8 +23,8 @@ div {
 section {
   display: flex;
   flex-direction: column;
-  font-family: 'Gloria Hallelujah';
   background-color: #BCC9D2;
+  font-family: 'Gloria Hallelujah';
 }
 
 button {
@@ -69,9 +69,9 @@ text {
   height: 20%;
   min-width: 100%;
   margin: 0px;
-  background-color: #7CB696;
   border-style: solid;
   border-color: #660381;
+  background-color: #7CB696;
 }
 
 .top-border__secret-alien-name {
@@ -107,7 +107,9 @@ text {
 
 .game-board,
 .game-board-classic,
-.game-board-difficult {
+.game-board-difficult,
+.game-board-fair {
+  flex-direction: row;
   height: 60%;
   min-width: 100%;
   margin: 0px;
@@ -134,11 +136,6 @@ text {
   margin: 119px 0px 0px 422px;
 }
 
-.game-board-classic,
-.game-board-difficult {
-  flex-direction: row;
-}
-
 .game-board-classic__explanation-text {
   position: absolute;
   margin: 313px 0px 0px 1042px;
@@ -151,11 +148,16 @@ text {
 .game-board-classic__scissors-button,
 .game-board-difficult__rock-button,
 .game-board-difficult__paper-button,
-.game-board-difficult__paper-button-two,
 .game-board-difficult__scissors-button,
 .game-board-difficult__wimpy-alien-button,
 .game-board-difficult__alien-button,
-.game-board-difficult__bigger-alien-button {
+.game-board-difficult__bigger-alien-button,
+.game-board-fair__rock-button,
+.game-board-fair__paper-button,
+.game-board-fair__scissors-button,
+.game-board-fair__wimpy-alien-button,
+.game-board-fair__alien-button,
+.game-board-fair__bigger-alien-button {
   position: absolute;
   height: 200px;
   width: 233px;
@@ -167,7 +169,8 @@ text {
 }
 
 .game-board-classic__paper-button,
-.game-board-difficult__paper-button {
+.game-board-difficult__paper-button,
+.game-board-fair__paper-button {
   height: 200px;
   width: 258px;
 }
@@ -180,36 +183,42 @@ text {
   margin: 115px 0px 0px 985px;
 }
 
-.game-board-difficult__rock-button {
+.game-board-difficult__rock-button,
+.game-board-fair__rock-button {
   margin: 0px 0px 0px 215px;
 }
 
-.game-board-difficult__paper-button {
+.game-board-difficult__paper-button,
+.game-board-fair__paper-button {
   margin: 8px 0px 0px 557px;
 }
 
-.game-board-difficult__scissors-button {
+.game-board-difficult__scissors-button,
+.game-board-fair__scissors-button {
   margin: 0px 0px 0px 985px;
 }
 
-.game-board-difficult__wimpy-alien-button {
+.game-board-difficult__wimpy-alien-button,
+.game-board-fair__wimpy-alien-button {
   margin: 231px 0px 0px 985px;
 }
 
-.game-board-difficult__alien-button {
+.game-board-difficult__alien-button,
+.game-board-fair__alien-button {
   margin: 232px 0px 0px 245px;
 }
 
-.game-board-difficult__bigger-alien-button {
+.game-board-difficult__bigger-alien-button,
+.game-board-fair__bigger-alien-button {
   width: 400px;
   margin: 222px 0px 0px 499px;
 }
 
 .game-board-difficult__no-touchy {
   margin: 256px 0px 0px 150px;
-  color: #FF80F7;
-  font-size: 65px;
   mix-blend-mode: color-dodge;
+  font-size: 65px;
+  color: #FF80F7;
 }
 
 .game-board__choose-mode {
@@ -255,7 +264,10 @@ text {
 .winner-card__chicken-dinner,
 #difficultWinnerCard,
 .winner-card-difficult__display-winner,
-.winner-card-difficult__chicken-dinner {
+.winner-card-difficult__chicken-dinner,
+#fairWinnerCard,
+.winner-card-fair__display-winner,
+.winner-card-fair__chicken-dinner {
   height: 60%;
   min-width: 100%;
   margin: 0px;
@@ -268,7 +280,10 @@ text {
 .winner-card__chicken-dinner-computer,
 .winner-card-difficult__chicken-dinner,
 .winner-card-difficult__chicken-dinner-human,
-.winner-card-difficult__chicken-dinner-computer {
+.winner-card-difficult__chicken-dinner-computer,
+.winner-card-fair__chicken-dinner,
+.winner-card-fair__chicken-dinner-human,
+.winner-card-fair__chicken-dinner-computer {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -276,17 +291,20 @@ text {
 }
 
 .winner-card__chicken-dinner-human,
-.winner-card-difficult__chicken-dinner-human {
+.winner-card-difficult__chicken-dinner-human,
+.winner-card-fair__chicken-dinner-human {
   font-size: 10;
 }
 
 .winner-card__chicken-dinner-computer,
-.winner-card-difficult__chicken-dinner-computer {
+.winner-card-difficult__chicken-dinner-computer,
+.winner-card-fair__chicken-dinner-computer {
   font-size: 30;
 }
 
 .winner-card__outcome-is,
-.winner-card-difficult__outcome-is {
+.winner-card-difficult__outcome-is,
+.winner-card-fair__outcome-is {
   font-size: 25;
   cursor: default;
 }
@@ -294,22 +312,26 @@ text {
 .winner-card__player-one-choice,
 .winner-card__player-two-choice,
 .winner-card-difficult__player-one-choice,
-.winner-card-difficult__player-two-choice {
+.winner-card-difficult__player-two-choice,
+.winner-card-fair__player-one-choice,
+.winner-card-fair__player-two-choice {
   position: absolute;
   height: 200px;
   width: 233px;
 }
 
 .winner-card__player-one-choice,
-.winner-card-difficult__player-one-choice {
+.winner-card-difficult__player-one-choice,
+.winner-card-fair__player-one-choice {
   position: absolute;
   margin: 42px 0px 0px 425px;
 }
 
 .winner-card__player-two-choice,
-.winner-card-difficult__player-two-choice {
-  margin: 42px 0px 0px 775px;
+.winner-card-difficult__player-two-choice,
+.winner-card-fair__player-two-choice {
   position: absolute;
+  margin: 42px 0px 0px 775px;
 }
 
 .classic-card,
@@ -390,9 +412,9 @@ text {
 .bottom-border {
   height: 20%;
   min-width: 100%;
-  background-color: #7CB696;
   border-style: solid;
   border-color: #660381;
+  background-color: #7CB696;
 }
 
 .bottom-border__player-name {
@@ -433,10 +455,11 @@ text {
 .bottom-border__play-fairly {
   height: 14px;
   width: 163px;
-  font-size: 7;
-  background-color: darkseagreen;
   margin: -86px 0px 0px 1273px;
   border-style: none;
+  background-color: darkseagreen;
+  font-size: 7;
+  cursor: pointer;
 }
 
 .not-allowed {
