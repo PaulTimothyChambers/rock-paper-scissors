@@ -226,21 +226,24 @@ text {
 }
 
 .game-board-difficult__alien-button-alt {
+  position: absolute;
   height: 115px;
   width: 128px;
-  margin-left: 731px;
+  margin: 215px 0px 0px 731px;
 }
 
 .game-board-difficult__bigger-alien-button-alt {
+  position: absolute;
   height: 100px;
   width: 178px;
   margin: 257px 0px 0px 808px;
 }
 
 .game-board-difficult__wimpy-alien-button-alt {
+  position: absolute;
   height: 100px;
   width: 100px;
-  margin-left: 963px;
+  margin: 215px 0px 0px 963px;
 }
 
 .game-board-difficult__no-touchy {
@@ -487,12 +490,13 @@ text {
 }
 
 .bottom-border__play-fairly {
-  height: 14px;
-  width: 163px;
-  margin: -86px 0px 0px 1273px;
+  height: 23px;
+  width: 227px;
+  margin: -31px 0px 0px 1174px;
   border-style: none;
-  background-color: darkseagreen;
-  font-size: 7;
+  background-color: black;
+  font-size: 10;
+  color: floralwhite;
   cursor: pointer;
 }
 
