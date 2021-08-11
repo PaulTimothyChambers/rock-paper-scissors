@@ -530,6 +530,10 @@ text {
   cursor: pointer;
 }
 
+.bottom-border__play-fairly-two {
+  display: none;
+}
+
 .stop-that,
 .stop-that-two {
   position: absolute;
