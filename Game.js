@@ -142,31 +142,31 @@ class Game {
   }
 
   playerFairChoice(humanChoice) {
-    if (humanChoice === 'game-board-fair__paper-button') {
+    if (humanChoice === 'game-board-fair__paper-button' || humanChoice === 'fair-game-rules__paper') {
       this.humanScore = this.human.paperScore;
       this.humanChoice = './assets/paypear.png';
 
-    } else if (humanChoice  === 'game-board-fair__rock-button') {
+    } else if (humanChoice  === 'game-board-fair__rock-button' || humanChoice === 'fair-game-rules__rock') {
       this.humanScore = this.human.rockScore;
       this.humanChoice = './assets/rock.png';
 
-    } else if (humanChoice  === 'game-board-fair__scissors-button') {
+    } else if (humanChoice  === 'game-board-fair__scissors-button' || humanChoice === 'fair-game-rules__scissors') {
       this.humanScore = this.human.scissorsScore;
       this.humanChoice = './assets/scissors-romero.png';
 
-    } else if (humanChoice  === 'game-board-fair__wimpy-alien-button') {
+    } else if (humanChoice  === 'game-board-fair__wimpy-alien-button' || humanChoice === 'fair-game-rules__wimpy-alien') {
       this.humanScore = this.human.wimpyAlienScore;
       this.humanChoice = './assets/wimpy-alien.png';
 
-    } else if (humanChoice === 'game-board-fair__alien-button') {
+    } else if (humanChoice === 'game-board-fair__alien-button' || humanChoice === 'fair-game-rules__alien') {
       this.humanScore = this.human.alienScore;
       this.humanChoice = './assets/alien.png';
 
-    } else if (humanChoice  === 'game-board-fair__bigger-alien-button') {
+    } else if (humanChoice  === 'game-board-fair__bigger-alien-button' || humanChoice === 'fair-game-rules__bigger-alien') {
       this.humanScore = this.human.biggerAlienScore;
       this.humanChoice = './assets/bigger-alien.png';
 
-    } else if (humanChoice  === 'game-board-fair__secret-alien-button') {
+    } else if (humanChoice  === 'game-board-fair__secret-alien-button' || humanChoice === 'fair-game-rules__secret-alien') {
       this.humanScore = this.human.secretAlienScore;
       this.humanChoice = './assets/secret-alien.png';
     }
