@@ -134,7 +134,6 @@ function classicGameInPlay() {
   newGame.logWinner(newGame.humanScore, computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
 
   displayClassicWinner();
-
   displayClassicPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
   setTimeout(changeViewToClassic, 2500);
@@ -158,7 +157,6 @@ function difficultGameInPlay() {
   newGame.computerWins(human.retrieveHumanWins(), computer.retrieveComputerWins());
 
   displayDifficultWinner();
-
   displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
   setTimeout(displayHelpfulMessage, 2500);
@@ -188,7 +186,6 @@ function difficultGameInPlayTwo() {
   newGame.computerWins(human.retrieveHumanWins(), computer.retrieveComputerWins());
 
   displayDifficultWinner();
-
   displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
   setTimeout(changeViewToDifficultTwo, 2800);
@@ -215,7 +212,6 @@ function fairGameInPlay() {
   newGame.logWinner(newGame.humanScore, newGame.computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
 
   displayFairWinner();
-
   displayFairPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
   setTimeout(changeViewToFairTwo, 2500);
@@ -233,211 +229,133 @@ function andDontComeBack() {
 
 function changeViewToMain() {
   hideElement(ciaWarning);
-
   hideElement(changeGameMode);
-
   hideElement(changeItBack);
-
   hideElement(classicCard);
-
   hideElement(classicGameCard);
-
   hideElement(difficultCard);
-
   hideElement(difficultGameCard);
-
   hideElement(fairCard);
-
   hideElement(fairGameCard);
-
   hideElement(stopThat);
-
   hideElement(stopThatTwo);
-
   hideElement(stopThatThree);
-
   hideElement(stopThatFour);
 
   showElement(topBorder);
-
   showElement(bottomBorder);
-
   showElement(mainCard);
 };
 
 function changeViewToMainTwo() {
   hideElement(changeGameMode);
-
   hideElement(changeItBack);
-
   hideElement(classicCard);
-
   hideElement(classicGameCard);
-
   hideElement(difficultCard);
-
   hideElement(difficultGameCard);
-
   hideElement(fairCard);
-
   hideElement(fairGameCard);
-
   hideElement(stopThat);
-
   hideElement(stopThatTwo);
-
   hideElement(stopThatThree);
-
   hideElement(stopThatFour);
 
   showElement(topBorder);
-
   showElement(bottomBorder);
-
   showElement(mainCardTwo);
 };
 
 function changeViewToClassic() {
   hideElement(mainCard);
-
   hideElement(classicWinnerCard);
-
   hideElement(stopThat);
-
   hideElement(stopThatTwo);
-
   hideElement(stopThatThree);
-
   hideElement(stopThatFour);
 
   showElement(classicGameCard);
-
   showElement(classicCard);
 };
 
 function changeViewToDifficult() {
   hideElement(mainCard);
-
   hideElement(difficultWinnerCard);
-
   hideElement(stopThat);
-
   hideElement(stopThatTwo);
-
   hideElement(stopThatThree);
-
   hideElement(stopThatFour);
-
   hideElement(helpfulMessageFive);
 
   showElement(difficultGameCard);
-
   showElement(difficultCard);
 };
 
 function changeViewToDifficultTwo() {
   hideElement(rockChoiceDifficult);
-
   hideElement(paperChoiceDifficult);
-
   hideElement(scissorsChoiceDifficult);
-
   hideElement(mainCard);
-
   hideElement(difficultWinnerCard);
-
   hideElement(stopThat);
-
   hideElement(stopThatTwo);
-
   hideElement(stopThatThree);
-
   hideElement(stopThatFour);
-
   hideElement(helpfulMessageFive);
 
   showElement(difficultGameCard);
-
   showElement(difficultCard);
-
   showElement(rockChoiceDifficultTwo);
-
   showElement(paperChoiceDifficultTwo);
-
   showElement(scissorsChoiceDifficultTwo);
 };
 
 function changeViewToFair() {
   hideElement(mainCard);
-
   hideElement(fairWinnerCard);
-
   hideElement(difficultCard);
-
   hideElement(difficultGameCard);
-
   hideElement(noTouchy);
-
   hideElement(playFairly);
 
   showElement(fairGameCard);
-
   showElement(fairCard);
-
   showElement(stopThat);
-
   showElement(stopThatTwo);
-
   showElement(stopThatThree);
-
   showElement(stopThatFour);
 };
 
 function changeViewToFairTwo() {
   hideElement(mainCard);
-
   hideElement(mainCardTwo);
-
   hideElement(fairWinnerCard);
-
   hideElement(difficultCard);
-
   hideElement(difficultGameCard);
-
   hideElement(noTouchy);
-
   hideElement(playFairly);
 
   showElement(fairGameCard);
-
   showElement(fairCard);
 };
 
 function displayClassicWinner() {
   hideElement(classicCard);
-
   showElement(classicWinnerCard);
 };
 
 function displayDifficultWinner() {
   hideElement(difficultCard);
-
   showElement(difficultWinnerCard);
 };
 
 function displayFairWinner() {
   hideElement(changeItBack);
-
   hideElement(stopThat);
-
   hideElement(stopThatTwo);
-
   hideElement(stopThatThree);
-
   hideElement(stopThatFour);
-
   hideElement(fairCard);
-
   hideElement(playFairly);
 
   showElement(fairWinnerCard);
@@ -445,41 +363,32 @@ function displayFairWinner() {
 
 function displayHelpfulMessage() {
   hideElement(mainCard);
-
   hideElement(fairWinnerCard);
-
   hideElement(difficultCard);
-
   hideElement(difficultWinnerCard);
-
   hideElement(noTouchy);
 
   showElement(help);
-
   showElement(helpfulMessageOne);
 };
 
 function displayHelpfulMessageTwo() {
   hideElement(helpfulMessageOne);
-
   showElement(helpfulMessageTwo);
 };
 
 function displayHelpfulMessageThree() {
   hideElement(helpfulMessageTwo);
-
   showElement(helpfulMessageThree);
 };
 
 function displayHelpfulMessageFour() {
   hideElement(helpfulMessageThree);
-
   showElement(helpfulMessageFour);
 };
 
 function displayHelpfulMessageFive() {
   hideElement(helpfulMessageFour);
-
   showElement(helpfulMessageFive);
 };
 
