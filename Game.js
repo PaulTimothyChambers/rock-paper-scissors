@@ -11,6 +11,7 @@ class Game {
   computerWins(parsedWinCountHuman, parsedWinCountComputer) {
     this.winner = this.computer.name;
     parsedWinCountComputer += 1;
+
     updateComputerWinCount(parsedWinCountComputer)
     this.computer.saveComputerWinToStorage(parsedWinCountComputer);
   }
