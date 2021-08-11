@@ -184,10 +184,15 @@ text {
 
 .game-board-classic__paper-button,
 .game-board-difficult__paper-button,
-.game-board-difficult__paper-button-two,
-.game-board-fair__paper-button {
+.game-board-difficult__paper-button-two {
   height: 200px;
   width: 258px;
+}
+
+.game-board-fair__paper-button {
+  height: 180px;
+  width: 213px;
+  margin: 0px 0px 0px 557px;
 }
 
 .game-board-classic__paper-button {
@@ -199,25 +204,36 @@ text {
 }
 
 .game-board-difficult__rock-button,
-.game-board-difficult__rock-button-two,
-.game-board-fair__rock-button {
+.game-board-difficult__rock-button-two {
   margin: 0px 0px 0px 215px;
 }
 
+.game-board-fair__rock-button {
+  height: 180px;
+  width: 213px;
+  margin: -9px 0px 0px 216px;
+}
+
 .game-board-fair__secret-alien-button {
-  margin: 216px 0px 0px 377px;
+  height: 164px;
+  width: 134px;
+  margin: 228px 0px 0px 428px;
 }
 
 .game-board-difficult__paper-button,
-.game-board-difficult__paper-button-two,
-.game-board-fair__paper-button {
+.game-board-difficult__paper-button-two {
   margin: 8px 0px 0px 557px;
 }
 
 .game-board-difficult__scissors-button,
-.game-board-difficult__scissors-button-two,
-.game-board-fair__scissors-button {
+.game-board-difficult__scissors-button-two {
   margin: 0px 0px 0px 985px;
+}
+
+.game-board-fair__scissors-button {
+  height: 180px;
+  width: 213px;
+  margin: -12px 0px 0px 985px;
 }
 
 .game-board-difficult__wimpy-alien-button,
@@ -226,7 +242,9 @@ text {
 }
 
 .game-board-fair__wimpy-alien-button {
-  margin: 231px 0px 0px 1143px;
+  height: 163px;
+  width: 187px;
+  margin: 240px 0px 0px 1143px;
 }
 
 .game-board-difficult__alien-button,
@@ -235,7 +253,9 @@ text {
 }
 
 .game-board-fair__alien-button {
-  margin: 232px 0px 0px 109px;
+  height: 180px;
+  width: 213px;
+  margin: 224px 0px 0px 109px;
 }
 
 .game-board-difficult__bigger-alien-button,
@@ -245,8 +265,9 @@ text {
 }
 
 .game-board-fair__bigger-alien-button {
-  width: 400px;
-  margin: 222px 0px 0px 724px;
+  height: 160px;
+  width: 273px;
+  margin: 237px 0px 0px 747px;
 }
 
 .game-board-difficult__alien-button-alt {
@@ -474,6 +495,115 @@ text {
   position: absolute;
   border-style: none;
   border-radius: 40px;
+}
+
+.fair-game-rules__paper,
+.fair-game-rules__paper-two,
+.fair-game-rules__rock,
+.fair-game-rules__rock-two,
+.fair-game-rules__scissors,
+.fair-game-rules__scissors-two,
+.fair-game-rules__secret-alien,
+.fair-game-rules__secret-alien-two,
+.fair-game-rules__bigger-alien,
+.fair-game-rules__bigger-alien-two,
+.fair-game-rules__alien,
+.fair-game-rules__alien-two,
+.fair-game-rules__wimpy-alien,
+.fair-game-rules__wimpy-alien-two {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  font-size: 14;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fair-game-rules__paper {
+  margin: 145px 0px 0px 652px;
+  color: seashell;
+  mix-blend-mode: color-dodge;
+}
+
+.fair-game-rules__rock {
+  margin: 142px 0px 0px 277px;
+  color: yellow;
+}
+
+.fair-game-rules__scissors {
+  margin: 140px 0px 0px 1068px;
+  color: salmon;
+  mix-blend-mode: hard-light;
+}
+
+.fair-game-rules__secret-alien {
+  margin: 361px 0px 0px 455px;
+  color: blanchedalmond;
+  mix-blend-mode: hard-light;
+}
+
+.fair-game-rules__bigger-alien {
+  margin: 360px 0px 0px 841px;
+  color: mintcream;
+}
+
+.fair-game-rules__alien {
+  margin: 357px 0px 0px 180px;
+  mix-blend-mode: color-dodge;
+  color: aqua;
+}
+
+.fair-game-rules__wimpy-alien {
+  margin: 356px 0px 0px 1159px;
+  mix-blend-mode: color-burn;
+  color: blue;
+}
+
+.fair-game-rules__paper-two,
+.fair-game-rules__rock-two,
+.fair-game-rules__scissors-two,
+.fair-game-rules__secret-alien-two,
+.fair-game-rules__bigger-alien-two,
+.fair-game-rules__alien-two,
+.fair-game-rules__wimpy-alien-two {
+  flex-direction: row;
+  font-size: 12;
+  cursor: default;
+}
+
+.fair-game-rules__paper-two{
+  width: 194px;
+  margin: 179px 0px 0px 593px;
+}
+
+.fair-game-rules__rock-two {
+  width: 274px;
+  margin: 176px 0px 0px 185px;
+}
+
+.fair-game-rules__scissors-two {
+  width: 203px;
+  margin: 177px 0px 0px 1005px;
+}
+
+.fair-game-rules__secret-alien-two {
+  width: 196px;
+  margin: 392px 0px 0px 394px;
+}
+
+.fair-game-rules__bigger-alien-two {
+  width: 167px;
+  margin: 393px 0px 0px 801px;
+}
+
+.fair-game-rules__alien-two {
+  width: 247px;
+  margin: 385px 0px 0px 96px;
+}
+
+.fair-game-rules__wimpy-alien-two {
+  width: 279px;
+  margin: 386px 0px 0px 1064px;
 }
 
 .bottom-border {
