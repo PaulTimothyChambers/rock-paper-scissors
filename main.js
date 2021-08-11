@@ -129,7 +129,7 @@ function classicGameInPlay() {
   newGame.determineClassicScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors']), newGame.human);
 
   var humanChoice = event.target.className;
-  newGame.playerChoice(humanChoice, 'game-board-classic__rock-button', 'game-board-classic__paper-button', 'game-board-classic__scissors-button');
+  newGame.playerChoice(humanChoice, 'game-board-classic__paper-button', 'game-board-classic__rock-button', 'game-board-classic__scissors-button');
 
   newGame.logWinner(newGame.humanScore, computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
 
