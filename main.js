@@ -445,7 +445,6 @@ function displayDifficultPlayerChoice(winner, humanChoice, computerChoice) {
 };
 
 function displayFairPlayerChoice(winner, humanChoice, computerChoice) {
-  console.log(humanChoice)
   fairGameOutcome.innerHTML = '';
   if (winner === 'PYUNEE DUM HOOMOHN') {
     fairGameOutcome.innerHTML += `
