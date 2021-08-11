@@ -162,11 +162,11 @@ function difficultGameInPlay() {
   displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
   setTimeout(displayHelpfulMessage, 2500);
-  setTimeout(displayHelpfulMessageTwo, 5000);
+  setTimeout(displayHelpfulMessageTwo, 4500);
   setTimeout(displayHelpfulMessageThree, 14000);
   setTimeout(displayHelpfulMessageFour, 20000);
   setTimeout(displayHelpfulMessageFive, 25000);
-  setTimeout(changeViewToDifficultTwo, 33000);
+  setTimeout(changeViewToDifficultTwo, 35000);
 };
 
 function difficultGameInPlayTwo() {
