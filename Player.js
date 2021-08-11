@@ -107,7 +107,7 @@ class Player {
     displayFairWinner();
     displayFairPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
-    setTimeout(changeViewToFairTwo, 2510);
-    setTimeout(showGameChangeButtonAlt, 2510);
+    setTimeout(changeViewToFairTwo, 2500);
+    setTimeout(showGameChangeButtonAlt, 2500);
   }
 };
