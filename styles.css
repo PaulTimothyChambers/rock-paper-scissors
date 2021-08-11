@@ -105,6 +105,7 @@ text {
   height: 33px;
   border-radius: 10px;
   background-color: deepskyblue;
+  cursor: pointer;
 }
 
 .top-border__change-mode-back-alt {
