@@ -65,7 +65,7 @@
 
 ## Access to Project
 
-* [Coming Soon]()
+* [Click Here for Published Project](https://paultimothychambers.github.io/rock-paper-scissors/)
 
 
 ## Contributors
