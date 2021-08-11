@@ -121,23 +121,7 @@ function classicGameInPlay() {
   var human = new Player('PYUNEE DUM HOOMOHN');
   var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
 
-  newGame.human = human;
-  newGame.computer = computer;
-
-  hideElement(changeGameMode);
-
-  newGame.determineClassicScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors']), newGame.human);
-
-  var humanChoice = event.target.className;
-  newGame.playerChoice(humanChoice, 'game-board-classic__paper-button', 'game-board-classic__rock-button', 'game-board-classic__scissors-button');
-
-  newGame.logWinner(newGame.humanScore, computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
-
-  displayClassicWinner();
-  displayClassicPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
-
-  setTimeout(changeViewToClassic, 2500);
-  setTimeout(showGameChangeButton, 2500);
+  human.classicGameInPlayNow(newGame, human, computer);
 };
 
 function difficultGameInPlay() {
@@ -146,25 +130,7 @@ function difficultGameInPlay() {
   var human = new Player('PYUNEE DUM HOOMOHN');
   var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
 
-  newGame.human = human;
-  newGame.computer = computer;
-
-  newGame.determineComputerWins();
-
-  var humanChoice = event.target.className;
-  newGame.playerChoice(humanChoice, 'game-board-difficult__paper-button', 'game-board-difficult__rock-button', 'game-board-difficult__scissors-button');
-
-  newGame.computerWins(human.retrieveHumanWins(), computer.retrieveComputerWins());
-
-  displayDifficultWinner();
-  displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
-
-  setTimeout(displayHelpfulMessage, 2500);
-  setTimeout(displayHelpfulMessageTwo, 4500);
-  setTimeout(displayHelpfulMessageThree, 14000);
-  setTimeout(displayHelpfulMessageFour, 20000);
-  setTimeout(displayHelpfulMessageFive, 25000);
-  setTimeout(changeViewToDifficultTwo, 35000);
+  human.difficultGameInPlayNow(newGame, human, computer);
 };
 
 function difficultGameInPlayTwo() {
@@ -175,21 +141,7 @@ function difficultGameInPlayTwo() {
   var human = new Player('PYUNEE DUM HOOMOHN');
   var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
 
-  newGame.human = human;
-  newGame.computer = computer;
-
-  newGame.determineComputerWins();
-
-  var humanChoice = event.target.className;
-  newGame.playerChoice(humanChoice, 'game-board-difficult__paper-button-two', 'game-board-difficult__rock-button-two', 'game-board-difficult__scissors-button-two');
-
-  newGame.computerWins(human.retrieveHumanWins(), computer.retrieveComputerWins());
-
-  displayDifficultWinner();
-  displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
-
-  setTimeout(changeViewToDifficultTwo, 2800);
-  setTimeout(showPlayFairlyButton, 20800);
+  human.difficultGameInPlayTwoNow(newGame, human, computer);
 };
 
 function fairGameInPlay() {
@@ -198,24 +150,7 @@ function fairGameInPlay() {
   var human = new Player('PYUNEE DUM HOOMOHN');
   var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
 
-  newGame.human = human;
-  newGame.computer = computer;
-
-  setInterval(hideElementPlayFairly, 1);
-
-  newGame.determineDifficultScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors', 'secret alien', 'bigger alien', 'alien', 'wimpy alien']));
-
-  var humanChoice = event.target.className;
-
-  newGame.playerFairChoice(humanChoice);
-
-  newGame.logWinner(newGame.humanScore, newGame.computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
-
-  displayFairWinner();
-  displayFairPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
-
-  setTimeout(changeViewToFairTwo, 2500);
-  setTimeout(showGameChangeButtonAlt, 2500);
+  human.fairGameInPlayNow(newGame, human, computer);
 };
 
 // FUNCTIONS: view changes ************************************
