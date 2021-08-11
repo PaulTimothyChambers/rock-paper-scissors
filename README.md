@@ -31,12 +31,12 @@
 
 ## Architecture
 
-* Player.js file containing a Player class. Methods include a way to:
+* **Player.js file containing a Player class. Methods include a way to:**
 
 - ***retrieve the user's and computer's wins from local storage***
 - ***save the user's and computer's wins to local storage***
 
-* Game.js file containing a Game class. Methods include a way to:
+* **Game.js file containing a Game class. Methods include a way to:**
 
 - ***force a computer-player win (for storyline purposes)***
 - ***determine player scores for games played in classic/difficult/difficult-but-fair modes***
@@ -45,7 +45,7 @@
 - ***determine the winner of each classic/difficult/difficult-but-fair game mode match and save this win to storage (through utilization of Player class methods)***
 - ***determine which piece the player has chosen and pass that information on the main file for display within the DOM***
 
-* main.js file for implementation of all Game.js and Player.js logic, and any/all manipulation of the DOM. Functions include a way to:
+* **main.js file for implementation of all Game.js and Player.js logic, and any/all manipulation of the DOM. Functions include a way to:**
 
 - ***control process flow of all logic within class files***
 - ***set timeouts for automatic screen changing (where applicable/necessary)***
