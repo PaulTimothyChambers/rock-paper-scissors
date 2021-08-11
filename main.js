@@ -13,13 +13,19 @@ var alienChoiceDifficult = document.querySelector('.game-board-difficult__alien-
 var biggerAlienChoiceDifficult = document.querySelector('.game-board-difficult__bigger-alien-button');
 var wimpyAlienChoiceDifficult = document.querySelector('.game-board-difficult__wimpy-alien-button');
 var secretAlienChoiceFair = document.querySelector('.game-board-fair__secret-alien-button');
-var notSeekritAleinTwo = document.querySelector('.top-border__secret-alien-image-two');
 var rockChoiceFair = document.querySelector('.game-board-fair__rock-button');
 var paperChoiceFair = document.querySelector('.game-board-fair__paper-button');
 var scissorsChoiceFair = document.querySelector('.game-board-fair__scissors-button');
 var alienChoiceFair = document.querySelector('.game-board-fair__alien-button');
 var biggerAlienChoiceFair = document.querySelector('.game-board-fair__bigger-alien-button');
 var wimpyAlienChoiceFair = document.querySelector('.game-board-fair__wimpy-alien-button');
+var fairGameRulePaper = document.querySelector('.fair-game-rules__paper');
+var fairGameRuleRock = document.querySelector('.fair-game-rules__rock');
+var fairGameRuleScissors = document.querySelector('.fair-game-rules__scissors');
+var fairGameRuleSecretAlien = document.querySelector('.fair-game-rules__secret-alien');
+var fairGameRuleBiggerAlien = document.querySelector('.fair-game-rules__bigger-alien');
+var fairGameRuleAlien = document.querySelector('.fair-game-rules__alien');
+var fairGameRuleWimpyAlien = document.querySelector('.fair-game-rules__wimpy-alien');
 // div elements and texts
 var ciaWarning = document.querySelector('.cia-warning');
 var topBorder = document.querySelector('.top-border');
@@ -108,6 +114,13 @@ alienChoiceFair.addEventListener('click', fairGameInPlay);
 biggerAlienChoiceFair.addEventListener('click', fairGameInPlay);
 wimpyAlienChoiceFair.addEventListener('click', fairGameInPlay);
 secretAlienChoiceFair.addEventListener('click', fairGameInPlay);
+fairGameRulePaper.addEventListener('click', fairGameInPlay)
+fairGameRuleRock.addEventListener('click', fairGameInPlay)
+fairGameRuleScissors.addEventListener('click', fairGameInPlay)
+fairGameRuleSecretAlien.addEventListener('click', fairGameInPlay)
+fairGameRuleBiggerAlien.addEventListener('click', fairGameInPlay)
+fairGameRuleAlien.addEventListener('click', fairGameInPlay)
+fairGameRuleWimpyAlien.addEventListener('click', fairGameInPlay)
 
 // GLOBALS ************************************
 var newGame = new Game();
