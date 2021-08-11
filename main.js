@@ -246,6 +246,7 @@ function changeViewToDifficultTwo() {
 };
 
 function changeViewToFair() {
+  changeStyling(playFairly, 'bottom-border__play-fairly', 'bottom-border__play-fairly-two');
   hideElement(mainCard);
   hideElement(fairWinnerCard);
   hideElement(difficultCard);
