@@ -32,24 +32,24 @@
 ## Architecture
 
 * Player.js file containing a Player class. Methods include a way to:
-- ***retrieve the user's and computer's wins from local storage***
-- ***save the user's and computer's wins to local storage***
+-- ***retrieve the user's and computer's wins from local storage***
+-- ***save the user's and computer's wins to local storage***
 * Game.js file containing a Game class. Methods include a way to:
-- ***force a computer-player win (for storyline purposes)***
-- ***determine player scores for games played in classic/difficult/difficult-but-fair modes***
-- ***determine the computer's choice of which "piece" to play***
-- ***force computer to choose a certain piece (for storyline purposes)***
-- ***determine the winner of each classic/difficult/difficult-but-fair game mode match and save this win to storage (through utilization of Player class methods)***
-- ***determine which piece the player has chosen and pass that information on the main file for display within the DOM***
+-- ***force a computer-player win (for storyline purposes)***
+-- ***determine player scores for games played in classic/difficult/difficult-but-fair modes***
+-- ***determine the computer's choice of which "piece" to play***
+-- ***force computer to choose a certain piece (for storyline purposes)***
+-- ***determine the winner of each classic/difficult/difficult-but-fair game mode match and save this win to storage (through utilization of Player class methods)***
+-- ***determine which piece the player has chosen and pass that information on the main file for display within the DOM***
 * main.js file for implementation of all Game.js and Player.js logic, and any/all manipulation of the DOM. Functions include a way to:
-- ***control process flow of all logic within class files***
-- ***set timeouts for automatic screen changing (where applicable/necessary)***
-- ***hide, show, and manipulate any/all elements as needed***
-- ***helper functions for hiding, showing, manipulating any/all elements as needed***
-- ***display all relevant/required information dynamically on the DOM***
-- ***retrieve any previously earned wins upon page load***
-- ***update the DOM to reflect the number of wins for each player***
-- ***"animate" certain portions of the DOM under certain conditions***
+-- ***control process flow of all logic within class files***
+-- ***set timeouts for automatic screen changing (where applicable/necessary)***
+-- ***hide, show, and manipulate any/all elements as needed***
+-- ***helper functions for hiding, showing, manipulating any/all elements as needed***
+-- ***display all relevant/required information dynamically on the DOM***
+-- ***retrieve any previously earned wins upon page load***
+-- ***update the DOM to reflect the number of wins for each player***
+-- ***"animate" certain portions of the DOM under certain conditions***
 
 ## Illustrations
 
