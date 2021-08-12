@@ -66,12 +66,12 @@ class Player {
     displayDifficultWinner();
     displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
-    setTimeout(displayHelpfulMessage, 2500);
-    setTimeout(displayHelpfulMessageTwo, 4500);
-    setTimeout(displayHelpfulMessageThree, 14000);
-    setTimeout(displayHelpfulMessageFour, 20000);
-    setTimeout(displayHelpfulMessageFive, 25000);
-    setTimeout(changeViewToDifficultTwo, 35000);
+    setTimeout(displayHelpfulMessage, 25);
+    setTimeout(displayHelpfulMessageTwo, 45);
+    setTimeout(displayHelpfulMessageThree, 140);
+    setTimeout(displayHelpfulMessageFour, 200);
+    setTimeout(displayHelpfulMessageFive, 250);
+    setTimeout(changeViewToDifficultTwo, 350);
   }
 
   difficultGameInPlayTwoNow(newGame, human, computer) {
@@ -88,8 +88,8 @@ class Player {
     displayDifficultWinner();
     displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
-    setTimeout(changeViewToDifficultTwo, 2800);
-    setTimeout(showPlayFairlyButton, 20800);
+    setTimeout(changeViewToDifficultTwo, 28);
+    setTimeout(showPlayFairlyButton, 208);
   }
 
   fairGameInPlayNow(newGame, human, computer) {
@@ -107,7 +107,7 @@ class Player {
     displayFairWinner();
     displayFairPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
-    setTimeout(changeViewToFairTwo, 2500);
-    setTimeout(showGameChangeButtonAlt, 2500);
+    setTimeout(changeViewToFairTwo, 25);
+    setTimeout(showGameChangeButtonAlt, 25);
   }
 };
