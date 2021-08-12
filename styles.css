@@ -127,13 +127,15 @@ text {
 
 .game-board__bad-text {
   position: absolute;
-  margin: 99px 0px 0px 0px;
+  margin: 142px 0px 0px 0px;
+  font-size: 13;
   cursor: default;
 }
 
 .game-board__good-text {
   position: absolute;
-  margin: 119px 0px 0px 70px;
+  margin: 160px 0px 0px 70px;
+  font-size: 13;
   cursor: default;
 }
 
@@ -298,19 +300,29 @@ text {
   color: #FF80F7;
 }
 
-.game-board__choose-mode {
+.game-board__choose-mode,
+.game-board__choose-mode-alt {
   position: absolute;
-  margin: 34px 0px 0px 471px;
-  font-size: 13;
+  margin: -8px 0px 0px 471px;
+  font-size: 50;
   font-weight: bolder;
 }
 
-.game-board__click-here {
+.game-board__click-here,
+.game-board__click-here-alt {
   position: absolute;
   margin: 74px 0px 0px 421px;
   font-size: 20;
   font-weight: bolder;
   cursor: default;
+}
+
+.game-board__choose-mode-alt {
+  color: purple;
+}
+
+.game-board__click-here-alt {
+  color: purple;
 }
 
 .game-board__classic-game-button {
@@ -320,8 +332,6 @@ text {
   border-radius: 44px;
   height: 163px;
   width: 331px;
-  box-shadow: 10px 10px 20px black;
-
 }
 
 .game-board__classic-game-button,
@@ -332,6 +342,7 @@ text {
   border-style: none;
   background-color: #897CB6;
   cursor: pointer;
+  box-shadow: 10px 10px 20px black;
 }
 
 .game-board__classic-game-button {
@@ -435,15 +446,16 @@ text {
 }
 
 .classic-card {
-  height: 163px;
-  width: 331px;
+  height: 170px;
+  width: 346px;
 }
 
 .classic-card-two {
   position: absolute;
-  height: 195px;
+  height: 170px;
   width: 346px;
-  margin: 19px 0px 0px -9px;
+  margin: -62px 0px 0px -9px;
+  padding-top: 65px;
   font-family: 'IBM Plex Mono';
   font-weight: bolder;
   font-size: 0;
@@ -451,7 +463,7 @@ text {
 
 .classic-card {
   transition-property: font-size;
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 
 .classic-card:hover {
@@ -460,10 +472,39 @@ text {
 
 .classic-card-two {
   transition-property: font-size;
-  transition-duration: 1.6s;
+  transition-duration: 0.5s;
 }
 
 .classic-card-two:hover {
+  font-size: 17;
+}
+
+.difficult-card-two {
+  position: absolute;
+  height: 346px;
+  width: 598px;
+  margin: -65px 0px 0px -53px;
+  padding-top: 85px;
+  font-family: 'IBM Plex Mono';
+  font-weight: bolder;
+  font-size: 0;
+}
+
+.difficult-card {
+  transition-property: font-size;
+  transition-duration: 1s;
+}
+
+.difficult-card:hover {
+  font-size: 0;
+}
+
+.difficult-card-two {
+  transition-property: font-size;
+  transition-duration: 0.5s;
+}
+
+.difficult-card-two:hover {
   font-size: 17;
 }
 
@@ -763,6 +804,43 @@ text {
   margin: 120px;
   font-family: 'IBM Plex Mono';
   font-size: 40;
+}
+
+#noteOne {
+  width: 613px;
+  margin: -82px 799px 0px 34px;
+  background-color: gray;
+  border-radius: 5px;
+  font-family: 'IBM Plex Mono';
+  font-size: 12;
+  text-align: center;
+  color: black;
+  opacity: 65%;
+}
+
+#noteTwo {
+  position: absolute;
+  width: 303px;
+  margin: 153px 1061px 0px 0px;
+  background-color: gray;
+  border-radius: 5px;
+  font-family: 'IBM Plex Mono';
+  font-size: 12;
+  text-align: center;
+  color: black;
+  opacity: 65%;
+}
+
+#noteThree {
+  width: 735px;
+  margin: 513px 138px 0px 590px;
+  background-color: gray;
+  border-radius: 5px;
+  font-family: 'IBM Plex Mono';
+  font-size: 12;
+  text-align: center;
+  color: black;
+  opacity: 65%;
 }
 
 .not-allowed {
