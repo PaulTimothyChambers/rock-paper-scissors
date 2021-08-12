@@ -34,6 +34,8 @@ var bottomBorder = document.querySelector('.bottom-border');
 var mainCardTwo = document.querySelector('.game-board-two');
 var noTouchy = document.querySelector('.game-board-difficult__no-touchy');
 var classicGameCard = document.querySelector('.game-board-classic');
+var divClassicCard = document.querySelector('.classic-card');
+var divclassicCardTwo = document.querySelector('.classic-card-two');
 var classicCard = document.querySelector('#classicCard');
 var classicWinnerCard = document.querySelector('#classicWinnerCard');
 var classicGameOutcome = document.querySelector('.winner-card__display-winner');
@@ -65,6 +67,7 @@ var changeGameMode = document.querySelector('.bottom-border__change-mode-button'
 var changeItBack = document.querySelector('.top-border__change-mode-back');
 // game mode buttons
 var startClassicGame = document.querySelector('.game-board__classic-game-button');
+var startClassicGameTwo = document.querySelector('.game-board__classic-game-button-two');
 var startDifficultGame = document.querySelector('.game-board__difficult-game-button');
 var alsoStartDifficultGame = document.querySelector('.difficult-card__deco-button-one');
 var alsoStartDifficultGameTwo = document.querySelector('.difficult-card__deco-button-two');
