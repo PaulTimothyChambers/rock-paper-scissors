@@ -60,6 +60,11 @@ var helpfulMessageThree = document.querySelector('.helpful-message-three');
 var helpfulMessageFour = document.querySelector('.helpful-message-four');
 var helpfulMessageFive = document.querySelector('.helpful-message-five');
 var help = document.querySelector('.help');
+var clickHereText = document.querySelector('.game-board__click-here');
+var chooseModeText = document.querySelector('.game-board__choose-mode');
+var ciaNoteOne = document.querySelector('#noteOne');
+var ciaNoteTwo = document.querySelector('#noteTwo');
+var ciaNoteThree = document.querySelector('#noteThree');
 // buttons
 var playFairly = document.querySelector('.bottom-border__play-fairly');
 var btnCiaProceed = document.querySelector('.cia-warning__proceed-button');
@@ -117,13 +122,13 @@ alienChoiceFair.addEventListener('click', fairGameInPlay);
 biggerAlienChoiceFair.addEventListener('click', fairGameInPlay);
 wimpyAlienChoiceFair.addEventListener('click', fairGameInPlay);
 secretAlienChoiceFair.addEventListener('click', fairGameInPlay);
-fairGameRulePaper.addEventListener('click', fairGameInPlay)
-fairGameRuleRock.addEventListener('click', fairGameInPlay)
-fairGameRuleScissors.addEventListener('click', fairGameInPlay)
-fairGameRuleSecretAlien.addEventListener('click', fairGameInPlay)
-fairGameRuleBiggerAlien.addEventListener('click', fairGameInPlay)
-fairGameRuleAlien.addEventListener('click', fairGameInPlay)
-fairGameRuleWimpyAlien.addEventListener('click', fairGameInPlay)
+fairGameRulePaper.addEventListener('click', fairGameInPlay);
+fairGameRuleRock.addEventListener('click', fairGameInPlay);
+fairGameRuleScissors.addEventListener('click', fairGameInPlay);
+fairGameRuleSecretAlien.addEventListener('click', fairGameInPlay);
+fairGameRuleBiggerAlien.addEventListener('click', fairGameInPlay);
+fairGameRuleAlien.addEventListener('click', fairGameInPlay);
+fairGameRuleWimpyAlien.addEventListener('click', fairGameInPlay);
 
 // GLOBALS ************************************
 var newGame = new Game();
@@ -179,6 +184,9 @@ function andDontComeBack() {
 };
 
 function changeViewToMain() {
+  showElement(ciaNoteOne);
+  showElement(ciaNoteTwo);
+  showElement(ciaNoteThree);
   hideElement(ciaWarning);
   hideElement(changeGameMode);
   hideElement(changeItBack);
@@ -199,6 +207,9 @@ function changeViewToMain() {
 };
 
 function changeViewToMainTwo() {
+  showElement(ciaNoteOne);
+  showElement(ciaNoteTwo);
+  showElement(ciaNoteThree);
   hideElement(changeGameMode);
   hideElement(changeItBack);
   hideElement(classicCard);
@@ -218,6 +229,9 @@ function changeViewToMainTwo() {
 };
 
 function changeViewToClassic() {
+  hideElement(ciaNoteOne);
+  hideElement(ciaNoteTwo);
+  hideElement(ciaNoteThree);
   hideElement(mainCard);
   hideElement(classicWinnerCard);
   hideElement(stopThat);
@@ -230,6 +244,9 @@ function changeViewToClassic() {
 };
 
 function changeViewToDifficult() {
+  hideElement(ciaNoteOne);
+  hideElement(ciaNoteTwo);
+  hideElement(ciaNoteThree);
   hideElement(mainCard);
   hideElement(difficultWinnerCard);
   hideElement(stopThat);
@@ -243,6 +260,9 @@ function changeViewToDifficult() {
 };
 
 function changeViewToDifficultTwo() {
+  hideElement(ciaNoteOne);
+  hideElement(ciaNoteTwo);
+  hideElement(ciaNoteThree);
   hideElement(rockChoiceDifficult);
   hideElement(paperChoiceDifficult);
   hideElement(scissorsChoiceDifficult);
@@ -263,6 +283,9 @@ function changeViewToDifficultTwo() {
 
 function changeViewToFair() {
   changeStyling(playFairly, 'bottom-border__play-fairly', 'bottom-border__play-fairly-two');
+  hideElement(ciaNoteOne);
+  hideElement(ciaNoteTwo);
+  hideElement(ciaNoteThree);
   hideElement(mainCard);
   hideElement(fairWinnerCard);
   hideElement(difficultCard);
@@ -279,6 +302,9 @@ function changeViewToFair() {
 };
 
 function changeViewToFairTwo() {
+  hideElement(ciaNoteOne);
+  hideElement(ciaNoteTwo);
+  hideElement(ciaNoteThree);
   hideElement(mainCard);
   hideElement(mainCardTwo);
   hideElement(fairWinnerCard);
@@ -358,7 +384,7 @@ function showGameChangeButtonAlt() {
 
 function hideElementPlayFairly() {
   hideElement(playFairly);
-}
+};
 
 // FUNCTIONS: dynamic HTML ************************************
 function displayClassicPlayerChoice(winner, humanChoice, computerChoice) {
@@ -460,6 +486,14 @@ function flashChangeModeButton() {
   changeGameMode.classList.toggle('bottom-border__change-mode-button-alt');
 };
 
+function flashChooseModeText() {
+  chooseModeText.classList.toggle('game-board__choose-mode-alt');
+};
+
+function flashClickHereText() {
+  clickHereText.classList.toggle('game-board__click-here-alt');
+};
+
 function hideElement(element) {
   element.classList.add('hidden');
 };
@@ -469,6 +503,10 @@ function showElement(element) {
 };
 
 // INTERVALS ************************************
+setInterval(flashChooseModeText, 75);
+
+setInterval(flashClickHereText, 95);
+
 setInterval(flashChangeModeButtonAlt, 90);
 
 setInterval(flashChangeModeButton, 300);
