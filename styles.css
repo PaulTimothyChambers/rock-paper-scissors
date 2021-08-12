@@ -318,15 +318,25 @@ text {
   margin: 56px 0px 0px 60px;
   padding-bottom: 20px;
   border-radius: 44px;
+  height: 163px;
+  width: 331px;
+  box-shadow: 10px 10px 20px black;
+
 }
 
 .game-board__classic-game-button,
+.game-board__classic-game-button-two,
 .game-board__difficult-game-button,
 .game-board__difficult-game-button-alt {
   flex-direction: column;
   border-style: none;
   background-color: #897CB6;
   cursor: pointer;
+}
+
+.game-board__classic-game-button {
+  height: 250px;
+  width: 346px;
 }
 
 .game-board__difficult-game-button,
@@ -422,6 +432,39 @@ text {
 .difficult-card {
   flex-direction: column;
   background: none;
+}
+
+.classic-card {
+  height: 163px;
+  width: 331px;
+}
+
+.classic-card-two {
+  position: absolute;
+  height: 195px;
+  width: 346px;
+  margin: 19px 0px 0px -9px;
+  font-family: 'IBM Plex Mono';
+  font-weight: bolder;
+  font-size: 0;
+}
+
+.classic-card {
+  transition-property: font-size;
+  transition-duration: 2s;
+}
+
+.classic-card:hover {
+  font-size: 0;
+}
+
+.classic-card-two {
+  transition-property: font-size;
+  transition-duration: 1.6s;
+}
+
+.classic-card-two:hover {
+  font-size: 17;
 }
 
 .difficult-card__arrow-one {
