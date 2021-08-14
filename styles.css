@@ -57,7 +57,6 @@ text {
   background-color: #FDE8EB;
 }
 
-
 .top-border {
   flex-direction: column;
   align-items: flex-end;
@@ -125,16 +124,84 @@ text {
   border-color: #660381;
 }
 
-.game-board__bad-text {
+.game-board__bad-text,
+.game-board__good-text {
   position: absolute;
-  margin: 99px 0px 0px 0px;
+  margin: 142px 0px 0px 0px;
+  font-size: 9;
   cursor: default;
 }
 
 .game-board__good-text {
+  margin: 162px 0px 0px 75px;
+}
+
+.game-board__choose-mode,
+.game-board__choose-mode-alt {
   position: absolute;
-  margin: 119px 0px 0px 70px;
+  margin: -6px 0px 0px 468px;
+  font-size: 50;
+  font-weight: bolder;
+}
+
+.game-board__click-here,
+.game-board__click-here-alt,
+.game-board__click-here-two,
+.game-board__click-here-two-alt {
+  position: absolute;
+  margin: 118px 0px 0px 490px;
+  font-size: 12;
+  font-weight: bolder;
   cursor: default;
+}
+
+.game-board__click-here-two,
+.game-board__click-here-two-alt {
+  margin: 170px 0px 0px 489px;
+}
+
+.game-board__click-here-smiley,
+.game-board__click-here-frowny {
+  position: absolute;
+  margin: 141px 0px 0px 555px;
+  font-size: 25;
+}
+
+.game-board__click-here-frowny {
+  margin: 121px 0px 0px 463px;
+}
+
+.game-board__choose-mode-alt {
+  color: purple;
+}
+
+.game-board__click-here-alt {
+  color: purple;
+}
+
+.game-board__click-here-two-alt {
+  color: purple;
+}
+
+.game-board__click-here-thumbs-down,
+.game-board__click-here-thumbs-down-two,
+.game-board__click-here-thumbs-up,
+.game-board__click-here-thumbs-up-two {
+  position: absolute;
+  margin: -29px 0px 0px 282px;
+  font-size: 35;
+}
+
+.game-board__click-here-thumbs-up {
+  margin: 31px 0px 0px -25px;
+}
+
+.game-board__click-here-thumbs-up-two {
+  margin: 31px 0px 0px 487px;
+}
+
+.game-board__click-here-thumbs-down-two {
+  margin: -29px 0px 0px 25px;
 }
 
 .game-board__choose-one-arrows {
@@ -175,11 +242,8 @@ text {
   position: absolute;
   height: 200px;
   width: 233px;
-  cursor: pointer;
-}
-
-.game-board-classic__rock-button {
   margin: 115px 0px 0px 215px;
+  cursor: pointer;
 }
 
 .game-board-classic__paper-button,
@@ -298,42 +362,36 @@ text {
   color: #FF80F7;
 }
 
-.game-board__choose-mode {
-  position: absolute;
-  margin: 34px 0px 0px 471px;
-  font-size: 13;
-  font-weight: bolder;
-}
-
-.game-board__click-here {
-  position: absolute;
-  margin: 74px 0px 0px 421px;
-  font-size: 20;
-  font-weight: bolder;
-  cursor: default;
-}
-
 .game-board__classic-game-button {
   position: absolute;
   margin: 56px 0px 0px 60px;
   padding-bottom: 20px;
   border-radius: 44px;
+  height: 163px;
+  width: 331px;
 }
 
 .game-board__classic-game-button,
+.game-board__classic-game-button-two,
 .game-board__difficult-game-button,
 .game-board__difficult-game-button-alt {
   flex-direction: column;
   border-style: none;
   background-color: #897CB6;
   cursor: pointer;
+  box-shadow: 10px 10px 20px black;
+}
+
+.game-board__classic-game-button {
+  height: 250px;
+  width: 346px;
 }
 
 .game-board__difficult-game-button,
 .game-board__difficult-game-button-alt {
   align-items: center;
   width: 604px;
-  margin: 70px 0px 7px 644px;
+  margin: 70px 0px 19px 644px;
   padding: 1px 8px;
   border-radius: 76px;
 }
@@ -422,6 +480,69 @@ text {
 .difficult-card {
   flex-direction: column;
   background: none;
+}
+
+.classic-card {
+  height: 170px;
+  width: 346px;
+}
+
+.classic-card-two {
+  position: absolute;
+  height: 170px;
+  width: 346px;
+  margin: -62px 0px 0px -9px;
+  padding-top: 65px;
+  font-family: 'IBM Plex Mono';
+  font-weight: bolder;
+  font-size: 0;
+}
+
+.classic-card {
+  transition-property: font-size;
+  transition-duration: 1s;
+}
+
+.classic-card:hover {
+  font-size: 0;
+}
+
+.classic-card-two {
+  transition-property: font-size;
+  transition-duration: 0.5s;
+}
+
+.classic-card-two:hover {
+  font-size: 17;
+}
+
+.difficult-card-two {
+  position: absolute;
+  height: 346px;
+  width: 598px;
+  margin: -65px 0px 0px -53px;
+  padding-top: 85px;
+  font-family: 'IBM Plex Mono';
+  font-weight: bolder;
+  font-size: 0;
+}
+
+.difficult-card {
+  transition-property: font-size;
+  transition-duration: 1s;
+}
+
+.difficult-card:hover {
+  font-size: 0;
+}
+
+.difficult-card-two {
+  transition-property: font-size;
+  transition-duration: 0.5s;
+}
+
+.difficult-card-two:hover {
+  font-size: 17;
 }
 
 .difficult-card__arrow-one {
@@ -720,6 +841,52 @@ text {
   margin: 120px;
   font-family: 'IBM Plex Mono';
   font-size: 40;
+}
+
+#noteOne,
+#noteTwo,
+#noteThree {
+  background-color: gray;
+  border-radius: 5px;
+  font-family: 'IBM Plex Mono';
+  font-size: 12;
+  text-align: center;
+  -webkit-text-stroke-width: medium;
+  color: white;
+  opacity: 75%;
+}
+
+#noteOne {
+  width: 613px;
+  margin: -82px 799px 0px 34px;
+}
+
+#noteTwo {
+  position: absolute;
+  width: 303px;
+  margin: 146px 1061px 0px 0px;
+}
+
+#noteThree {
+  width: 735px;
+  margin: 497px 138px 0px 590px;
+}
+
+#watermarkOne,
+#watermarkTwo {
+  position: absolute;
+  height: 59px;
+  opacity: 7%;
+}
+
+#watermarkOne {
+  width: 550px;
+  margin: 42px 0px 0px -832px;
+}
+
+#watermarkTwo {
+  width: 650px;
+  margin: 22px 0px 0px 620px;
 }
 
 .not-allowed {
