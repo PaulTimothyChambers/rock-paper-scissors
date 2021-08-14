@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.human = '';
-    this.computer = '';
+    this.human = new Player('PYUNEE DUM HOOMOHN');
+    this.computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
     this.humanScore = '';
     this.humanChoice = '';
     this.computerChoice = '';
