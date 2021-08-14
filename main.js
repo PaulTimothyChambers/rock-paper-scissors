@@ -1,8 +1,6 @@
 // QUERY SELECTORS ************************************
 // clickable elements
-var rockChoice = document.querySelector('.game-board-classic__rock-button');
-var paperChoice = document.querySelector('.game-board-classic__paper-button');
-var scissorsChoice = document.querySelector('.game-board-classic__scissors-button');
+var classicChoice = document.querySelectorAll('#classicChoice');
 var rockChoiceDifficult = document.querySelector('.game-board-difficult__rock-button');
 var rockChoiceDifficultTwo = document.querySelector('.game-board-difficult__rock-button-two');
 var paperChoiceDifficult = document.querySelector('.game-board-difficult__paper-button');
@@ -61,10 +59,13 @@ var helpfulMessageFour = document.querySelector('.helpful-message-four');
 var helpfulMessageFive = document.querySelector('.helpful-message-five');
 var help = document.querySelector('.help');
 var clickHereText = document.querySelector('.game-board__click-here');
+var clickHereTextTwo = document.querySelector('.game-board__click-here-two');
 var chooseModeText = document.querySelector('.game-board__choose-mode');
 var ciaNoteOne = document.querySelector('#noteOne');
 var ciaNoteTwo = document.querySelector('#noteTwo');
 var ciaNoteThree = document.querySelector('#noteThree');
+var watermarkOne = document.querySelector('#watermarkOne');
+var watermarkTwo = document.querySelector('#watermarkTwo');
 // buttons
 var playFairly = document.querySelector('.bottom-border__play-fairly');
 var btnCiaProceed = document.querySelector('.cia-warning__proceed-button');
@@ -73,11 +74,7 @@ var changeItBack = document.querySelector('.top-border__change-mode-back');
 // game mode buttons
 var startClassicGame = document.querySelector('.game-board__classic-game-button');
 var startClassicGameTwo = document.querySelector('.game-board__classic-game-button-two');
-var startDifficultGame = document.querySelector('.game-board__difficult-game-button');
-var alsoStartDifficultGame = document.querySelector('.difficult-card__deco-button-one');
-var alsoStartDifficultGameTwo = document.querySelector('.difficult-card__deco-button-two');
-var alsoStartDifficultGameThree = document.querySelector('.difficult-card__deco-button-three');
-var alsoStartDifficultGameFour = document.querySelector('.difficult-card__deco-button-four');
+var startDifficultGame = document.querySelectorAll('#startDifficultGame');
 var startDifficultGameAlt = document.querySelector('.game-board__difficult-game-button-alt');
 var alsoStartDifficultGameAlt = document.querySelector('.difficult-card__deco-button-one-alt');
 var alsoStartDifficultGameTwoAlt = document.querySelector('.difficult-card__deco-button-two-alt');
@@ -92,20 +89,21 @@ changeItBack.addEventListener('click', changeViewToMainTwo);
 changeGameMode.addEventListener('click', changeViewToMain);
 btnCiaProceed.addEventListener('click', changeViewToMain);
 startClassicGame.addEventListener('click', changeViewToClassic);
-startDifficultGame.addEventListener('click', changeViewToDifficult);
-alsoStartDifficultGame.addEventListener('click', changeViewToDifficult);
-alsoStartDifficultGameTwo.addEventListener('click', changeViewToDifficult);
-alsoStartDifficultGameThree.addEventListener('click', changeViewToDifficult);
-alsoStartDifficultGameFour.addEventListener('click', changeViewToDifficult);
+for (var i=0;i<startDifficultGame.length;i++) {
+  startDifficultGame[i].addEventListener('click', changeViewToDifficult);
+};
+for (var i=0;i<classicChoice.length;i++) {
+  classicChoice[i].addEventListener('click', classicGameInPlay);
+};
 startDifficultGameAlt.addEventListener('click', changeViewToFairTwo);
 alsoStartDifficultGameAlt.addEventListener('click', changeViewToFairTwo);
 alsoStartDifficultGameTwoAlt.addEventListener('click', changeViewToFairTwo);
 alsoStartDifficultGameThreeAlt.addEventListener('click', changeViewToFairTwo);
 alsoStartDifficultGameFourAlt.addEventListener('click', changeViewToFairTwo);
 playFairly.addEventListener('click', changeViewToFair);
-rockChoice.addEventListener('click', classicGameInPlay);
-paperChoice.addEventListener('click', classicGameInPlay);
-scissorsChoice.addEventListener('click', classicGameInPlay);
+// rockChoice.addEventListener('click', classicGameInPlay);
+// paperChoice.addEventListener('click', classicGameInPlay);
+// scissorsChoice.addEventListener('click', classicGameInPlay);
 rockChoiceDifficult.addEventListener('click', difficultGameInPlay);
 rockChoiceDifficultTwo.addEventListener('click', difficultGameInPlayTwo);
 paperChoiceDifficult.addEventListener('click', difficultGameInPlay);
@@ -139,39 +137,35 @@ retrieveWinsOnLoad();
 function classicGameInPlay() {
   event.preventDefault();
 
-  var human = new Player('PYUNEE DUM HOOMOHN');
-  var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
-
-  human.classicGameInPlayNow(newGame, human, computer);
+  newGame.human.classicGameInPlayNow(newGame, newGame.human, newGame.computer);
 };
 
 function difficultGameInPlay() {
   event.preventDefault();
 
-  var human = new Player('PYUNEE DUM HOOMOHN');
-  var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
+  hideElement(watermarkOne);
+  hideElement(watermarkTwo);
 
-  human.difficultGameInPlayNow(newGame, human, computer);
+  newGame.human.difficultGameInPlayNow(newGame, newGame.human, newGame.computer);
 };
 
 function difficultGameInPlayTwo() {
   event.preventDefault();
 
   hideElement(playFairly);
+  hideElement(watermarkOne);
+  hideElement(watermarkTwo);
 
-  var human = new Player('PYUNEE DUM HOOMOHN');
-  var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
-
-  human.difficultGameInPlayTwoNow(newGame, human, computer);
+  newGame.human.difficultGameInPlayTwoNow(newGame, newGame.human, newGame.computer);
 };
 
 function fairGameInPlay() {
   event.preventDefault();
 
-  var human = new Player('PYUNEE DUM HOOMOHN');
-  var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
+  hideElement(watermarkOne);
+  hideElement(watermarkTwo);
 
-  human.fairGameInPlayNow(newGame, human, computer);
+  newGame.human.fairGameInPlayNow(newGame, newGame.human, newGame.computer);
 };
 
 // FUNCTIONS: view changes ************************************
@@ -184,9 +178,6 @@ function andDontComeBack() {
 };
 
 function changeViewToMain() {
-  showElement(ciaNoteOne);
-  showElement(ciaNoteTwo);
-  showElement(ciaNoteThree);
   hideElement(ciaWarning);
   hideElement(changeGameMode);
   hideElement(changeItBack);
@@ -201,15 +192,17 @@ function changeViewToMain() {
   hideElement(stopThatThree);
   hideElement(stopThatFour);
 
+  showElement(watermarkOne);
+  showElement(watermarkTwo);
+  showElement(ciaNoteOne);
+  showElement(ciaNoteTwo);
+  showElement(ciaNoteThree);
   showElement(topBorder);
   showElement(bottomBorder);
   showElement(mainCard);
 };
 
 function changeViewToMainTwo() {
-  showElement(ciaNoteOne);
-  showElement(ciaNoteTwo);
-  showElement(ciaNoteThree);
   hideElement(changeGameMode);
   hideElement(changeItBack);
   hideElement(classicCard);
@@ -223,6 +216,11 @@ function changeViewToMainTwo() {
   hideElement(stopThatThree);
   hideElement(stopThatFour);
 
+  showElement(watermarkOne);
+  showElement(watermarkTwo);
+  showElement(ciaNoteOne);
+  showElement(ciaNoteTwo);
+  showElement(ciaNoteThree);
   showElement(topBorder);
   showElement(bottomBorder);
   showElement(mainCardTwo);
@@ -238,6 +236,8 @@ function changeViewToClassic() {
   hideElement(stopThatTwo);
   hideElement(stopThatThree);
   hideElement(stopThatFour);
+  hideElement(watermarkOne);
+  hideElement(watermarkTwo);
 
   showElement(classicGameCard);
   showElement(classicCard);
@@ -254,6 +254,8 @@ function changeViewToDifficult() {
   hideElement(stopThatThree);
   hideElement(stopThatFour);
   hideElement(helpfulMessageFive);
+  hideElement(watermarkOne);
+  hideElement(watermarkTwo);
 
   showElement(difficultGameCard);
   showElement(difficultCard);
@@ -273,6 +275,8 @@ function changeViewToDifficultTwo() {
   hideElement(stopThatThree);
   hideElement(stopThatFour);
   hideElement(helpfulMessageFive);
+  hideElement(watermarkOne);
+  hideElement(watermarkTwo);
 
   showElement(difficultGameCard);
   showElement(difficultCard);
@@ -292,6 +296,8 @@ function changeViewToFair() {
   hideElement(difficultGameCard);
   hideElement(noTouchy);
   hideElement(playFairly);
+  hideElement(watermarkOne);
+  hideElement(watermarkTwo);
 
   showElement(fairGameCard);
   showElement(fairCard);
@@ -312,6 +318,8 @@ function changeViewToFairTwo() {
   hideElement(difficultGameCard);
   hideElement(noTouchy);
   hideElement(playFairly);
+  hideElement(watermarkOne);
+  hideElement(watermarkTwo);
 
   showElement(fairGameCard);
   showElement(fairCard);
@@ -469,6 +477,17 @@ function updateComputerWinCount(parsedComputerWinCount) {
 };
 
 // FUNCTIONS: misc. ************************************
+function createPlayerOne() {
+  var human = new Player('PYUNEE DUM HOOMOHN');
+  return human
+};
+
+function createPlayerTwo() {
+  var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
+  return computer
+};
+
+
 function changeStyling(element, styleOne, styleTwo) {
   element.classList.remove(styleOne);
   element.classList.add(styleTwo);
@@ -492,6 +511,7 @@ function flashChooseModeText() {
 
 function flashClickHereText() {
   clickHereText.classList.toggle('game-board__click-here-alt');
+  clickHereTextTwo.classList.toggle('game-board__click-here-two-alt')
 };
 
 function hideElement(element) {
