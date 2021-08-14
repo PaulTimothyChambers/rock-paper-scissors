@@ -35,16 +35,19 @@
       <text class="cia-notes" id="noteOne">OFFICIAL NOTE: The GUI of BU-77 isn't user-friendly (although WEBSAF analysts believe this "limitation" was not due to design, but rather to a lack of talent for good, human-centric design; which is odd because whoever the developers of BU-77 are, they're DEFINITELY HUMAN). In any case, here's all you need to know to get started:</text>
       <text class="cia-notes" id="noteTwo">This smaller button on the left (located below) takes you to a 'classic mode' (aka, vanilla version) of rock-paper-scissors.</text>
       <text class="cia-notes" id="noteThree">This larger button on the right (located above) is the problematic one. Although the button itself is still FULLY FUNCTIONAL, this is for RESEARCH and DATA TRACKING purposes ONLY; for your safety, and the safety of the agency, selection of this "game mode" is STRICTLY PROHIBITED at this time. To be clear, the button is DEFINITELY 100% CLICKABLE AND YOU CAN TOTALLY SELECT IT (but also don't do that).</text>
+      <img class="cia-watermark" id="watermarkOne" src="./assets/cia-warning-two.png">
     </div>
     <section class="game-board hidden">
       <img class="game-board__choose-one-arrows" src="./assets/arrows-icon.png" alt="image of arrow pointing towards both of the game modes; the arrow pointing left says 'bad', the arrow pointing right says 'good', indicating that the alien wants you to choose the game mode on the right">
-      <text class="game-board__choose-mode">CHOOZ 1
-        <text class="game-board__bad-text">BAD</text>
-        <text class="game-board__good-text">GHOOD</text>
-      </text>
-      <text class="game-board__click-here">CLIK HEER OR HEER!!!</text>
+      <text class="game-board__choose-mode">CHOOZ 1</text>
+      <text class="game-board__click-here">CLIK HEER...</text>
+      <text class="game-board__click-here-two">...OR HEER!!!</text>
+      <text class="game-board__click-here-smiley">😄</text>
+      <text class="game-board__click-here-frowny">😫</text>
       <button class="game-board__classic-game-button" alt="button for selecting the classic game mode (the game mode on the left)">
         <h3>STRT CLASIK GAYM</h3>
+        <text class="game-board__click-here-thumbs-down">👎</text>
+        <text class="game-board__click-here-thumbs-down-two">👎</text>
         <div class="classic-card">
           <text class="classic-card__classic-game">CLASIK GAYM
             <text class="classic-card__game-rules">++++==========================++++</text>
@@ -58,20 +61,22 @@
               <text class="classic-card__game-rules-two">* ROCK beats SCISSORS *</text>
               <text class="classic-card__game-rules-two">* SCISSORS beats PAPER *</text>
               <text class="classic-card__game-rules-two">* PAPER beats ...  *</text>
-              <text class="classic-card__game-rules-two">UM ... I forget now sorry</text>
-              <text class="classic-card__game-rules-two">let's play </text>
+              <text class="classic-card__game-rules-two">um ... I forget now sorry</text>
+              <text class="classic-card__game-rules-two">let's play hurry</text>
             </div>
           </text>
         </div>
       </button>
       <div class="difficult-card__deco-button">
-        <div class="difficult-card__deco-button-one difficult-card__deco-button-helper"></div>
-        <div class="difficult-card__deco-button-two difficult-card__deco-button-helper"></div>
-        <div class="difficult-card__deco-button-three"></div>
-        <div class="difficult-card__deco-button-four difficult-card__deco-button-helper"></div>
+        <div class="difficult-card__deco-button-one difficult-card__deco-button-helper" id="startDifficultGame"></div>
+        <div class="difficult-card__deco-button-two difficult-card__deco-button-helper" id="startDifficultGame"></div>
+        <div class="difficult-card__deco-button-three" id="startDifficultGame"></div>
+        <div class="difficult-card__deco-button-four difficult-card__deco-button-helper" id="startDifficultGame"></div>
       </div>
-      <button class="game-board__difficult-game-button" alt="button for selecting the difficult game mode (the game mode on the right)">
+      <button class="game-board__difficult-game-button" id="startDifficultGame" alt="button for selecting the difficult game mode (the game mode on the right)">
         <h3>START PIESFUL AND REELAKSING GAYM (NO DETH I PROMIS)</h3>
+        <text class="game-board__click-here-thumbs-up">👍</text>
+        <text class="game-board__click-here-thumbs-up-two">👍</text>
         <img class="difficult-card__arrow-one" src="./assets/arrow-one.png" alt="image of an arrow pointing towards the right side game mode">
         <img class="difficult-card__arrow-two" src="./assets/arrow-two.png" alt="image of another arrow pointing towards the right side game mode">
         <img class="difficult-card__arrow-three" src="./assets/arrow-three.png" alt="image of yet another arrow pointing towards the right side game mode">
@@ -98,9 +103,9 @@
     </section>
     <section class="game-board-classic hidden">
       <div class="" id="classicCard">
-        <img class="game-board-classic__rock-button" src="./assets/rock.png" alt="image of Dwayne 'The Rock' Johnson">
-        <img class="game-board-classic__paper-button" src="./assets/paypear.png" alt="image of the PAYDAY candybar logo, with the latter half covered by the image of a pear; thus, pay-pear">
-        <img class="game-board-classic__scissors-button" src="./assets/scissors-romero.png" alt="image of Cesar Romero (who played the Joker in the 1960's tv show 'Batman') appearing here because his first name sounds like 'scissor')">
+        <img class="game-board-classic__rock-button" id="classicChoice" src="./assets/rock.png" alt="image of Dwayne 'The Rock' Johnson">
+        <img class="game-board-classic__paper-button" id="classicChoice" src="./assets/paypear.png" alt="image of the PAYDAY candybar logo, with the latter half covered by the image of a pear; thus, pay-pear">
+        <img class="game-board-classic__scissors-button" id="classicChoice" src="./assets/scissors-romero.png" alt="image of Cesar Romero (who played the Joker in the 1960's tv show 'Batman') appearing here because his first name sounds like 'scissor')">
         <text class="game-board-classic__explanation-text">the actor's name is cesar romero...that's the joke...feel free to lol, now</text>
       </div>
       <div class="hidden" id="classicWinnerCard">
@@ -197,6 +202,7 @@
       <button class="bottom-border__play-fairly hidden">pssst...click here for a FAIR game... *smile*</button>
       <text class="stop-that-three hidden">STOP DAT!!</text>
       <text class="stop-that-four hidden">DONT TUCH THOEZ!</text>
+      <img class="cia-watermark" id="watermarkTwo" src="./assets/cia-warning-two.png">
     </div>
     <script type="text/javascript" src="./Player.js"></script>
     <script type="text/javascript" src="./Game.js"></script>
