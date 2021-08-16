@@ -66,6 +66,7 @@ var ciaNoteTwo = document.querySelector('#noteTwo');
 var ciaNoteThree = document.querySelector('#noteThree');
 var watermarkOne = document.querySelector('#watermarkOne');
 var watermarkTwo = document.querySelector('#watermarkTwo');
+var chains = document.querySelectorAll('.chain')
 // buttons
 var playFairly = document.querySelector('.bottom-border__play-fairly');
 var btnCiaProceed = document.querySelector('.cia-warning__proceed-button');
@@ -89,10 +90,10 @@ changeItBack.addEventListener('click', changeViewToMainTwo);
 changeGameMode.addEventListener('click', changeViewToMain);
 btnCiaProceed.addEventListener('click', changeViewToMain);
 startClassicGame.addEventListener('click', changeViewToClassic);
-for (var i=0;i<startDifficultGame.length;i++) {
+for (let i=0;i<startDifficultGame.length;i++) {
   startDifficultGame[i].addEventListener('click', changeViewToDifficult);
 };
-for (var i=0;i<classicChoice.length;i++) {
+for (let i=0;i<classicChoice.length;i++) {
   classicChoice[i].addEventListener('click', classicGameInPlay);
 };
 startDifficultGameAlt.addEventListener('click', changeViewToFairTwo);
@@ -130,41 +131,30 @@ fairGameRuleWimpyAlien.addEventListener('click', fairGameInPlay);
 
 // GLOBALS ************************************
 var newGame = new Game();
-
 retrieveWinsOnLoad();
 
 // FUNCTIONS: match instantiations ************************************
 function classicGameInPlay() {
   event.preventDefault();
-
+  createNewPlayerInstances();
   newGame.human.classicGameInPlayNow(newGame, newGame.human, newGame.computer);
 };
 
 function difficultGameInPlay() {
   event.preventDefault();
-
-  hideElement(watermarkOne);
-  hideElement(watermarkTwo);
-
+  createNewPlayerInstances();
   newGame.human.difficultGameInPlayNow(newGame, newGame.human, newGame.computer);
 };
 
 function difficultGameInPlayTwo() {
   event.preventDefault();
-
-  hideElement(playFairly);
-  hideElement(watermarkOne);
-  hideElement(watermarkTwo);
-
+  createNewPlayerInstances();
   newGame.human.difficultGameInPlayTwoNow(newGame, newGame.human, newGame.computer);
 };
 
 function fairGameInPlay() {
   event.preventDefault();
-
-  hideElement(watermarkOne);
-  hideElement(watermarkTwo);
-
+  createNewPlayerInstances();
   newGame.human.fairGameInPlayNow(newGame, newGame.human, newGame.computer);
 };
 
@@ -259,6 +249,13 @@ function changeViewToDifficult() {
 
   showElement(difficultGameCard);
   showElement(difficultCard);
+
+  setTimeout(chainBreakingZero, 2000);
+  setTimeout(chainBreakingOne, 3000);
+  setTimeout(chainBreakingTwo, 4000);
+  setTimeout(chainBreakingThree, 4400);
+  setTimeout(chainBreakingFour, 4800);
+  setTimeout(chainBreakingFive, 5200);
 };
 
 function changeViewToDifficultTwo() {
@@ -455,7 +452,7 @@ function displayFairPlayerChoice(winner, humanChoice, computerChoice) {
 
 // FUNCTIONS: local storage ************************************
 function retrieveWinsOnLoad() {
-  if (localStorage.length > 0) {
+  if (localStorage.length) {
     var retrievedHumanWins = localStorage.getItem('newHumanWinCount');
     var parsedHumanWinCount = JSON.parse(retrievedHumanWins);
 
@@ -477,21 +474,45 @@ function updateComputerWinCount(parsedComputerWinCount) {
 };
 
 // FUNCTIONS: misc. ************************************
-function createPlayerOne() {
-  var human = new Player('PYUNEE DUM HOOMOHN');
-  return human
-};
-
-function createPlayerTwo() {
-  var computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
-  return computer
-};
-
+function createNewPlayerInstances() {
+  newGame.human = new Player('PYUNEE DUM HOOMOHN');
+  newGame.computer = new Player('POWREFUL BAUEUATIFUL ALEIN');
+}
 
 function changeStyling(element, styleOne, styleTwo) {
   element.classList.remove(styleOne);
   element.classList.add(styleTwo);
 };
+
+function chainBreakingZero() {
+  showElement(chains[0]);
+}
+
+function chainBreakingOne() {
+  hideElement(chains[0]);
+  showElement(chains[1]);
+}
+
+function chainBreakingTwo() {
+  hideElement(chains[1]);
+  showElement(chains[2]);
+}
+
+function chainBreakingThree() {
+  hideElement(chains[2]);
+  showElement(chains[3]);
+}
+
+function chainBreakingFour() {
+  hideElement(chains[3]);
+  showElement(chains[4]);
+}
+
+function chainBreakingFive() {
+  hideElement(chains[4]);
+  showElement(chains[5]);
+  chains[5].classList.toggle('chainFour');
+}
 
 function flashStopThat(element, newStyle) {
   element.classList.toggle(newStyle);

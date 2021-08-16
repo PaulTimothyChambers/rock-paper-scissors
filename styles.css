@@ -489,9 +489,9 @@ text {
 
 .classic-card-two {
   position: absolute;
-  height: 170px;
+  height: 186px;
   width: 346px;
-  margin: -62px 0px 0px -9px;
+  margin: -67px 0px 0px -9px;
   padding-top: 65px;
   font-family: 'IBM Plex Mono';
   font-weight: bolder;
@@ -518,9 +518,9 @@ text {
 
 .difficult-card-two {
   position: absolute;
-  height: 346px;
-  width: 598px;
-  margin: -65px 0px 0px -53px;
+  height: 252px;
+  width: 604px;
+  margin: -67px 0px 0px -57px;
   padding-top: 85px;
   font-family: 'IBM Plex Mono';
   font-weight: bolder;
@@ -547,7 +547,7 @@ text {
 
 .difficult-card__arrow-one {
   position: absolute;
-  height: 150px;
+  height: 94px;
   width: 150px;
   margin: 172px 0px 0px 174px;
   cursor: default;
@@ -607,7 +607,7 @@ text {
 .difficult-card__deco-button-four-alt {
   height: 37px;
   width: 329px;
-  margin: 341px 0px 0px 781px;
+  margin: 312px 0px 0px 781px;
   mix-blend-mode: color;
   background-color: #6166FF;
 }
@@ -616,6 +616,26 @@ text {
   position: absolute;
   border-style: none;
   border-radius: 40px;
+}
+
+#moreFunText {
+  margin-top: -13px;
+}
+
+#moreFunTextTwo {
+  margin-top: 46px;
+}
+
+#translationOne {
+  margin-top: -18px;
+}
+
+#translationTwo {
+  margin-top: 3px;
+}
+
+#translationTwo {
+  margin-top: 4px;
 }
 
 .fair-game-rules__paper,
@@ -857,19 +877,19 @@ text {
 }
 
 #noteOne {
-  width: 613px;
-  margin: -82px 799px 0px 34px;
+  width: 692px;
+  margin: -82px 740px 0px 0px;
 }
 
 #noteTwo {
   position: absolute;
   width: 303px;
-  margin: 146px 1061px 0px 0px;
+  margin: 147px 1053px 0px 0px;
 }
 
 #noteThree {
   width: 735px;
-  margin: 497px 138px 0px 590px;
+  margin: 527px 117px 0px 590px;
 }
 
 #watermarkOne,
@@ -880,6 +900,7 @@ text {
 }
 
 #watermarkOne {
+  height: 29px;
   width: 550px;
   margin: 42px 0px 0px -832px;
 }
@@ -887,6 +908,21 @@ text {
 #watermarkTwo {
   width: 650px;
   margin: 22px 0px 0px 620px;
+}
+
+.chain,
+.chainFour {
+  position: absolute;
+  height: 300px;
+  width: 700px;
+  visibility: visible;
+}
+
+.chainFour {
+  transition-property: visibility;
+  transition-duration: 20s;
+  /* transition-delay: 20s; */
+  visibility: hidden;
 }
 
 .not-allowed {
