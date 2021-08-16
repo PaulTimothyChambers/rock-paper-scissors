@@ -32,19 +32,12 @@ class Player {
     localStorage.setItem('newHumanWinCount', JSON.stringify(humanCount));
   }
 
-  classicGameInPlayNow(newGame, human, computer) {
-    newGame.human = human;
-    newGame.computer = computer;
-
-    hideElement(changeGameMode);
-
-    newGame.determineClassicScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors']), newGame.human);
-
+  classicGameInPlayNow(newGame, human, computer, humanChoice) {
     var humanChoice = event.target.className;
+    hideElement(changeGameMode);
+    newGame.determineClassicScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors']), newGame.human);
     newGame.playerChoice(humanChoice, 'game-board-classic__paper-button', 'game-board-classic__rock-button', 'game-board-classic__scissors-button');
-
     newGame.logWinner(newGame.humanScore, computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
-
     displayClassicWinner();
     displayClassicPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
@@ -52,20 +45,15 @@ class Player {
     setTimeout(showGameChangeButton, 2500);
   }
 
-  difficultGameInPlayNow(newGame, human, computer) {
-    newGame.human = human;
-    newGame.computer = computer;
-
-    newGame.determineComputerWins();
-
+  difficultGameInPlayNow(newGame, human, computer, humanChoice) {
     var humanChoice = event.target.className;
+    hideElement(watermarkOne);
+    hideElement(watermarkTwo);
+    newGame.determineComputerWins();
     newGame.playerChoice(humanChoice, 'game-board-difficult__paper-button', 'game-board-difficult__rock-button', 'game-board-difficult__scissors-button');
-
     newGame.computerWins(human.retrieveHumanWins(), computer.retrieveComputerWins());
-
     displayDifficultWinner();
     displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
-
     setTimeout(displayHelpfulMessage, 2500);
     setTimeout(displayHelpfulMessageTwo, 4500);
     setTimeout(displayHelpfulMessageThree, 14000);
@@ -74,17 +62,14 @@ class Player {
     setTimeout(changeViewToDifficultTwo, 35000);
   }
 
-  difficultGameInPlayTwoNow(newGame, human, computer) {
-    newGame.human = human;
-    newGame.computer = computer;
-
-    newGame.determineComputerWins();
-
+  difficultGameInPlayTwoNow(newGame, human, computer, humanChoice) {
     var humanChoice = event.target.className;
+    hideElement(playFairly);
+    hideElement(watermarkOne);
+    hideElement(watermarkTwo);
+    newGame.determineComputerWins();
     newGame.playerChoice(humanChoice, 'game-board-difficult__paper-button-two', 'game-board-difficult__rock-button-two', 'game-board-difficult__scissors-button-two');
-
     newGame.computerWins(human.retrieveHumanWins(), computer.retrieveComputerWins());
-
     displayDifficultWinner();
     displayDifficultPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
@@ -92,18 +77,13 @@ class Player {
     setTimeout(showPlayFairlyButton, 20800);
   }
 
-  fairGameInPlayNow(newGame, human, computer) {
-    newGame.human = human;
-    newGame.computer = computer;
-
-    newGame.determineDifficultScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors', 'secret alien', 'bigger alien', 'alien', 'wimpy alien']));
-
+  fairGameInPlayNow(newGame, human, computer, humanChoice) {
     var humanChoice = event.target.className;
-
+    hideElement(watermarkOne);
+    hideElement(watermarkTwo);
+    newGame.determineDifficultScores(newGame.determineComputerChoice(['paper', 'rock', 'scissors', 'secret alien', 'bigger alien', 'alien', 'wimpy alien']));
     newGame.playerFairChoice(humanChoice);
-
     newGame.logWinner(newGame.humanScore, newGame.computer.score, human.retrieveHumanWins(), computer.retrieveComputerWins());
-
     displayFairWinner();
     displayFairPlayerChoice(newGame.winner, newGame.humanChoice, newGame.computerChoice);
 
