@@ -67,6 +67,8 @@ var ciaNoteThree = document.querySelector('#noteThree');
 var watermarkOne = document.querySelector('#watermarkOne');
 var watermarkTwo = document.querySelector('#watermarkTwo');
 var chains = document.querySelectorAll('.chain')
+var achievementIn = document.querySelector('.achievement-in');
+var achievementOut = document.querySelector('.achievement-out');
 // buttons
 var playFairly = document.querySelector('.bottom-border__play-fairly');
 var btnCiaProceed = document.querySelector('.cia-warning__proceed-button');
@@ -90,30 +92,24 @@ changeItBack.addEventListener('click', changeViewToMainTwo);
 changeGameMode.addEventListener('click', changeViewToMain);
 btnCiaProceed.addEventListener('click', changeViewToMain);
 startClassicGame.addEventListener('click', changeViewToClassic);
-for (let i=0;i<startDifficultGame.length;i++) {
-  startDifficultGame[i].addEventListener('click', changeViewToDifficult);
-};
-for (let i=0;i<classicChoice.length;i++) {
-  classicChoice[i].addEventListener('click', classicGameInPlay);
-};
+startDifficultGame.forEach(choice => {
+  choice.addEventListener('click', changeViewToDifficult);
+});
+classicChoice.forEach(choice => {
+  choice.addEventListener('click', classicGameInPlay);
+});
 startDifficultGameAlt.addEventListener('click', changeViewToFairTwo);
 alsoStartDifficultGameAlt.addEventListener('click', changeViewToFairTwo);
 alsoStartDifficultGameTwoAlt.addEventListener('click', changeViewToFairTwo);
 alsoStartDifficultGameThreeAlt.addEventListener('click', changeViewToFairTwo);
 alsoStartDifficultGameFourAlt.addEventListener('click', changeViewToFairTwo);
 playFairly.addEventListener('click', changeViewToFair);
-// rockChoice.addEventListener('click', classicGameInPlay);
-// paperChoice.addEventListener('click', classicGameInPlay);
-// scissorsChoice.addEventListener('click', classicGameInPlay);
 rockChoiceDifficult.addEventListener('click', difficultGameInPlay);
 rockChoiceDifficultTwo.addEventListener('click', difficultGameInPlayTwo);
 paperChoiceDifficult.addEventListener('click', difficultGameInPlay);
 paperChoiceDifficultTwo.addEventListener('click', difficultGameInPlayTwo);
 scissorsChoiceDifficult.addEventListener('click', difficultGameInPlay);
 scissorsChoiceDifficultTwo.addEventListener('click', difficultGameInPlayTwo);
-alienChoiceDifficult.addEventListener('click', difficultGameInPlay);
-biggerAlienChoiceDifficult.addEventListener('click', difficultGameInPlay);
-wimpyAlienChoiceDifficult.addEventListener('click', difficultGameInPlay);
 rockChoiceFair.addEventListener('click', fairGameInPlay);
 paperChoiceFair.addEventListener('click', fairGameInPlay);
 scissorsChoiceFair.addEventListener('click', fairGameInPlay);
@@ -250,12 +246,12 @@ function changeViewToDifficult() {
   showElement(difficultGameCard);
   showElement(difficultCard);
 
-  setTimeout(chainBreakingZero, 2000);
-  setTimeout(chainBreakingOne, 3000);
-  setTimeout(chainBreakingTwo, 4000);
-  setTimeout(chainBreakingThree, 4400);
-  setTimeout(chainBreakingFour, 4800);
-  setTimeout(chainBreakingFive, 5200);
+  // setTimeout(chainBreakingZero, 2000);
+  // setTimeout(chainBreakingOne, 3000);
+  // setTimeout(chainBreakingTwo, 4000);
+  // setTimeout(chainBreakingThree, 4400);
+  // setTimeout(chainBreakingFour, 4800);
+  // setTimeout(chainBreakingFive, 5200);
 };
 
 function changeViewToDifficultTwo() {
@@ -394,24 +390,28 @@ function hideElementPlayFairly() {
 // FUNCTIONS: dynamic HTML ************************************
 function displayClassicPlayerChoice(winner, humanChoice, computerChoice) {
   classicGameOutcome.innerHTML = '';
-  if (winner === 'PYUNEE DUM HOOMOHN') {
-    classicGameOutcome.innerHTML += `
-      <div class="winner-card__chicken-dinner-human">${winner}
-        <img class="winner-card__player-one-choice" src="${humanChoice}">
-        <img class="winner-card__player-two-choice" src="${computerChoice}">
-      </div>`;
-  } else if (winner === 'POWREFUL BAUEUATIFUL ALEIN') {
-    classicGameOutcome.innerHTML += `
-      <div class="winner-card__chicken-dinner-computer">${winner}
-        <img class="winner-card__player-one-choice" src="${humanChoice}">
-        <img class="winner-card__player-two-choice" src="${computerChoice}">
-      </div>`;
-  } else {
-    classicGameOutcome.innerHTML += `
-      <div class="winner-card__chicken-dinner">${winner}
-        <img class="winner-card__player-one-choice" src="${humanChoice}">
-        <img class="winner-card__player-two-choice" src="${computerChoice}">
-      </div>`;
+  const expr = winner;
+  switch (expr) {
+    case 'PYUNEE DUM HOOMOHN':
+      classicGameOutcome.innerHTML += `
+        <div class="winner-card__chicken-dinner-human">${winner}
+          <img class="winner-card__player-one-choice" src="${humanChoice}">
+          <img class="winner-card__player-two-choice" src="${computerChoice}">
+        </div>`;
+      break;
+    case 'POWREFUL BAUEUATIFUL ALEIN':
+      classicGameOutcome.innerHTML += `
+        <div class="winner-card__chicken-dinner-computer">${winner}
+          <img class="winner-card__player-one-choice" src="${humanChoice}">
+          <img class="winner-card__player-two-choice" src="${computerChoice}">
+        </div>`;
+      break;
+    default:
+      classicGameOutcome.innerHTML += `
+        <div class="winner-card__chicken-dinner">${winner}
+          <img class="winner-card__player-one-choice" src="${humanChoice}">
+          <img class="winner-card__player-two-choice" src="${computerChoice}">
+        </div>`;
   }
 };
 
@@ -484,35 +484,54 @@ function changeStyling(element, styleOne, styleTwo) {
   element.classList.add(styleTwo);
 };
 
-function chainBreakingZero() {
-  showElement(chains[0]);
-}
+// function chainBreakingZero() {
+//   showElement(chains[0]);
+// }
+//
+// function chainBreakingOne() {
+//   hideElement(chains[0]);
+//   showElement(chains[1]);
+// }
+//
+// function chainBreakingTwo() {
+//   hideElement(chains[1]);
+//   showElement(chains[2]);
+// }
+//
+// function chainBreakingThree() {
+//   hideElement(chains[2]);
+//   showElement(chains[3]);
+// }
+//
+// function chainBreakingFour() {
+//   hideElement(chains[3]);
+//   showElement(chains[4]);
+// }
+//
+// function chainBreakingFive() {
+//   hideElement(chains[4]);
+//   showElement(chains[5]);
+// }
 
-function chainBreakingOne() {
-  hideElement(chains[0]);
-  showElement(chains[1]);
-}
 
-function chainBreakingTwo() {
-  hideElement(chains[1]);
-  showElement(chains[2]);
-}
 
-function chainBreakingThree() {
-  hideElement(chains[2]);
-  showElement(chains[3]);
-}
+// function manipDom() {
+//   achievementIn.innerHTML = `
+//     <input class="input" type="checkbox" checked>
+//     <label class="achievemen-text">5 Wins! Look at you go!</label>`;
+//
+//   showElement(achievementIn);
+//
+//   setTimeout(showElement(achievementOut), 5000)
+//   setTimeout(hideElement(achievementIn), 5000)
+//   setTimeout(changeMess, 4970)
+// }
 
-function chainBreakingFour() {
-  hideElement(chains[3]);
-  showElement(chains[4]);
-}
-
-function chainBreakingFive() {
-  hideElement(chains[4]);
-  showElement(chains[5]);
-  chains[5].classList.toggle('chainFour');
-}
+// function changeMess() {
+//   achievementOut.innerHTML = `
+//     <input class="input" type="checkbox" checked>
+//     <label class="achievemen-text">5 Wins! Look at you go!</label>`;
+// }
 
 function flashStopThat(element, newStyle) {
   element.classList.toggle(newStyle);

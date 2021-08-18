@@ -112,19 +112,26 @@ class Game {
     if (humanScore > computerScore) {
       this.winner = this.human.name;
       parsedWinCountHuman += 1;
-      updateHumanWinCount(parsedWinCountHuman)
+      updateHumanWinCount(parsedWinCountHuman);
+      // this.checkHumanWins();
       this.human.saveHumanWinToStorage(parsedWinCountHuman);
 
     } else if (humanScore < computerScore) {
       this.winner = this.computer.name;
       parsedWinCountComputer += 1;
-      updateComputerWinCount(parsedWinCountComputer)
+      updateComputerWinCount(parsedWinCountComputer);
       this.computer.saveComputerWinToStorage(parsedWinCountComputer);
 
     } else {
       this.winner = 'NOBUDDY';
     }
   }
+
+  // checkHumanWins() {
+  //   if (this.human.wincount == 1) {
+  //     manipDom()
+  //   }
+  // }
 
   playerChoice(humanChoice, paperButton, rockButton, scissorsButton) {
     if (humanChoice === paperButton) {

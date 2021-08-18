@@ -618,25 +618,6 @@ text {
   border-radius: 40px;
 }
 
-#moreFunText {
-  margin-top: -13px;
-}
-
-#moreFunTextTwo {
-  margin-top: 46px;
-}
-
-#translationOne {
-  margin-top: -18px;
-}
-
-#translationTwo {
-  margin-top: 3px;
-}
-
-#translationTwo {
-  margin-top: 4px;
-}
 
 .fair-game-rules__paper,
 .fair-game-rules__paper-two,
@@ -889,7 +870,7 @@ text {
 
 #noteThree {
   width: 735px;
-  margin: 527px 117px 0px 590px;
+  margin: 520px 117px 0px 590px;
 }
 
 #watermarkOne,
@@ -910,19 +891,64 @@ text {
   margin: 22px 0px 0px 620px;
 }
 
-.chain,
-.chainFour {
+.input {
+  visibility: hidden;
+}
+
+/* .achievement-in {
+  position: absolute;
+  margin-left: 700px;
+  font-size: 50;
+  transition-property: margin-left;
+  overflow: hidden;
+  transition-duration: 20s;
+}
+
+.achievement-in:checked {
+  margin-left: -500px;
+}
+
+.achievement-out {
+  position: absolute;
+  margin-left: 700px;
+  font-size: 50;
+  transition-property: margin-left;
+  overflow: hidden;
+  transition-duration: 20s;
+}
+
+.achievement-out:checked {
+  margin-left: -500px;
+} */
+
+.chain {
   position: absolute;
   height: 300px;
   width: 700px;
-  visibility: visible;
 }
 
-.chainFour {
-  transition-property: visibility;
-  transition-duration: 20s;
-  /* transition-delay: 20s; */
-  visibility: hidden;
+#moreFunText {
+  margin-top: -13px;
+}
+
+#moreFunTextTwo {
+  margin-top: 46px;
+}
+
+#translationOne {
+  margin-top: -18px;
+}
+
+#translationTwo {
+  margin-top: 3px;
+}
+
+#translationThree {
+  margin-top: 3px;
+}
+
+.difficult-card__game-rules-two-next {
+  margin-top: 45px;
 }
 
 .not-allowed {
